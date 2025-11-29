@@ -74,10 +74,11 @@ public class MixerSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         
         if (quantityText != null)
         {
-            // Show quantity based on multiplier
-            if (hasIcon && mixerController != null && mixerController.CurrentMultiplier > 1)
+            // Show quantity based on multiplier - cache the multiplier value
+            int multiplier = mixerController != null ? mixerController.CurrentMultiplier : 1;
+            if (hasIcon && multiplier > 1)
             {
-                quantityText.text = $"x{mixerController.CurrentMultiplier}";
+                quantityText.text = $"x{multiplier}";
                 quantityText.gameObject.SetActive(true);
             }
             else

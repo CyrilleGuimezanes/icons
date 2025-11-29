@@ -182,10 +182,19 @@ public class MixerController : ScreenController
         
         if (!string.IsNullOrEmpty(result))
         {
-            // Successful mix
-            ConsumeIngredientsFromSlots();
-            PlayerInventory.Instance?.AddIcon(result, currentMultiplier);
-            ShowSuccessResult(result);
+            // Successful mix - first verify we can add the result, then consume ingredients
+            if (PlayerInventory.Instance != null)
+            {
+                // Add result first to ensure the operation can succeed
+                PlayerInventory.Instance.AddIcon(result, currentMultiplier);
+                // Then consume the ingredients
+                ConsumeIngredientsFromSlots();
+                ShowSuccessResult(result);
+            }
+            else
+            {
+                ShowFailureResult("Erreur d'inventaire !");
+            }
         }
         else
         {
