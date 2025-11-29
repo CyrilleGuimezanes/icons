@@ -54,6 +54,7 @@ public class PlayerInventory : MonoBehaviour
 
     /// <summary>
     /// Adds a specified quantity of an icon to the inventory.
+    /// Also unlocks the icon if it wasn't already unlocked.
     /// </summary>
     /// <param name="iconId">The unique identifier of the icon.</param>
     /// <param name="quantity">The quantity to add (must be positive).</param>
@@ -73,6 +74,12 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             inventoryData.items.Add(new InventoryItem(iconId, quantity));
+        }
+
+        // Unlock the icon when it's added to the inventory
+        if (UnlockedIconsManager.Instance != null)
+        {
+            UnlockedIconsManager.Instance.UnlockIcon(iconId);
         }
 
         Save();
