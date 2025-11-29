@@ -70,6 +70,7 @@ public class IconDatabase : MonoBehaviour
         AddIcon("spa", "Fleur", IconRarity.Common);
         AddIcon("bug_report", "Insecte", IconRarity.Common);
         AddIcon("catching_pokemon", "Filet", IconRarity.Common);
+        AddIcon("paid", "Pièce", IconRarity.Common);  // Coin icon for in-game currency
 
         // Uncommon icons (tools, processed items) - Blue
         AddIcon("hardware", "Outil", IconRarity.Uncommon);
