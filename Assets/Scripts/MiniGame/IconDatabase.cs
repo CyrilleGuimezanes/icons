@@ -70,6 +70,11 @@ public class IconDatabase : MonoBehaviour
         AddIcon("spa", "Fleur", IconRarity.Common);
         AddIcon("bug_report", "Insecte", IconRarity.Common);
         AddIcon("catching_pokemon", "Filet", IconRarity.Common);
+        AddIcon("recycling", "Recyclage", IconRarity.Common);
+        AddIcon("compost", "Compost", IconRarity.Common);
+        AddIcon("oil_barrel", "Pétrole", IconRarity.Common);
+        AddIcon("iron", "Fer", IconRarity.Common);
+        AddIcon("coal", "Charbon", IconRarity.Common);
 
         // Uncommon icons (tools, processed items) - Blue
         AddIcon("hardware", "Outil", IconRarity.Uncommon);
@@ -85,13 +90,18 @@ public class IconDatabase : MonoBehaviour
         AddIcon("cookie", "Cookie", IconRarity.Uncommon);
         AddIcon("cake", "Gâteau", IconRarity.Uncommon);
         AddIcon("icecream", "Glace", IconRarity.Uncommon);
-        AddIcon("emoji_food_beverage", "Café", IconRarity.Uncommon);
+        AddIcon("emoji_food_beverage", "Boisson", IconRarity.Uncommon);
         AddIcon("local_cafe", "Café", IconRarity.Uncommon);
         AddIcon("wine_bar", "Vin", IconRarity.Uncommon);
         AddIcon("liquor", "Liqueur", IconRarity.Uncommon);
         AddIcon("home", "Maison", IconRarity.Uncommon);
         AddIcon("cottage", "Cottage", IconRarity.Uncommon);
         AddIcon("cabin", "Cabane", IconRarity.Uncommon);
+        AddIcon("plumbing", "Plomberie", IconRarity.Uncommon);
+        AddIcon("electrical_services", "Électricité", IconRarity.Uncommon);
+        AddIcon("set_meal", "Plateau Repas", IconRarity.Uncommon);
+        AddIcon("ramen_dining", "Ramen", IconRarity.Uncommon);
+        AddIcon("kebab_dining", "Kebab", IconRarity.Uncommon);
 
         // Rare icons (advanced machines, complex items) - Purple
         AddIcon("precision_manufacturing", "Machine", IconRarity.Rare);
@@ -114,6 +124,11 @@ public class IconDatabase : MonoBehaviour
         AddIcon("military_tech", "Médaille", IconRarity.Rare);
         AddIcon("workspace_premium", "Premium", IconRarity.Rare);
         AddIcon("emoji_events", "Trophée", IconRarity.Rare);
+        AddIcon("electric_car", "Voiture Électrique", IconRarity.Rare);
+        AddIcon("flight", "Avion", IconRarity.Rare);
+        AddIcon("sailing", "Bateau", IconRarity.Rare);
+        AddIcon("train", "Train", IconRarity.Rare);
+        AddIcon("helicopter", "Hélicoptère", IconRarity.Rare);
 
         // Legendary icons (ultimate items) - Orange
         AddIcon("rocket_launch", "Fusée", IconRarity.Legendary);
