@@ -137,10 +137,10 @@ public class ShopManager : MonoBehaviour
 
     /// <summary>
     /// Attempts to purchase a pack with real money (IAP).
-    /// This is a simulation - actual IAP integration would use Unity IAP.
+    /// Uses Unity IAP for actual purchases.
     /// </summary>
     /// <param name="pack">The pack to purchase.</param>
-    /// <returns>True if purchase was successful, false otherwise.</returns>
+    /// <returns>True if purchase was initiated, false otherwise.</returns>
     public bool PurchasePack(IconPack pack)
     {
         if (pack == null)
@@ -148,9 +148,46 @@ public class ShopManager : MonoBehaviour
             return false;
         }
 
-        // In a real implementation, this would integrate with Unity IAP
-        // For now, we simulate a successful purchase
-        return ProcessPackPurchase(pack);
+        // Use IAPManager for real IAP purchases
+        if (IAPManager.Instance != null && IAPManager.Instance.IsInitialized)
+        {
+            IAPManager.Instance.PurchaseProduct(pack.packId);
+            return true;
+        }
+        else
+        {
+            // Fallback to simulation if IAP is not available
+            Debug.LogWarning("IAP not available, simulating purchase");
+            return ProcessPackPurchase(pack);
+        }
+    }
+
+    /// <summary>
+    /// Called by IAPManager when an IAP purchase is successful.
+    /// </summary>
+    /// <param name="packId">The pack ID that was purchased.</param>
+    public void ProcessIAPPurchase(string packId)
+    {
+        IconPack pack = null;
+
+        // Find the pack
+        foreach (var p in IconPacks.GetAllPacks())
+        {
+            if (p.packId == packId)
+            {
+                pack = p;
+                break;
+            }
+        }
+
+        if (pack != null)
+        {
+            ProcessPackPurchase(pack);
+        }
+        else
+        {
+            Debug.LogWarning($"Pack {packId} not found for IAP processing");
+        }
     }
 
     /// <summary>

@@ -72,10 +72,17 @@ public class ShopPackDisplay : MonoBehaviour
             descriptionText.text = pack.description;
         }
 
-        // Set price
+        // Set price (use localized price from IAP if available)
         if (priceText != null)
         {
-            priceText.text = pack.realMoneyPrice;
+            if (IAPManager.Instance != null && IAPManager.Instance.IsInitialized)
+            {
+                priceText.text = IAPManager.Instance.GetLocalizedPrice(pack.packId);
+            }
+            else
+            {
+                priceText.text = pack.realMoneyPrice;
+            }
         }
 
         // Set background color based on pack type
