@@ -88,78 +88,455 @@ public class ProductionManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Initializes default production recipes.
+    /// Initializes all 49 production recipes from the icons database.
     /// </summary>
     private void InitializeDefaultProductions()
     {
-        // Plant productions (Potager)
         availableProductions.Add(new ProductionData(
-            "wheat_production",
-            "Blé",
-            new List<string> { "seed_wheat" },
-            "wheat",
+            "prod_grain",
+            "Cultiver du Blé",
+            new List<string> { "water_drop" },
+            "grain",
             15f,
             ProductionType.Plant
         ));
 
         availableProductions.Add(new ProductionData(
-            "tomato_production",
-            "Tomate",
-            new List<string> { "seed_tomato" },
-            "tomato",
+            "prod_grass",
+            "Faire pousser l'Herbe",
+            new List<string> { "water_drop", "wb_sunny" },
+            "grass",
+            10f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_flower",
+            "Cultiver des Fleurs",
+            new List<string> { "water_drop", "grass" },
+            "spa",
             20f,
             ProductionType.Plant
         ));
 
         availableProductions.Add(new ProductionData(
-            "carrot_production",
-            "Carotte",
-            new List<string> { "seed_carrot" },
-            "carrot",
+            "prod_tree",
+            "Planter un Arbre",
+            new List<string> { "water_drop", "grass", "wb_sunny" },
+            "forest",
+            30f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_eco",
+            "Récolter des Feuilles",
+            new List<string> { "forest" },
+            "eco",
+            15f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_egg",
+            "Produire des Oeufs",
+            new List<string> { "pets", "grain" },
+            "egg",
+            20f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_insect",
+            "Élever des Insectes",
+            new List<string> { "grass", "eco" },
+            "bug_report",
+            10f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_seed",
+            "Récolter des Graines",
+            new List<string> { "spa" },
+            "seed",
+            15f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_sprout",
+            "Faire germer",
+            new List<string> { "seed", "water_drop" },
+            "sprout",
+            12f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_moss",
+            "Cultiver de la Mousse",
+            new List<string> { "grass", "water_drop" },
+            "moss",
             18f,
             ProductionType.Plant
         ));
 
-        // Manufactured goods (Industrie)
         availableProductions.Add(new ProductionData(
-            "flour_production",
-            "Farine",
-            new List<string> { "wheat" },
-            "flour",
-            12f,
+            "prod_hive",
+            "Construire une Ruche",
+            new List<string> { "bug_report", "bug_report" },
+            "hive",
+            25f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_compost2",
+            "Créer du Compost",
+            new List<string> { "eco", "eco" },
+            "compost",
+            20f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_rabbit",
+            "Élever des Lapins",
+            new List<string> { "pets", "grass" },
+            "cruelty_free",
+            25f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_fish",
+            "Pêcher",
+            new List<string> { "water_drop", "catching_pokemon" },
+            "phishing",
+            20f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_duck",
+            "Élever des Canards",
+            new List<string> { "pets", "water_drop" },
+            "duck",
+            22f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_goat",
+            "Élever des Chèvres",
+            new List<string> { "pets", "grass" },
+            "goat",
+            28f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_turkey",
+            "Élever des Dindes",
+            new List<string> { "pets", "grain" },
+            "turkey",
+            26f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_butterfly",
+            "Élever des Papillons",
+            new List<string> { "bug_report", "spa" },
+            "flutter",
+            18f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_bee",
+            "Élever des Abeilles",
+            new List<string> { "bug_report", "hive" },
+            "emoji_nature",
+            24f,
+            ProductionType.Plant
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_wood_planks",
+            "Fabriquer des Planches",
+            new List<string> { "forest", "hardware" },
+            "carpenter",
+            20f,
             ProductionType.ManufacturedGood
         ));
 
         availableProductions.Add(new ProductionData(
-            "planks_production",
-            "Planches",
-            new List<string> { "wood" },
-            "planks",
-            15f,
-            ProductionType.ManufacturedGood
-        ));
-
-        availableProductions.Add(new ProductionData(
-            "metal_plates_production",
-            "Plaques métalliques",
-            new List<string> { "ore" },
-            "metal_plates",
+            "prod_bricks",
+            "Cuire des Briques",
+            new List<string> { "landscape", "local_fire_department" },
+            "construction",
             25f,
             ProductionType.ManufacturedGood
         ));
 
         availableProductions.Add(new ProductionData(
-            "bread_production",
-            "Pain",
-            new List<string> { "flour", "water" },
-            "bread",
+            "prod_machine",
+            "Assembler une Machine",
+            new List<string> { "hardware", "hardware" },
+            "precision_manufacturing",
+            30f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_circuit",
+            "Fabriquer un Circuit",
+            new List<string> { "precision_manufacturing", "hardware" },
+            "developer_board",
+            25f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_tool",
+            "Forger des Outils",
+            new List<string> { "landscape", "forest" },
+            "hardware",
+            15f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_beverage",
+            "Préparer une Boisson",
+            new List<string> { "water_drop", "grain" },
+            "emoji_food_beverage",
+            15f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_nutrition",
+            "Préparer de la Nutrition",
+            new List<string> { "grain", "grain" },
+            "nutrition",
+            10f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_ice",
+            "Fabriquer de la Glace",
+            new List<string> { "water_drop", "air" },
+            "ac_unit",
             20f,
             ProductionType.ManufacturedGood
         ));
 
-        // Mark some as discovered by default for testing
-        DiscoverProduction("wheat_production");
-        DiscoverProduction("flour_production");
+        availableProductions.Add(new ProductionData(
+            "prod_sand",
+            "Extraire du Sable",
+            new List<string> { "landscape", "water_drop" },
+            "sand",
+            15f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_clay",
+            "Préparer de l'Argile",
+            new List<string> { "sand", "water_drop" },
+            "clay",
+            18f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_iron",
+            "Fondre du Fer",
+            new List<string> { "landscape", "local_fire_department" },
+            "iron",
+            28f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_coal",
+            "Produire du Charbon",
+            new List<string> { "forest", "local_fire_department" },
+            "coal",
+            25f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_oil",
+            "Extraire du Pétrole",
+            new List<string> { "landscape", "precision_manufacturing" },
+            "oil_barrel",
+            30f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_chair",
+            "Fabriquer une Chaise",
+            new List<string> { "forest", "hardware" },
+            "chair",
+            18f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_table",
+            "Fabriquer une Table",
+            new List<string> { "forest", "forest" },
+            "table_restaurant",
+            22f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_bed",
+            "Fabriquer un Lit",
+            new List<string> { "forest", "spa" },
+            "bed",
+            25f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_door",
+            "Fabriquer une Porte",
+            new List<string> { "forest", "hardware" },
+            "door_front",
+            20f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_window",
+            "Fabriquer une Fenêtre",
+            new List<string> { "sand", "local_fire_department" },
+            "window",
+            22f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_fence",
+            "Construire une Clôture",
+            new List<string> { "forest", "hardware" },
+            "fence",
+            18f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_memory",
+            "Fabriquer de la Mémoire",
+            new List<string> { "developer_board", "precision_manufacturing" },
+            "memory",
+            28f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_robot",
+            "Construire un Robot",
+            new List<string> { "developer_board", "memory" },
+            "smart_toy",
+            30f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_camera",
+            "Fabriquer un Appareil Photo",
+            new List<string> { "developer_board", "hardware" },
+            "photo_camera",
+            26f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_radio",
+            "Construire une Radio",
+            new List<string> { "developer_board", "hardware" },
+            "radio",
+            24f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_tv",
+            "Fabriquer une TV",
+            new List<string> { "developer_board", "developer_board" },
+            "tv",
+            28f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_solar",
+            "Installer des Panneaux Solaires",
+            new List<string> { "developer_board", "hardware" },
+            "solar_power",
+            30f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_wind",
+            "Construire une Éolienne",
+            new List<string> { "precision_manufacturing", "hardware" },
+            "wind_power",
+            30f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_blender",
+            "Fabriquer un Mixeur",
+            new List<string> { "precision_manufacturing", "hardware" },
+            "blender",
+            22f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_microwave",
+            "Fabriquer un Micro-ondes",
+            new List<string> { "developer_board", "precision_manufacturing" },
+            "microwave",
+            26f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_grill",
+            "Construire un Barbecue",
+            new List<string> { "iron", "hardware" },
+            "grill",
+            24f,
+            ProductionType.ManufacturedGood
+        ));
+
+        availableProductions.Add(new ProductionData(
+            "prod_guitar",
+            "Fabriquer une Guitare",
+            new List<string> { "forest", "hardware" },
+            "guitar",
+            25f,
+            ProductionType.ManufacturedGood
+        ));
+
+        // Mark starter productions as discovered by default
+        DiscoverProduction("prod_grain");
+        DiscoverProduction("prod_grass");
+        DiscoverProduction("prod_tool");
     }
 
     /// <summary>
