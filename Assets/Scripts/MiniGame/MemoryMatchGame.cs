@@ -29,6 +29,7 @@ public class MemoryMatchGame : MiniGameBase
     [SerializeField] private float flipDuration = 0.2f;
     [SerializeField] private float matchDelay = 0.5f;
     [SerializeField] private float mismatchDelay = 1f;
+    [SerializeField] private float matchedCardAlpha = 0.7f;
 
     private List<MemoryCard> cards = new List<MemoryCard>();
     private MemoryCard firstFlipped;
@@ -123,7 +124,7 @@ public class MemoryMatchGame : MiniGameBase
                 card = cardObj.AddComponent<MemoryCard>();
             }
 
-            card.Setup(cardIcons[i], cardBackIcon, cardFrontColor, cardBackColor, this);
+            card.Setup(cardIcons[i], cardBackIcon, cardFrontColor, cardBackColor, this, matchedCardAlpha);
             cards.Add(card);
         }
     }
@@ -234,6 +235,7 @@ public class MemoryCard : MonoBehaviour
     private Color frontColor;
     private Color backColor;
     private MemoryMatchGame game;
+    private float matchedAlpha = 0.7f;
 
     private bool isFlipped;
     private bool isMatched;
@@ -245,13 +247,14 @@ public class MemoryCard : MonoBehaviour
     public bool IsFlipped => isFlipped;
     public bool IsMatched => isMatched;
 
-    public void Setup(string icon, string back, Color front, Color backCol, MemoryMatchGame gameRef)
+    public void Setup(string icon, string back, Color front, Color backCol, MemoryMatchGame gameRef, float alpha = 0.7f)
     {
         iconId = icon;
         backIcon = back;
         frontColor = front;
         backColor = backCol;
         game = gameRef;
+        matchedAlpha = alpha;
         isFlipped = false;
         isMatched = false;
 
@@ -325,7 +328,7 @@ public class MemoryCard : MonoBehaviour
             if (background != null)
             {
                 Color matchedColor = frontColor;
-                matchedColor.a = 0.7f;
+                matchedColor.a = matchedAlpha;
                 background.color = matchedColor;
             }
 

@@ -19,6 +19,7 @@ public class IconCatcherGame : MiniGameBase
     [Header("Spawn Area")]
     [SerializeField] private RectTransform spawnArea;
     [SerializeField] private float spawnPadding = 50f;
+    [SerializeField] private float missedYThreshold = -500f;
 
     [Header("UI References")]
     [SerializeField] private Transform iconsContainer;
@@ -138,8 +139,8 @@ public class IconCatcherGame : MiniGameBase
         // Calculate current fall speed (increases over time)
         float currentSpeed = fallSpeed + (speedIncrease * catchCount);
 
-        // Setup the icon
-        icon.Setup(iconId, currentSpeed, this);
+        // Setup the icon with configurable missed threshold
+        icon.Setup(iconId, currentSpeed, this, missedYThreshold);
         activeIcons.Add(icon);
     }
 
@@ -265,17 +266,19 @@ public class FallingIcon : MonoBehaviour
 {
     private string iconId;
     private float fallSpeed;
+    private float missedYThreshold;
     private IconCatcherGame game;
     private RectTransform rectTransform;
     private bool isFalling = true;
     private Button button;
     private TextMeshProUGUI iconText;
 
-    public void Setup(string icon, float speed, IconCatcherGame gameRef)
+    public void Setup(string icon, float speed, IconCatcherGame gameRef, float yThreshold = -500f)
     {
         iconId = icon;
         fallSpeed = speed;
         game = gameRef;
+        missedYThreshold = yThreshold;
         rectTransform = GetComponent<RectTransform>();
 
         // Setup UI components
@@ -303,7 +306,7 @@ public class FallingIcon : MonoBehaviour
         rectTransform.anchoredPosition = position;
 
         // Check if off screen (missed)
-        if (position.y < -500f) // Adjust based on screen size
+        if (position.y < missedYThreshold)
         {
             if (game != null)
             {

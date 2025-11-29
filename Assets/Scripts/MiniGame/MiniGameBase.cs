@@ -110,6 +110,10 @@ public abstract class MiniGameBase : MonoBehaviour
         {
             gameManager.OnMiniGameComplete(success);
         }
+        else
+        {
+            Debug.LogWarning($"MiniGameBase: gameManager is null for {gameName}. Game may not have been started from MiniGameManager.");
+        }
     }
 
     /// <summary>

@@ -212,8 +212,8 @@ public class QuickSortGame : MiniGameBase
         wrongSorts++;
         streak = 0;
 
-        // Time penalty
-        currentTime -= wrongPenaltyTime;
+        // Time penalty - ensure time doesn't go negative
+        currentTime = Mathf.Max(0f, currentTime - wrongPenaltyTime);
 
         // Show wrong feedback
         StartCoroutine(ShowFeedback(false));

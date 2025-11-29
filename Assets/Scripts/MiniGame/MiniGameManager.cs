@@ -43,6 +43,7 @@ public class MiniGameManager : ScreenController
 
     [Header("Animation Settings")]
     [SerializeField] private float rewardDisplayDuration = 3f;
+    [SerializeField] private float rewardBackgroundAlpha = 0.2f;
 
     private MiniGameData saveData;
     private MiniGameBase currentGame;
@@ -282,7 +283,7 @@ public class MiniGameManager : ScreenController
         {
             // Set a subtle background color based on rarity
             Color bgColor = icon.GetRarityColor();
-            bgColor.a = 0.2f;
+            bgColor.a = rewardBackgroundAlpha;
             rewardBackground.color = bgColor;
         }
     }
