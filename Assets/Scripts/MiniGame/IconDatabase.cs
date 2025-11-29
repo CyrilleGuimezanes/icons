@@ -137,6 +137,16 @@ public class IconDatabase : MonoBehaviour
         AddIcon("psychology", "Esprit", IconRarity.Legendary);
         AddIcon("self_improvement", "Méditation", IconRarity.Legendary);
         AddIcon("favorite", "Coeur", IconRarity.Legendary);
+
+        // Hidden mini-game reward icons (Legendary - only obtainable through hidden challenges)
+        AddIcon("battery_0_bar", "Batterie Vide", IconRarity.Legendary);
+        AddIcon("battery_charging_full", "Batterie Pleine", IconRarity.Legendary);
+        AddIcon("volume_off", "Volume Off", IconRarity.Legendary);
+        AddIcon("volume_up", "Volume Max", IconRarity.Legendary);
+        AddIcon("stay_current_portrait", "Mode Portrait", IconRarity.Legendary);
+        AddIcon("stay_current_landscape", "Mode Paysage", IconRarity.Legendary);
+        AddIcon("airplanemode_active", "Mode Avion", IconRarity.Legendary);
+        AddIcon("signal_cellular_alt", "Signal Fort", IconRarity.Legendary);
     }
 
     private void AddIcon(string id, string displayName, IconRarity rarity)

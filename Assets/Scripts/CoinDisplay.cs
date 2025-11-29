@@ -1,101 +1,46 @@
 using UnityEngine;
 using TMPro;
-using System;
 
 /// <summary>
-/// UI component that displays the player's coin balance.
-/// This component should be placed on a persistent UI element
-/// that is always visible on screen.
+/// Simple coin display component that shows the current coin balance.
+/// Can be placed anywhere in the UI (typically in the header).
 /// </summary>
 public class CoinDisplay : MonoBehaviour
 {
-    [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI coinIconText;
-    [SerializeField] private TextMeshProUGUI coinAmountText;
-    [SerializeField] private TextMeshProUGUI nextCoinTimerText;
-
-    [Header("Settings")]
-    [SerializeField] private bool showNextCoinTimer = true;
-    [SerializeField] private string coinIconId = "paid";
-
-    private void Start()
-    {
-        // Set the coin icon (Material Icons ligature)
-        if (coinIconText != null)
-        {
-            coinIconText.text = coinIconId;
-        }
-
-        UpdateDisplay();
-    }
+    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] private string prefix = "";
+    [SerializeField] private string suffix = "";
 
     private void OnEnable()
     {
-        // Subscribe to balance changes
         if (CurrencyManager.Instance != null)
         {
-            CurrencyManager.Instance.OnBalanceChanged += OnBalanceChanged;
+            CurrencyManager.Instance.OnCoinsChanged += UpdateDisplay;
+            UpdateDisplay(CurrencyManager.Instance.Coins);
         }
     }
 
     private void OnDisable()
     {
-        // Unsubscribe from balance changes
         if (CurrencyManager.Instance != null)
         {
-            CurrencyManager.Instance.OnBalanceChanged -= OnBalanceChanged;
+            CurrencyManager.Instance.OnCoinsChanged -= UpdateDisplay;
         }
     }
 
-    private void Update()
+    private void Start()
     {
-        // Update the timer display
-        if (showNextCoinTimer && nextCoinTimerText != null)
-        {
-            UpdateTimerDisplay();
-        }
+        UpdateDisplay(CurrencyManager.Instance?.Coins ?? 0);
     }
 
     /// <summary>
-    /// Updates the coin amount display.
+    /// Updates the coin display text.
     /// </summary>
-    public void UpdateDisplay()
+    private void UpdateDisplay(int coins)
     {
-        if (coinAmountText != null && CurrencyManager.Instance != null)
+        if (coinText != null)
         {
-            coinAmountText.text = CurrencyManager.Instance.Balance.ToString();
-        }
-    }
-
-    /// <summary>
-    /// Updates the next coin timer display.
-    /// </summary>
-    private void UpdateTimerDisplay()
-    {
-        if (CurrencyManager.Instance == null)
-        {
-            return;
-        }
-
-        TimeSpan remaining = CurrencyManager.Instance.GetTimeUntilNextCoin();
-        if (remaining.TotalSeconds > 0)
-        {
-            nextCoinTimerText.text = $"{remaining.Minutes:D2}:{remaining.Seconds:D2}";
-        }
-        else
-        {
-            nextCoinTimerText.text = "00:00";
-        }
-    }
-
-    /// <summary>
-    /// Called when the coin balance changes.
-    /// </summary>
-    private void OnBalanceChanged(int newBalance)
-    {
-        if (coinAmountText != null)
-        {
-            coinAmountText.text = newBalance.ToString();
+            coinText.text = $"{prefix}{coins}{suffix}";
         }
     }
 }
