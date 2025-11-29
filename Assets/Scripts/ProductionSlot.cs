@@ -65,11 +65,20 @@ public class ProductionSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         ClearSlot();
     }
 
+    // Timer for throttled UI updates
+    private float lastUIUpdateTime;
+    private const float UI_UPDATE_INTERVAL = 0.25f; // Update 4 times per second
+
     private void Update()
     {
         if (activeProduction != null)
         {
-            UpdateProgress();
+            // Throttle UI updates to reduce overhead
+            if (Time.time - lastUIUpdateTime >= UI_UPDATE_INTERVAL)
+            {
+                lastUIUpdateTime = Time.time;
+                UpdateProgress();
+            }
         }
     }
 
@@ -361,13 +370,9 @@ public class ProductionSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
     {
         if (activeProduction != null)
         {
-            // If production is complete, collect it
-            if (activeProduction.IsComplete())
-            {
-                // Production is auto-collected by ProductionManager
-                // Just clear the slot
-                ClearSlot();
-            }
+            // If production is complete, it should be collected by ProductionManager
+            // The ProductionManager handles adding items to inventory
+            // We don't manually clear here - let RefreshProductionSlots handle sync
             return;
         }
 

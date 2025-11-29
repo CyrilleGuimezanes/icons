@@ -459,6 +459,9 @@ public class ProductionManager : MonoBehaviour
 
     /// <summary>
     /// Loads production state from persistent storage.
+    /// Note: Productions resume from their saved progress. This design choice means
+    /// productions do not progress while the game is closed. For offline progression,
+    /// consider using DateTime-based tracking instead of Time.time.
     /// </summary>
     public void Load()
     {
@@ -474,6 +477,7 @@ public class ProductionManager : MonoBehaviour
                     activeProductions = saveData.productions;
 
                     // Recalculate start time based on saved elapsed time
+                    // This preserves progress within the session but doesn't account for offline time
                     float currentTime = Time.time;
                     foreach (var production in activeProductions)
                     {
