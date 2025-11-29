@@ -31,8 +31,8 @@ public class HiddenMiniGameManager : MonoBehaviour
     [SerializeField] private float silentVolumeThreshold = 0.1f;
     [SerializeField] private float loudVolumeThreshold = 0.9f;
 
-    [Header("Network Settings")]
-    [SerializeField] private float weakNetworkThreshold = 0.3f;
+    // Battery level constant
+    private const float BATTERY_LEVEL_UNAVAILABLE = -1f;
 
     [SerializeField]
     private HiddenMiniGameData saveData = new HiddenMiniGameData();
@@ -124,8 +124,8 @@ public class HiddenMiniGameManager : MonoBehaviour
         float batteryLevel = SystemInfo.batteryLevel;
         BatteryStatus batteryStatus = SystemInfo.batteryStatus;
 
-        // batteryLevel is -1 if not available
-        if (batteryLevel >= 0 && batteryLevel <= lowBatteryThreshold && 
+        // Check battery level is available and below threshold
+        if (batteryLevel > BATTERY_LEVEL_UNAVAILABLE && batteryLevel <= lowBatteryThreshold && 
             batteryStatus == BatteryStatus.Discharging)
         {
             CompleteHiddenGame(GAME_BATTERY_LOW);
@@ -149,12 +149,15 @@ public class HiddenMiniGameManager : MonoBehaviour
 
     /// <summary>
     /// Checks if device is in silent mode (volume very low).
+    /// Note: Uses AudioListener.volume as a proxy for game volume settings.
+    /// This reflects the in-game audio level, not the actual device system volume.
+    /// For accurate system volume detection, platform-specific plugins would be needed.
     /// </summary>
     private void CheckSilentMode()
     {
         if (IsGameCompleted(GAME_SILENT_MODE)) return;
 
-        // Use AudioListener volume as a proxy for system volume
+        // Use AudioListener volume as a proxy for game audio settings
         float volume = AudioListener.volume;
 
         if (volume <= silentVolumeThreshold)
@@ -165,11 +168,14 @@ public class HiddenMiniGameManager : MonoBehaviour
 
     /// <summary>
     /// Checks if device volume is high.
+    /// Note: Uses AudioListener.volume as a proxy for game volume settings.
+    /// This reflects the in-game audio level, not the actual device system volume.
     /// </summary>
     private void CheckLoudMode()
     {
         if (IsGameCompleted(GAME_LOUD_MODE)) return;
 
+        // Use AudioListener volume as a proxy for game audio settings
         float volume = AudioListener.volume;
 
         if (volume >= loudVolumeThreshold)

@@ -221,17 +221,20 @@ public class HiddenGamesScreen : ScreenController
         TextMeshProUGUI statusText = item.transform.Find("Status")?.GetComponent<TextMeshProUGUI>();
         Image background = item.GetComponent<Image>();
 
-        // Set icon
+        // Set icon - use Material Symbols font ID for rendering
+        // The icon text is set to the icon ID which is used by the Material Symbols font
         if (iconText != null)
         {
             if (gameInfo.isCompleted)
             {
+                // Display the Material Symbol icon using its ID
                 iconText.text = gameInfo.rewardIconId;
                 iconText.color = completedColor;
             }
             else
             {
-                iconText.text = "?";
+                // Show a locked/mystery icon for uncompleted games
+                iconText.text = "help"; // Material Symbol for question mark/help icon
                 iconText.color = lockedColor;
             }
         }
@@ -243,12 +246,14 @@ public class HiddenGamesScreen : ScreenController
             titleText.color = gameInfo.isCompleted ? completedColor : Color.white;
         }
 
-        // Set description
+        // Set description with icon name when completed
         if (descText != null)
         {
             if (gameInfo.isCompleted)
             {
-                descText.text = "✓ Complété!";
+                // Get the display name from IconDatabase if available
+                string iconDisplayName = GetIconDisplayName(gameInfo.rewardIconId);
+                descText.text = $"✓ Complété! Icône débloquée: {iconDisplayName}";
                 descText.color = completedColor;
             }
             else
@@ -285,5 +290,28 @@ public class HiddenGamesScreen : ScreenController
                 background.color = new Color(0.1f, 0.1f, 0.1f, 0.8f);
             }
         }
+    }
+
+    /// <summary>
+    /// Gets the display name for an icon from the IconDatabase.
+    /// </summary>
+    private string GetIconDisplayName(string iconId)
+    {
+        if (string.IsNullOrEmpty(iconId))
+        {
+            return "Inconnu";
+        }
+
+        if (IconDatabase.Instance != null)
+        {
+            var iconEntry = IconDatabase.Instance.GetIconById(iconId);
+            if (iconEntry != null)
+            {
+                return iconEntry.displayName;
+            }
+        }
+
+        // Fallback: format the icon ID to be more readable
+        return iconId.Replace("_", " ");
     }
 }
