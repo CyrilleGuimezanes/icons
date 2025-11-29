@@ -189,6 +189,7 @@ public class IconDatabase : MonoBehaviour
         AddIcon("lens", "Lentille", IconRarity.Common);
         AddIcon("crop_square", "Carré Crop", IconRarity.Common);
         AddIcon("vignette", "Vignette", IconRarity.Common);
+        AddIcon("paid", "Pièce", IconRarity.Common);  // Coin icon for in-game currency
 
         // Uncommon icons (119 icons) - Blue
         AddIcon("hardware", "Outil", IconRarity.Uncommon);
