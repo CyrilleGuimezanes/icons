@@ -1,239 +1,4762 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "lastUpdated": "2025-11-29",
+  "totalIcons": 439,
+  "totalCombinations": 199,
+  "totalProductions": 49,
   "icons": {
     "common": [
-      {"id": "grain", "displayName": "Blé", "category": "resource"},
-      {"id": "water_drop", "displayName": "Eau", "category": "resource"},
-      {"id": "landscape", "displayName": "Pierre", "category": "resource"},
-      {"id": "forest", "displayName": "Bois", "category": "resource"},
-      {"id": "grass", "displayName": "Herbe", "category": "resource"},
-      {"id": "park", "displayName": "Parc", "category": "nature"},
-      {"id": "eco", "displayName": "Feuille", "category": "nature"},
-      {"id": "nature", "displayName": "Nature", "category": "nature"},
-      {"id": "wb_sunny", "displayName": "Soleil", "category": "weather"},
-      {"id": "cloud", "displayName": "Nuage", "category": "weather"},
-      {"id": "air", "displayName": "Air", "category": "weather"},
-      {"id": "terrain", "displayName": "Terrain", "category": "resource"},
-      {"id": "pets", "displayName": "Animal", "category": "animal"},
-      {"id": "egg", "displayName": "Oeuf", "category": "food"},
-      {"id": "nutrition", "displayName": "Nutrition", "category": "food"},
-      {"id": "local_fire_department", "displayName": "Feu", "category": "element"},
-      {"id": "ac_unit", "displayName": "Glace", "category": "element"},
-      {"id": "spa", "displayName": "Fleur", "category": "nature"},
-      {"id": "bug_report", "displayName": "Insecte", "category": "animal"},
-      {"id": "catching_pokemon", "displayName": "Filet", "category": "tool"},
-      {"id": "recycling", "displayName": "Recyclage", "category": "resource"},
-      {"id": "compost", "displayName": "Compost", "category": "resource"},
-      {"id": "oil_barrel", "displayName": "Pétrole", "category": "resource"},
-      {"id": "iron", "displayName": "Fer", "category": "resource"},
-      {"id": "coal", "displayName": "Charbon", "category": "resource"}
+      {
+        "id": "grain",
+        "displayName": "Blé",
+        "category": "resource"
+      },
+      {
+        "id": "water_drop",
+        "displayName": "Eau",
+        "category": "resource"
+      },
+      {
+        "id": "landscape",
+        "displayName": "Pierre",
+        "category": "resource"
+      },
+      {
+        "id": "forest",
+        "displayName": "Bois",
+        "category": "resource"
+      },
+      {
+        "id": "grass",
+        "displayName": "Herbe",
+        "category": "resource"
+      },
+      {
+        "id": "park",
+        "displayName": "Parc",
+        "category": "nature"
+      },
+      {
+        "id": "eco",
+        "displayName": "Feuille",
+        "category": "nature"
+      },
+      {
+        "id": "nature",
+        "displayName": "Nature",
+        "category": "nature"
+      },
+      {
+        "id": "wb_sunny",
+        "displayName": "Soleil",
+        "category": "weather"
+      },
+      {
+        "id": "cloud",
+        "displayName": "Nuage",
+        "category": "weather"
+      },
+      {
+        "id": "air",
+        "displayName": "Air",
+        "category": "weather"
+      },
+      {
+        "id": "terrain",
+        "displayName": "Terrain",
+        "category": "resource"
+      },
+      {
+        "id": "pets",
+        "displayName": "Animal",
+        "category": "animal"
+      },
+      {
+        "id": "egg",
+        "displayName": "Oeuf",
+        "category": "food"
+      },
+      {
+        "id": "nutrition",
+        "displayName": "Nutrition",
+        "category": "food"
+      },
+      {
+        "id": "local_fire_department",
+        "displayName": "Feu",
+        "category": "element"
+      },
+      {
+        "id": "ac_unit",
+        "displayName": "Glace",
+        "category": "element"
+      },
+      {
+        "id": "spa",
+        "displayName": "Fleur",
+        "category": "nature"
+      },
+      {
+        "id": "bug_report",
+        "displayName": "Insecte",
+        "category": "animal"
+      },
+      {
+        "id": "catching_pokemon",
+        "displayName": "Filet",
+        "category": "tool"
+      },
+      {
+        "id": "recycling",
+        "displayName": "Recyclage",
+        "category": "resource"
+      },
+      {
+        "id": "compost",
+        "displayName": "Compost",
+        "category": "resource"
+      },
+      {
+        "id": "oil_barrel",
+        "displayName": "Pétrole",
+        "category": "resource"
+      },
+      {
+        "id": "iron",
+        "displayName": "Fer",
+        "category": "resource"
+      },
+      {
+        "id": "coal",
+        "displayName": "Charbon",
+        "category": "resource"
+      },
+      {
+        "id": "yard",
+        "displayName": "Jardin",
+        "category": "nature"
+      },
+      {
+        "id": "waves",
+        "displayName": "Vagues",
+        "category": "nature"
+      },
+      {
+        "id": "sunny",
+        "displayName": "Ensoleillé",
+        "category": "weather"
+      },
+      {
+        "id": "cloudy",
+        "displayName": "Nuageux",
+        "category": "weather"
+      },
+      {
+        "id": "rainy",
+        "displayName": "Pluvieux",
+        "category": "weather"
+      },
+      {
+        "id": "snowy",
+        "displayName": "Neigeux",
+        "category": "weather"
+      },
+      {
+        "id": "foggy",
+        "displayName": "Brumeux",
+        "category": "weather"
+      },
+      {
+        "id": "storm",
+        "displayName": "Orage",
+        "category": "weather"
+      },
+      {
+        "id": "rainbow",
+        "displayName": "Arc-en-ciel",
+        "category": "weather"
+      },
+      {
+        "id": "north",
+        "displayName": "Nord",
+        "category": "direction"
+      },
+      {
+        "id": "south",
+        "displayName": "Sud",
+        "category": "direction"
+      },
+      {
+        "id": "east",
+        "displayName": "Est",
+        "category": "direction"
+      },
+      {
+        "id": "west",
+        "displayName": "Ouest",
+        "category": "direction"
+      },
+      {
+        "id": "explore",
+        "displayName": "Explorer",
+        "category": "action"
+      },
+      {
+        "id": "hiking",
+        "displayName": "Randonnée",
+        "category": "activity"
+      },
+      {
+        "id": "cruelty_free",
+        "displayName": "Lapin",
+        "category": "animal"
+      },
+      {
+        "id": "phishing",
+        "displayName": "Poisson",
+        "category": "animal"
+      },
+      {
+        "id": "flutter",
+        "displayName": "Papillon",
+        "category": "animal"
+      },
+      {
+        "id": "pest_control",
+        "displayName": "Rat",
+        "category": "animal"
+      },
+      {
+        "id": "emoji_nature",
+        "displayName": "Abeille",
+        "category": "animal"
+      },
+      {
+        "id": "hive",
+        "displayName": "Ruche",
+        "category": "animal"
+      },
+      {
+        "id": "raven",
+        "displayName": "Corbeau",
+        "category": "animal"
+      },
+      {
+        "id": "owl",
+        "displayName": "Hibou",
+        "category": "animal"
+      },
+      {
+        "id": "crow",
+        "displayName": "Corneille",
+        "category": "animal"
+      },
+      {
+        "id": "duck",
+        "displayName": "Canard",
+        "category": "animal"
+      },
+      {
+        "id": "goat",
+        "displayName": "Chèvre",
+        "category": "animal"
+      },
+      {
+        "id": "turkey",
+        "displayName": "Dinde",
+        "category": "animal"
+      },
+      {
+        "id": "texture",
+        "displayName": "Texture",
+        "category": "resource"
+      },
+      {
+        "id": "grain_outlined",
+        "displayName": "Grain",
+        "category": "resource"
+      },
+      {
+        "id": "sand",
+        "displayName": "Sable",
+        "category": "resource"
+      },
+      {
+        "id": "rock",
+        "displayName": "Roche",
+        "category": "resource"
+      },
+      {
+        "id": "clay",
+        "displayName": "Argile",
+        "category": "resource"
+      },
+      {
+        "id": "soil",
+        "displayName": "Terre",
+        "category": "resource"
+      },
+      {
+        "id": "leaf",
+        "displayName": "Feuille Simple",
+        "category": "nature"
+      },
+      {
+        "id": "branch",
+        "displayName": "Branche",
+        "category": "nature"
+      },
+      {
+        "id": "trunk",
+        "displayName": "Tronc",
+        "category": "nature"
+      },
+      {
+        "id": "seed",
+        "displayName": "Graine",
+        "category": "resource"
+      },
+      {
+        "id": "sprout",
+        "displayName": "Pousse",
+        "category": "nature"
+      },
+      {
+        "id": "moss",
+        "displayName": "Mousse",
+        "category": "nature"
+      },
+      {
+        "id": "build",
+        "displayName": "Construire",
+        "category": "tool"
+      },
+      {
+        "id": "handyman_outlined",
+        "displayName": "Bricoleur",
+        "category": "tool"
+      },
+      {
+        "id": "pan_tool",
+        "displayName": "Outil Main",
+        "category": "tool"
+      },
+      {
+        "id": "gesture",
+        "displayName": "Geste",
+        "category": "action"
+      },
+      {
+        "id": "touch_app",
+        "displayName": "Toucher",
+        "category": "action"
+      },
+      {
+        "id": "swipe",
+        "displayName": "Glisser",
+        "category": "action"
+      },
+      {
+        "id": "schedule",
+        "displayName": "Horaire",
+        "category": "time"
+      },
+      {
+        "id": "timer",
+        "displayName": "Minuteur",
+        "category": "time"
+      },
+      {
+        "id": "hourglass_empty",
+        "displayName": "Sablier",
+        "category": "time"
+      },
+      {
+        "id": "hourglass_full",
+        "displayName": "Sablier Plein",
+        "category": "time"
+      },
+      {
+        "id": "update",
+        "displayName": "Mise à jour",
+        "category": "time"
+      },
+      {
+        "id": "history",
+        "displayName": "Historique",
+        "category": "time"
+      },
+      {
+        "id": "circle",
+        "displayName": "Cercle",
+        "category": "shape"
+      },
+      {
+        "id": "square",
+        "displayName": "Carré",
+        "category": "shape"
+      },
+      {
+        "id": "change_history",
+        "displayName": "Triangle",
+        "category": "shape"
+      },
+      {
+        "id": "pentagon",
+        "displayName": "Pentagone",
+        "category": "shape"
+      },
+      {
+        "id": "hexagon",
+        "displayName": "Hexagone",
+        "category": "shape"
+      },
+      {
+        "id": "star_outline",
+        "displayName": "Étoile Vide",
+        "category": "shape"
+      },
+      {
+        "id": "palette",
+        "displayName": "Palette",
+        "category": "art"
+      },
+      {
+        "id": "brush",
+        "displayName": "Pinceau",
+        "category": "art"
+      },
+      {
+        "id": "colorize",
+        "displayName": "Coloriser",
+        "category": "art"
+      },
+      {
+        "id": "format_paint",
+        "displayName": "Peinture",
+        "category": "art"
+      },
+      {
+        "id": "edit",
+        "displayName": "Éditer",
+        "category": "tool"
+      },
+      {
+        "id": "draw",
+        "displayName": "Dessiner",
+        "category": "art"
+      },
+      {
+        "id": "add",
+        "displayName": "Ajouter",
+        "category": "action"
+      },
+      {
+        "id": "remove",
+        "displayName": "Retirer",
+        "category": "action"
+      },
+      {
+        "id": "done",
+        "displayName": "Fait",
+        "category": "action"
+      },
+      {
+        "id": "close",
+        "displayName": "Fermer",
+        "category": "action"
+      },
+      {
+        "id": "check",
+        "displayName": "Vérifier",
+        "category": "action"
+      },
+      {
+        "id": "clear",
+        "displayName": "Effacer",
+        "category": "action"
+      },
+      {
+        "id": "inventory_2",
+        "displayName": "Inventaire",
+        "category": "container"
+      },
+      {
+        "id": "inbox",
+        "displayName": "Boîte",
+        "category": "container"
+      },
+      {
+        "id": "archive",
+        "displayName": "Archive",
+        "category": "container"
+      },
+      {
+        "id": "folder",
+        "displayName": "Dossier",
+        "category": "container"
+      },
+      {
+        "id": "shopping_bag",
+        "displayName": "Sac",
+        "category": "container"
+      },
+      {
+        "id": "backpack",
+        "displayName": "Sac à dos",
+        "category": "container"
+      },
+      {
+        "id": "north_east",
+        "displayName": "Nord-Est",
+        "category": "direction"
+      },
+      {
+        "id": "north_west",
+        "displayName": "Nord-Ouest",
+        "category": "direction"
+      },
+      {
+        "id": "south_east",
+        "displayName": "Sud-Est",
+        "category": "direction"
+      },
+      {
+        "id": "south_west",
+        "displayName": "Sud-Ouest",
+        "category": "direction"
+      },
+      {
+        "id": "arrow_upward",
+        "displayName": "Haut",
+        "category": "direction"
+      },
+      {
+        "id": "arrow_downward",
+        "displayName": "Bas",
+        "category": "direction"
+      },
+      {
+        "id": "arrow_forward",
+        "displayName": "Avant",
+        "category": "direction"
+      },
+      {
+        "id": "arrow_back",
+        "displayName": "Arrière",
+        "category": "direction"
+      },
+      {
+        "id": "volume_down",
+        "displayName": "Volume Bas",
+        "category": "sound"
+      },
+      {
+        "id": "volume_mute",
+        "displayName": "Muet",
+        "category": "sound"
+      },
+      {
+        "id": "mic",
+        "displayName": "Micro",
+        "category": "sound"
+      },
+      {
+        "id": "speaker",
+        "displayName": "Haut-parleur",
+        "category": "sound"
+      },
+      {
+        "id": "light_mode",
+        "displayName": "Mode Clair",
+        "category": "light"
+      },
+      {
+        "id": "dark_mode",
+        "displayName": "Mode Sombre",
+        "category": "light"
+      },
+      {
+        "id": "brightness_low",
+        "displayName": "Luminosité Basse",
+        "category": "light"
+      },
+      {
+        "id": "brightness_medium",
+        "displayName": "Luminosité Moyenne",
+        "category": "light"
+      },
+      {
+        "id": "looks_one",
+        "displayName": "Un",
+        "category": "number"
+      },
+      {
+        "id": "looks_two",
+        "displayName": "Deux",
+        "category": "number"
+      },
+      {
+        "id": "looks_3",
+        "displayName": "Trois",
+        "category": "number"
+      },
+      {
+        "id": "looks_4",
+        "displayName": "Quatre",
+        "category": "number"
+      },
+      {
+        "id": "looks_5",
+        "displayName": "Cinq",
+        "category": "number"
+      },
+      {
+        "id": "looks_6",
+        "displayName": "Six",
+        "category": "number"
+      },
+      {
+        "id": "straighten",
+        "displayName": "Règle",
+        "category": "tool"
+      },
+      {
+        "id": "square_foot",
+        "displayName": "Mètre Carré",
+        "category": "measure"
+      },
+      {
+        "id": "height",
+        "displayName": "Hauteur",
+        "category": "measure"
+      },
+      {
+        "id": "width",
+        "displayName": "Largeur",
+        "category": "measure"
+      },
+      {
+        "id": "battery_std",
+        "displayName": "Batterie",
+        "category": "resource"
+      },
+      {
+        "id": "power",
+        "displayName": "Énergie",
+        "category": "resource"
+      },
+      {
+        "id": "flash_auto",
+        "displayName": "Flash Auto",
+        "category": "light"
+      },
+      {
+        "id": "highlight",
+        "displayName": "Surbrillance",
+        "category": "light"
+      },
+      {
+        "id": "mood",
+        "displayName": "Humeur",
+        "category": "emotion"
+      },
+      {
+        "id": "sentiment_satisfied",
+        "displayName": "Satisfait",
+        "category": "emotion"
+      },
+      {
+        "id": "sentiment_dissatisfied",
+        "displayName": "Insatisfait",
+        "category": "emotion"
+      },
+      {
+        "id": "sentiment_neutral",
+        "displayName": "Neutre",
+        "category": "emotion"
+      },
+      {
+        "id": "fiber_manual_record",
+        "displayName": "Point",
+        "category": "shape"
+      },
+      {
+        "id": "lens",
+        "displayName": "Lentille",
+        "category": "shape"
+      },
+      {
+        "id": "crop_square",
+        "displayName": "Carré Crop",
+        "category": "shape"
+      },
+      {
+        "id": "vignette",
+        "displayName": "Vignette",
+        "category": "effect"
+      }
     ],
     "uncommon": [
-      {"id": "hardware", "displayName": "Outil", "category": "tool"},
-      {"id": "handyman", "displayName": "Bricoleur", "category": "person"},
-      {"id": "construction", "displayName": "Construction", "category": "building"},
-      {"id": "carpenter", "displayName": "Menuisier", "category": "person"},
-      {"id": "agriculture", "displayName": "Agriculture", "category": "farming"},
-      {"id": "bakery_dining", "displayName": "Pain", "category": "food"},
-      {"id": "restaurant", "displayName": "Restaurant", "category": "building"},
-      {"id": "local_dining", "displayName": "Repas", "category": "food"},
-      {"id": "lunch_dining", "displayName": "Déjeuner", "category": "food"},
-      {"id": "dinner_dining", "displayName": "Dîner", "category": "food"},
-      {"id": "cookie", "displayName": "Cookie", "category": "food"},
-      {"id": "cake", "displayName": "Gâteau", "category": "food"},
-      {"id": "icecream", "displayName": "Glace", "category": "food"},
-      {"id": "emoji_food_beverage", "displayName": "Boisson", "category": "food"},
-      {"id": "local_cafe", "displayName": "Café", "category": "building"},
-      {"id": "wine_bar", "displayName": "Vin", "category": "food"},
-      {"id": "liquor", "displayName": "Liqueur", "category": "food"},
-      {"id": "home", "displayName": "Maison", "category": "building"},
-      {"id": "cottage", "displayName": "Cottage", "category": "building"},
-      {"id": "cabin", "displayName": "Cabane", "category": "building"},
-      {"id": "plumbing", "displayName": "Plomberie", "category": "tool"},
-      {"id": "electrical_services", "displayName": "Électricité", "category": "tool"},
-      {"id": "set_meal", "displayName": "Plateau Repas", "category": "food"},
-      {"id": "ramen_dining", "displayName": "Ramen", "category": "food"},
-      {"id": "kebab_dining", "displayName": "Kebab", "category": "food"}
+      {
+        "id": "hardware",
+        "displayName": "Outil",
+        "category": "tool"
+      },
+      {
+        "id": "handyman",
+        "displayName": "Bricoleur",
+        "category": "person"
+      },
+      {
+        "id": "construction",
+        "displayName": "Construction",
+        "category": "building"
+      },
+      {
+        "id": "carpenter",
+        "displayName": "Menuisier",
+        "category": "person"
+      },
+      {
+        "id": "agriculture",
+        "displayName": "Agriculture",
+        "category": "farming"
+      },
+      {
+        "id": "plumbing",
+        "displayName": "Plomberie",
+        "category": "tool"
+      },
+      {
+        "id": "electrical_services",
+        "displayName": "Électricité",
+        "category": "tool"
+      },
+      {
+        "id": "architecture",
+        "displayName": "Architecture",
+        "category": "profession"
+      },
+      {
+        "id": "design_services",
+        "displayName": "Design",
+        "category": "profession"
+      },
+      {
+        "id": "bakery_dining",
+        "displayName": "Pain",
+        "category": "food"
+      },
+      {
+        "id": "restaurant",
+        "displayName": "Restaurant",
+        "category": "building"
+      },
+      {
+        "id": "local_dining",
+        "displayName": "Repas",
+        "category": "food"
+      },
+      {
+        "id": "lunch_dining",
+        "displayName": "Déjeuner",
+        "category": "food"
+      },
+      {
+        "id": "dinner_dining",
+        "displayName": "Dîner",
+        "category": "food"
+      },
+      {
+        "id": "cookie",
+        "displayName": "Cookie",
+        "category": "food"
+      },
+      {
+        "id": "cake",
+        "displayName": "Gâteau",
+        "category": "food"
+      },
+      {
+        "id": "icecream",
+        "displayName": "Glace",
+        "category": "food"
+      },
+      {
+        "id": "emoji_food_beverage",
+        "displayName": "Boisson",
+        "category": "food"
+      },
+      {
+        "id": "local_cafe",
+        "displayName": "Café",
+        "category": "building"
+      },
+      {
+        "id": "wine_bar",
+        "displayName": "Vin",
+        "category": "food"
+      },
+      {
+        "id": "liquor",
+        "displayName": "Liqueur",
+        "category": "food"
+      },
+      {
+        "id": "set_meal",
+        "displayName": "Plateau Repas",
+        "category": "food"
+      },
+      {
+        "id": "ramen_dining",
+        "displayName": "Ramen",
+        "category": "food"
+      },
+      {
+        "id": "kebab_dining",
+        "displayName": "Kebab",
+        "category": "food"
+      },
+      {
+        "id": "local_pizza",
+        "displayName": "Pizza",
+        "category": "food"
+      },
+      {
+        "id": "fastfood",
+        "displayName": "Fast-food",
+        "category": "food"
+      },
+      {
+        "id": "rice_bowl",
+        "displayName": "Bol de Riz",
+        "category": "food"
+      },
+      {
+        "id": "tapas",
+        "displayName": "Tapas",
+        "category": "food"
+      },
+      {
+        "id": "bento",
+        "displayName": "Bento",
+        "category": "food"
+      },
+      {
+        "id": "soup_kitchen",
+        "displayName": "Soupe",
+        "category": "food"
+      },
+      {
+        "id": "breakfast_dining",
+        "displayName": "Petit-déjeuner",
+        "category": "food"
+      },
+      {
+        "id": "brunch_dining",
+        "displayName": "Brunch",
+        "category": "food"
+      },
+      {
+        "id": "home",
+        "displayName": "Maison",
+        "category": "building"
+      },
+      {
+        "id": "cottage",
+        "displayName": "Cottage",
+        "category": "building"
+      },
+      {
+        "id": "cabin",
+        "displayName": "Cabane",
+        "category": "building"
+      },
+      {
+        "id": "apartment_outlined",
+        "displayName": "Appartement Simple",
+        "category": "building"
+      },
+      {
+        "id": "house",
+        "displayName": "Maison Simple",
+        "category": "building"
+      },
+      {
+        "id": "bungalow",
+        "displayName": "Bungalow",
+        "category": "building"
+      },
+      {
+        "id": "chalet",
+        "displayName": "Chalet",
+        "category": "building"
+      },
+      {
+        "id": "villa",
+        "displayName": "Villa",
+        "category": "building"
+      },
+      {
+        "id": "warehouse",
+        "displayName": "Entrepôt",
+        "category": "building"
+      },
+      {
+        "id": "store",
+        "displayName": "Magasin",
+        "category": "building"
+      },
+      {
+        "id": "storefront",
+        "displayName": "Vitrine",
+        "category": "building"
+      },
+      {
+        "id": "shop",
+        "displayName": "Boutique",
+        "category": "building"
+      },
+      {
+        "id": "garage_home",
+        "displayName": "Garage",
+        "category": "building"
+      },
+      {
+        "id": "shed",
+        "displayName": "Abri",
+        "category": "building"
+      },
+      {
+        "id": "barn",
+        "displayName": "Grange",
+        "category": "building"
+      },
+      {
+        "id": "silo",
+        "displayName": "Silo",
+        "category": "building"
+      },
+      {
+        "id": "engineering_outlined",
+        "displayName": "Ingénieur",
+        "category": "person"
+      },
+      {
+        "id": "medical_services",
+        "displayName": "Médecin",
+        "category": "person"
+      },
+      {
+        "id": "local_police",
+        "displayName": "Policier",
+        "category": "person"
+      },
+      {
+        "id": "firefighter",
+        "displayName": "Pompier",
+        "category": "person"
+      },
+      {
+        "id": "school",
+        "displayName": "École",
+        "category": "building"
+      },
+      {
+        "id": "work",
+        "displayName": "Travail",
+        "category": "concept"
+      },
+      {
+        "id": "business",
+        "displayName": "Affaires",
+        "category": "concept"
+      },
+      {
+        "id": "checkroom",
+        "displayName": "Vestiaire",
+        "category": "clothing"
+      },
+      {
+        "id": "dry_cleaning",
+        "displayName": "Nettoyage",
+        "category": "service"
+      },
+      {
+        "id": "iron_outlined",
+        "displayName": "Fer à repasser",
+        "category": "tool"
+      },
+      {
+        "id": "watch",
+        "displayName": "Montre",
+        "category": "accessory"
+      },
+      {
+        "id": "diamond_outlined",
+        "displayName": "Diamant Brut",
+        "category": "accessory"
+      },
+      {
+        "id": "directions_car",
+        "displayName": "Voiture",
+        "category": "vehicle"
+      },
+      {
+        "id": "directions_bus",
+        "displayName": "Bus",
+        "category": "vehicle"
+      },
+      {
+        "id": "directions_bike",
+        "displayName": "Vélo",
+        "category": "vehicle"
+      },
+      {
+        "id": "directions_walk",
+        "displayName": "Marche",
+        "category": "transport"
+      },
+      {
+        "id": "directions_boat",
+        "displayName": "Bateau Simple",
+        "category": "vehicle"
+      },
+      {
+        "id": "motorcycle",
+        "displayName": "Moto",
+        "category": "vehicle"
+      },
+      {
+        "id": "pedal_bike",
+        "displayName": "Vélo Pédale",
+        "category": "vehicle"
+      },
+      {
+        "id": "electric_scooter",
+        "displayName": "Trottinette",
+        "category": "vehicle"
+      },
+      {
+        "id": "skateboarding",
+        "displayName": "Skateboard",
+        "category": "vehicle"
+      },
+      {
+        "id": "snowboarding",
+        "displayName": "Snowboard",
+        "category": "vehicle"
+      },
+      {
+        "id": "surfing",
+        "displayName": "Surf",
+        "category": "vehicle"
+      },
+      {
+        "id": "kayaking",
+        "displayName": "Kayak",
+        "category": "vehicle"
+      },
+      {
+        "id": "chair",
+        "displayName": "Chaise",
+        "category": "furniture"
+      },
+      {
+        "id": "table_restaurant",
+        "displayName": "Table",
+        "category": "furniture"
+      },
+      {
+        "id": "bed",
+        "displayName": "Lit",
+        "category": "furniture"
+      },
+      {
+        "id": "weekend",
+        "displayName": "Canapé",
+        "category": "furniture"
+      },
+      {
+        "id": "desk",
+        "displayName": "Bureau",
+        "category": "furniture"
+      },
+      {
+        "id": "door_front",
+        "displayName": "Porte",
+        "category": "furniture"
+      },
+      {
+        "id": "window",
+        "displayName": "Fenêtre",
+        "category": "furniture"
+      },
+      {
+        "id": "stairs",
+        "displayName": "Escaliers",
+        "category": "furniture"
+      },
+      {
+        "id": "king_bed",
+        "displayName": "Grand Lit",
+        "category": "furniture"
+      },
+      {
+        "id": "single_bed",
+        "displayName": "Lit Simple",
+        "category": "furniture"
+      },
+      {
+        "id": "kitchen",
+        "displayName": "Cuisine",
+        "category": "building"
+      },
+      {
+        "id": "countertops",
+        "displayName": "Comptoir",
+        "category": "furniture"
+      },
+      {
+        "id": "microwave",
+        "displayName": "Micro-ondes",
+        "category": "appliance"
+      },
+      {
+        "id": "blender",
+        "displayName": "Mixeur",
+        "category": "appliance"
+      },
+      {
+        "id": "coffee_maker",
+        "displayName": "Cafetière",
+        "category": "appliance"
+      },
+      {
+        "id": "soup",
+        "displayName": "Soupe",
+        "category": "food"
+      },
+      {
+        "id": "sports_soccer",
+        "displayName": "Football",
+        "category": "sport"
+      },
+      {
+        "id": "sports_basketball",
+        "displayName": "Basketball",
+        "category": "sport"
+      },
+      {
+        "id": "sports_tennis",
+        "displayName": "Tennis",
+        "category": "sport"
+      },
+      {
+        "id": "sports_baseball",
+        "displayName": "Baseball",
+        "category": "sport"
+      },
+      {
+        "id": "sports_golf",
+        "displayName": "Golf",
+        "category": "sport"
+      },
+      {
+        "id": "sports_hockey",
+        "displayName": "Hockey",
+        "category": "sport"
+      },
+      {
+        "id": "sports_volleyball",
+        "displayName": "Volleyball",
+        "category": "sport"
+      },
+      {
+        "id": "sports_handball",
+        "displayName": "Handball",
+        "category": "sport"
+      },
+      {
+        "id": "sports_rugby",
+        "displayName": "Rugby",
+        "category": "sport"
+      },
+      {
+        "id": "sports_cricket",
+        "displayName": "Cricket",
+        "category": "sport"
+      },
+      {
+        "id": "sports_kabaddi",
+        "displayName": "Kabaddi",
+        "category": "sport"
+      },
+      {
+        "id": "sports_martial_arts",
+        "displayName": "Arts Martiaux",
+        "category": "sport"
+      },
+      {
+        "id": "pool",
+        "displayName": "Piscine",
+        "category": "sport"
+      },
+      {
+        "id": "fitness_center",
+        "displayName": "Gym",
+        "category": "sport"
+      },
+      {
+        "id": "self_improvement_outlined",
+        "displayName": "Yoga",
+        "category": "sport"
+      },
+      {
+        "id": "music_note",
+        "displayName": "Note",
+        "category": "music"
+      },
+      {
+        "id": "audiotrack",
+        "displayName": "Piste Audio",
+        "category": "music"
+      },
+      {
+        "id": "piano",
+        "displayName": "Piano",
+        "category": "music"
+      },
+      {
+        "id": "guitar",
+        "displayName": "Guitare",
+        "category": "music"
+      },
+      {
+        "id": "album",
+        "displayName": "Album",
+        "category": "music"
+      },
+      {
+        "id": "radio",
+        "displayName": "Radio",
+        "category": "entertainment"
+      },
+      {
+        "id": "tv",
+        "displayName": "Télévision",
+        "category": "entertainment"
+      },
+      {
+        "id": "videocam",
+        "displayName": "Caméra",
+        "category": "entertainment"
+      },
+      {
+        "id": "movie",
+        "displayName": "Film",
+        "category": "entertainment"
+      },
+      {
+        "id": "theaters",
+        "displayName": "Théâtre",
+        "category": "entertainment"
+      },
+      {
+        "id": "local_florist",
+        "displayName": "Fleuriste",
+        "category": "shop"
+      },
+      {
+        "id": "yard_outlined",
+        "displayName": "Cour",
+        "category": "nature"
+      },
+      {
+        "id": "fence",
+        "displayName": "Clôture",
+        "category": "structure"
+      },
+      {
+        "id": "deck",
+        "displayName": "Terrasse",
+        "category": "structure"
+      },
+      {
+        "id": "grill",
+        "displayName": "Barbecue",
+        "category": "appliance"
+      },
+      {
+        "id": "outdoor_grill",
+        "displayName": "Grill Extérieur",
+        "category": "appliance"
+      }
     ],
     "rare": [
-      {"id": "precision_manufacturing", "displayName": "Machine", "category": "industry"},
-      {"id": "factory", "displayName": "Usine", "category": "building"},
-      {"id": "science", "displayName": "Science", "category": "science"},
-      {"id": "biotech", "displayName": "Biotech", "category": "science"},
-      {"id": "engineering", "displayName": "Ingénierie", "category": "science"},
-      {"id": "memory", "displayName": "Mémoire", "category": "tech"},
-      {"id": "developer_board", "displayName": "Circuit", "category": "tech"},
-      {"id": "smart_toy", "displayName": "Robot", "category": "tech"},
-      {"id": "adb", "displayName": "Android", "category": "tech"},
-      {"id": "castle", "displayName": "Château", "category": "building"},
-      {"id": "church", "displayName": "Église", "category": "building"},
-      {"id": "temple_buddhist", "displayName": "Temple", "category": "building"},
-      {"id": "stadium", "displayName": "Stade", "category": "building"},
-      {"id": "apartment", "displayName": "Appartement", "category": "building"},
-      {"id": "domain", "displayName": "Domaine", "category": "building"},
-      {"id": "diamond", "displayName": "Diamant", "category": "resource"},
-      {"id": "currency_bitcoin", "displayName": "Bitcoin", "category": "currency"},
-      {"id": "military_tech", "displayName": "Médaille", "category": "achievement"},
-      {"id": "workspace_premium", "displayName": "Premium", "category": "achievement"},
-      {"id": "emoji_events", "displayName": "Trophée", "category": "achievement"},
-      {"id": "electric_car", "displayName": "Voiture Électrique", "category": "vehicle"},
-      {"id": "flight", "displayName": "Avion", "category": "vehicle"},
-      {"id": "sailing", "displayName": "Bateau", "category": "vehicle"},
-      {"id": "train", "displayName": "Train", "category": "vehicle"},
-      {"id": "helicopter", "displayName": "Hélicoptère", "category": "vehicle"}
+      {
+        "id": "precision_manufacturing",
+        "displayName": "Machine",
+        "category": "industry"
+      },
+      {
+        "id": "factory",
+        "displayName": "Usine",
+        "category": "building"
+      },
+      {
+        "id": "science",
+        "displayName": "Science",
+        "category": "science"
+      },
+      {
+        "id": "biotech",
+        "displayName": "Biotech",
+        "category": "science"
+      },
+      {
+        "id": "engineering",
+        "displayName": "Ingénierie",
+        "category": "science"
+      },
+      {
+        "id": "memory",
+        "displayName": "Mémoire",
+        "category": "tech"
+      },
+      {
+        "id": "developer_board",
+        "displayName": "Circuit",
+        "category": "tech"
+      },
+      {
+        "id": "smart_toy",
+        "displayName": "Robot",
+        "category": "tech"
+      },
+      {
+        "id": "adb",
+        "displayName": "Android",
+        "category": "tech"
+      },
+      {
+        "id": "hub",
+        "displayName": "Hub",
+        "category": "tech"
+      },
+      {
+        "id": "router",
+        "displayName": "Routeur",
+        "category": "tech"
+      },
+      {
+        "id": "dns",
+        "displayName": "DNS",
+        "category": "tech"
+      },
+      {
+        "id": "terminal",
+        "displayName": "Terminal",
+        "category": "tech"
+      },
+      {
+        "id": "code",
+        "displayName": "Code",
+        "category": "tech"
+      },
+      {
+        "id": "data_object",
+        "displayName": "Données",
+        "category": "tech"
+      },
+      {
+        "id": "storage",
+        "displayName": "Stockage",
+        "category": "tech"
+      },
+      {
+        "id": "cloud_upload",
+        "displayName": "Cloud Upload",
+        "category": "tech"
+      },
+      {
+        "id": "cloud_download",
+        "displayName": "Cloud Download",
+        "category": "tech"
+      },
+      {
+        "id": "api",
+        "displayName": "API",
+        "category": "tech"
+      },
+      {
+        "id": "webhook",
+        "displayName": "Webhook",
+        "category": "tech"
+      },
+      {
+        "id": "smart_display",
+        "displayName": "Écran Intelligent",
+        "category": "tech"
+      },
+      {
+        "id": "smart_screen",
+        "displayName": "Smart Screen",
+        "category": "tech"
+      },
+      {
+        "id": "cast",
+        "displayName": "Cast",
+        "category": "tech"
+      },
+      {
+        "id": "sensors",
+        "displayName": "Capteurs",
+        "category": "tech"
+      },
+      {
+        "id": "device_thermostat",
+        "displayName": "Thermostat",
+        "category": "tech"
+      },
+      {
+        "id": "nest_cam_outdoor",
+        "displayName": "Caméra Extérieure",
+        "category": "tech"
+      },
+      {
+        "id": "castle",
+        "displayName": "Château",
+        "category": "building"
+      },
+      {
+        "id": "church",
+        "displayName": "Église",
+        "category": "building"
+      },
+      {
+        "id": "temple_buddhist",
+        "displayName": "Temple",
+        "category": "building"
+      },
+      {
+        "id": "stadium",
+        "displayName": "Stade",
+        "category": "building"
+      },
+      {
+        "id": "apartment",
+        "displayName": "Appartement",
+        "category": "building"
+      },
+      {
+        "id": "domain",
+        "displayName": "Domaine",
+        "category": "building"
+      },
+      {
+        "id": "corporate_fare",
+        "displayName": "Siège Social",
+        "category": "building"
+      },
+      {
+        "id": "location_city",
+        "displayName": "Ville",
+        "category": "building"
+      },
+      {
+        "id": "local_hospital",
+        "displayName": "Hôpital",
+        "category": "building"
+      },
+      {
+        "id": "local_library",
+        "displayName": "Bibliothèque",
+        "category": "building"
+      },
+      {
+        "id": "local_mall",
+        "displayName": "Centre Commercial",
+        "category": "building"
+      },
+      {
+        "id": "local_movies",
+        "displayName": "Cinéma",
+        "category": "building"
+      },
+      {
+        "id": "local_airport",
+        "displayName": "Aéroport",
+        "category": "building"
+      },
+      {
+        "id": "local_atm",
+        "displayName": "Banque",
+        "category": "building"
+      },
+      {
+        "id": "museum",
+        "displayName": "Musée",
+        "category": "building"
+      },
+      {
+        "id": "account_balance",
+        "displayName": "Tribunal",
+        "category": "building"
+      },
+      {
+        "id": "synagogue",
+        "displayName": "Synagogue",
+        "category": "building"
+      },
+      {
+        "id": "mosque",
+        "displayName": "Mosquée",
+        "category": "building"
+      },
+      {
+        "id": "temple_hindu",
+        "displayName": "Temple Hindou",
+        "category": "building"
+      },
+      {
+        "id": "fort",
+        "displayName": "Fort",
+        "category": "building"
+      },
+      {
+        "id": "electric_car",
+        "displayName": "Voiture Électrique",
+        "category": "vehicle"
+      },
+      {
+        "id": "flight",
+        "displayName": "Avion",
+        "category": "vehicle"
+      },
+      {
+        "id": "sailing",
+        "displayName": "Bateau",
+        "category": "vehicle"
+      },
+      {
+        "id": "train",
+        "displayName": "Train",
+        "category": "vehicle"
+      },
+      {
+        "id": "helicopter",
+        "displayName": "Hélicoptère",
+        "category": "vehicle"
+      },
+      {
+        "id": "rocket",
+        "displayName": "Fusée Simple",
+        "category": "vehicle"
+      },
+      {
+        "id": "directions_railway",
+        "displayName": "Train Rapide",
+        "category": "vehicle"
+      },
+      {
+        "id": "tram",
+        "displayName": "Tramway",
+        "category": "vehicle"
+      },
+      {
+        "id": "subway",
+        "displayName": "Métro",
+        "category": "vehicle"
+      },
+      {
+        "id": "cable_car",
+        "displayName": "Téléphérique",
+        "category": "vehicle"
+      },
+      {
+        "id": "local_shipping",
+        "displayName": "Camion",
+        "category": "vehicle"
+      },
+      {
+        "id": "fire_truck",
+        "displayName": "Camion Pompier",
+        "category": "vehicle"
+      },
+      {
+        "id": "airport_shuttle",
+        "displayName": "Navette",
+        "category": "vehicle"
+      },
+      {
+        "id": "rv_hookup",
+        "displayName": "Camping-car",
+        "category": "vehicle"
+      },
+      {
+        "id": "two_wheeler",
+        "displayName": "Deux-roues",
+        "category": "vehicle"
+      },
+      {
+        "id": "agriculture_machinery",
+        "displayName": "Tracteur",
+        "category": "vehicle"
+      },
+      {
+        "id": "diamond",
+        "displayName": "Diamant",
+        "category": "resource"
+      },
+      {
+        "id": "currency_bitcoin",
+        "displayName": "Bitcoin",
+        "category": "currency"
+      },
+      {
+        "id": "paid",
+        "displayName": "Payé",
+        "category": "currency"
+      },
+      {
+        "id": "savings",
+        "displayName": "Épargne",
+        "category": "currency"
+      },
+      {
+        "id": "account_balance_wallet",
+        "displayName": "Portefeuille",
+        "category": "currency"
+      },
+      {
+        "id": "credit_card",
+        "displayName": "Carte Crédit",
+        "category": "currency"
+      },
+      {
+        "id": "currency_exchange",
+        "displayName": "Change",
+        "category": "currency"
+      },
+      {
+        "id": "euro",
+        "displayName": "Euro",
+        "category": "currency"
+      },
+      {
+        "id": "attach_money",
+        "displayName": "Dollar",
+        "category": "currency"
+      },
+      {
+        "id": "currency_yen",
+        "displayName": "Yen",
+        "category": "currency"
+      },
+      {
+        "id": "currency_pound",
+        "displayName": "Livre",
+        "category": "currency"
+      },
+      {
+        "id": "currency_rupee",
+        "displayName": "Roupie",
+        "category": "currency"
+      },
+      {
+        "id": "currency_franc",
+        "displayName": "Franc",
+        "category": "currency"
+      },
+      {
+        "id": "currency_lira",
+        "displayName": "Lire",
+        "category": "currency"
+      },
+      {
+        "id": "military_tech",
+        "displayName": "Médaille",
+        "category": "achievement"
+      },
+      {
+        "id": "workspace_premium",
+        "displayName": "Premium",
+        "category": "achievement"
+      },
+      {
+        "id": "emoji_events",
+        "displayName": "Trophée",
+        "category": "achievement"
+      },
+      {
+        "id": "grade",
+        "displayName": "Note",
+        "category": "achievement"
+      },
+      {
+        "id": "verified",
+        "displayName": "Vérifié",
+        "category": "achievement"
+      },
+      {
+        "id": "new_releases",
+        "displayName": "Nouveau",
+        "category": "achievement"
+      },
+      {
+        "id": "stars_outlined",
+        "displayName": "Étoiles Rating",
+        "category": "achievement"
+      },
+      {
+        "id": "thumb_up",
+        "displayName": "Pouce Haut",
+        "category": "achievement"
+      },
+      {
+        "id": "celebration",
+        "displayName": "Célébration",
+        "category": "achievement"
+      },
+      {
+        "id": "loyalty",
+        "displayName": "Fidélité",
+        "category": "achievement"
+      },
+      {
+        "id": "biotech_outlined",
+        "displayName": "Biologie",
+        "category": "science"
+      },
+      {
+        "id": "medication",
+        "displayName": "Médicament",
+        "category": "science"
+      },
+      {
+        "id": "vaccines",
+        "displayName": "Vaccin",
+        "category": "science"
+      },
+      {
+        "id": "science_outlined",
+        "displayName": "Laboratoire",
+        "category": "science"
+      },
+      {
+        "id": "psychology_outlined",
+        "displayName": "Psychologie",
+        "category": "science"
+      },
+      {
+        "id": "psychiatry",
+        "displayName": "Psychiatrie",
+        "category": "science"
+      },
+      {
+        "id": "health_and_safety",
+        "displayName": "Santé Sécurité",
+        "category": "science"
+      },
+      {
+        "id": "solar_power",
+        "displayName": "Solaire",
+        "category": "energy"
+      },
+      {
+        "id": "wind_power",
+        "displayName": "Éolien",
+        "category": "energy"
+      },
+      {
+        "id": "electric_bolt",
+        "displayName": "Électricité",
+        "category": "energy"
+      },
+      {
+        "id": "gas_meter",
+        "displayName": "Gaz",
+        "category": "energy"
+      },
+      {
+        "id": "water_heater",
+        "displayName": "Chauffe-eau",
+        "category": "energy"
+      },
+      {
+        "id": "hvac",
+        "displayName": "Climatisation",
+        "category": "energy"
+      },
+      {
+        "id": "museum_outlined",
+        "displayName": "Galerie",
+        "category": "art"
+      },
+      {
+        "id": "palette_outlined",
+        "displayName": "Art",
+        "category": "art"
+      },
+      {
+        "id": "photo_camera",
+        "displayName": "Appareil Photo",
+        "category": "art"
+      },
+      {
+        "id": "camera",
+        "displayName": "Caméra Pro",
+        "category": "art"
+      },
+      {
+        "id": "videocam_outlined",
+        "displayName": "Vidéo Pro",
+        "category": "art"
+      }
     ],
     "legendary": [
-      {"id": "rocket_launch", "displayName": "Fusée", "category": "space"},
-      {"id": "satellite_alt", "displayName": "Satellite", "category": "space"},
-      {"id": "public", "displayName": "Monde", "category": "space"},
-      {"id": "auto_awesome", "displayName": "Magie", "category": "magic"},
-      {"id": "stars", "displayName": "Étoiles", "category": "space"},
-      {"id": "bolt", "displayName": "Éclair", "category": "element"},
-      {"id": "flash_on", "displayName": "Flash", "category": "element"},
-      {"id": "whatshot", "displayName": "Flamme", "category": "element"},
-      {"id": "local_fire_station", "displayName": "Feu Ardent", "category": "element"},
-      {"id": "volcano", "displayName": "Volcan", "category": "disaster"},
-      {"id": "tsunami", "displayName": "Tsunami", "category": "disaster"},
-      {"id": "tornado", "displayName": "Tornade", "category": "disaster"},
-      {"id": "cyclone", "displayName": "Cyclone", "category": "disaster"},
-      {"id": "flare", "displayName": "Flare", "category": "space"},
-      {"id": "brightness_high", "displayName": "Lumière", "category": "element"},
-      {"id": "all_inclusive", "displayName": "Infini", "category": "magic"},
-      {"id": "hub", "displayName": "Hub", "category": "tech"},
-      {"id": "psychology", "displayName": "Esprit", "category": "magic"},
-      {"id": "self_improvement", "displayName": "Méditation", "category": "magic"},
-      {"id": "favorite", "displayName": "Coeur", "category": "magic"}
-    ],
-    "hiddenRewards": [
-      {"id": "battery_0_bar", "displayName": "Batterie Vide", "hiddenGame": "hidden_battery_low"},
-      {"id": "battery_charging_full", "displayName": "Batterie Pleine", "hiddenGame": "hidden_battery_charging"},
-      {"id": "volume_off", "displayName": "Volume Off", "hiddenGame": "hidden_silent_mode"},
-      {"id": "volume_up", "displayName": "Volume Max", "hiddenGame": "hidden_loud_mode"},
-      {"id": "stay_current_portrait", "displayName": "Mode Portrait", "hiddenGame": "hidden_portrait_mode"},
-      {"id": "stay_current_landscape", "displayName": "Mode Paysage", "hiddenGame": "hidden_landscape_mode"},
-      {"id": "airplanemode_active", "displayName": "Mode Avion", "hiddenGame": "hidden_airplane_mode"},
-      {"id": "signal_cellular_alt", "displayName": "Signal Fort", "hiddenGame": "hidden_strong_network"}
+      {
+        "id": "rocket_launch",
+        "displayName": "Fusée",
+        "category": "space"
+      },
+      {
+        "id": "satellite_alt",
+        "displayName": "Satellite",
+        "category": "space"
+      },
+      {
+        "id": "public",
+        "displayName": "Monde",
+        "category": "space"
+      },
+      {
+        "id": "stars",
+        "displayName": "Étoiles",
+        "category": "space"
+      },
+      {
+        "id": "flare",
+        "displayName": "Flare",
+        "category": "space"
+      },
+      {
+        "id": "brightness_high",
+        "displayName": "Lumière",
+        "category": "element"
+      },
+      {
+        "id": "nightlight",
+        "displayName": "Veilleuse",
+        "category": "space"
+      },
+      {
+        "id": "dark_mode_outlined",
+        "displayName": "Lune",
+        "category": "space"
+      },
+      {
+        "id": "bedtime",
+        "displayName": "Nuit Étoilée",
+        "category": "space"
+      },
+      {
+        "id": "astronomy",
+        "displayName": "Astronomie",
+        "category": "space"
+      },
+      {
+        "id": "orbit",
+        "displayName": "Orbite",
+        "category": "space"
+      },
+      {
+        "id": "travel_explore",
+        "displayName": "Exploration",
+        "category": "space"
+      },
+      {
+        "id": "bolt",
+        "displayName": "Éclair",
+        "category": "element"
+      },
+      {
+        "id": "flash_on",
+        "displayName": "Flash",
+        "category": "element"
+      },
+      {
+        "id": "whatshot",
+        "displayName": "Flamme",
+        "category": "element"
+      },
+      {
+        "id": "local_fire_station",
+        "displayName": "Feu Ardent",
+        "category": "element"
+      },
+      {
+        "id": "thunderstorm",
+        "displayName": "Tempête",
+        "category": "element"
+      },
+      {
+        "id": "severe_cold",
+        "displayName": "Froid Extrême",
+        "category": "element"
+      },
+      {
+        "id": "thermostat_auto",
+        "displayName": "Température Auto",
+        "category": "element"
+      },
+      {
+        "id": "device_hub",
+        "displayName": "Hub Énergie",
+        "category": "element"
+      },
+      {
+        "id": "volcano",
+        "displayName": "Volcan",
+        "category": "disaster"
+      },
+      {
+        "id": "tsunami",
+        "displayName": "Tsunami",
+        "category": "disaster"
+      },
+      {
+        "id": "tornado",
+        "displayName": "Tornade",
+        "category": "disaster"
+      },
+      {
+        "id": "cyclone",
+        "displayName": "Cyclone",
+        "category": "disaster"
+      },
+      {
+        "id": "flood",
+        "displayName": "Inondation",
+        "category": "disaster"
+      },
+      {
+        "id": "landslide",
+        "displayName": "Glissement",
+        "category": "disaster"
+      },
+      {
+        "id": "earthquake",
+        "displayName": "Tremblement",
+        "category": "disaster"
+      },
+      {
+        "id": "auto_awesome",
+        "displayName": "Magie",
+        "category": "magic"
+      },
+      {
+        "id": "all_inclusive",
+        "displayName": "Infini",
+        "category": "magic"
+      },
+      {
+        "id": "psychology",
+        "displayName": "Esprit",
+        "category": "magic"
+      },
+      {
+        "id": "self_improvement",
+        "displayName": "Méditation",
+        "category": "magic"
+      },
+      {
+        "id": "favorite",
+        "displayName": "Coeur",
+        "category": "magic"
+      },
+      {
+        "id": "auto_fix_high",
+        "displayName": "Auto-Fix",
+        "category": "magic"
+      },
+      {
+        "id": "auto_awesome_mosaic",
+        "displayName": "Mosaïque Magique",
+        "category": "magic"
+      },
+      {
+        "id": "auto_awesome_motion",
+        "displayName": "Mouvement Magique",
+        "category": "magic"
+      },
+      {
+        "id": "blur_on",
+        "displayName": "Flou Magique",
+        "category": "magic"
+      },
+      {
+        "id": "lens_blur",
+        "displayName": "Lentille Magique",
+        "category": "magic"
+      },
+      {
+        "id": "tips_and_updates",
+        "displayName": "Conseils Magiques",
+        "category": "magic"
+      },
+      {
+        "id": "lightbulb",
+        "displayName": "Idée",
+        "category": "magic"
+      },
+      {
+        "id": "emoji_objects",
+        "displayName": "Ampoule",
+        "category": "magic"
+      },
+      {
+        "id": "memory_alt",
+        "displayName": "Super Mémoire",
+        "category": "tech"
+      },
+      {
+        "id": "precision_manufacturing_outlined",
+        "displayName": "Super Machine",
+        "category": "tech"
+      },
+      {
+        "id": "hub_outlined",
+        "displayName": "Super Hub",
+        "category": "tech"
+      },
+      {
+        "id": "router_outlined",
+        "displayName": "Super Routeur",
+        "category": "tech"
+      },
+      {
+        "id": "cell_tower",
+        "displayName": "Tour Cellulaire",
+        "category": "tech"
+      },
+      {
+        "id": "broadcast_on_personal",
+        "displayName": "Broadcast",
+        "category": "tech"
+      },
+      {
+        "id": "settings_input_antenna",
+        "displayName": "Antenne",
+        "category": "tech"
+      },
+      {
+        "id": "satellite",
+        "displayName": "Satellite Simple",
+        "category": "tech"
+      },
+      {
+        "id": "castle_outlined",
+        "displayName": "Palais",
+        "category": "building"
+      },
+      {
+        "id": "church_outlined",
+        "displayName": "Cathédrale",
+        "category": "building"
+      },
+      {
+        "id": "fort_outlined",
+        "displayName": "Forteresse",
+        "category": "building"
+      },
+      {
+        "id": "domain_outlined",
+        "displayName": "Empire",
+        "category": "building"
+      },
+      {
+        "id": "location_city_outlined",
+        "displayName": "Métropole",
+        "category": "building"
+      },
+      {
+        "id": "holiday_village",
+        "displayName": "Village Vacances",
+        "category": "building"
+      },
+      {
+        "id": "pets_outlined",
+        "displayName": "Animal Légendaire",
+        "category": "animal"
+      },
+      {
+        "id": "cruelty_free_outlined",
+        "displayName": "Créature",
+        "category": "animal"
+      },
+      {
+        "id": "power_settings_new",
+        "displayName": "Puissance Max",
+        "category": "power"
+      },
+      {
+        "id": "offline_bolt",
+        "displayName": "Éclair Offline",
+        "category": "power"
+      },
+      {
+        "id": "electrical_services_outlined",
+        "displayName": "Super Électricité",
+        "category": "power"
+      },
+      {
+        "id": "workspace_premium_outlined",
+        "displayName": "Couronne",
+        "category": "royalty"
+      },
+      {
+        "id": "verified_user",
+        "displayName": "Utilisateur Vérifié",
+        "category": "royalty"
+      },
+      {
+        "id": "shield",
+        "displayName": "Bouclier",
+        "category": "royalty"
+      },
+      {
+        "id": "security",
+        "displayName": "Sécurité Max",
+        "category": "royalty"
+      },
+      {
+        "id": "admin_panel_settings",
+        "displayName": "Admin",
+        "category": "royalty"
+      },
+      {
+        "id": "supervisor_account",
+        "displayName": "Superviseur",
+        "category": "royalty"
+      },
+      {
+        "id": "timeline",
+        "displayName": "Timeline",
+        "category": "time"
+      },
+      {
+        "id": "timer_outlined",
+        "displayName": "Temps Infini",
+        "category": "time"
+      },
+      {
+        "id": "restore",
+        "displayName": "Restaurer",
+        "category": "time"
+      },
+      {
+        "id": "next_plan",
+        "displayName": "Futur",
+        "category": "time"
+      },
+      {
+        "id": "event_repeat",
+        "displayName": "Répétition",
+        "category": "time"
+      },
+      {
+        "id": "battery_0_bar",
+        "displayName": "Batterie Vide",
+        "category": "hidden"
+      },
+      {
+        "id": "battery_charging_full",
+        "displayName": "Batterie Pleine",
+        "category": "hidden"
+      },
+      {
+        "id": "volume_off",
+        "displayName": "Volume Off",
+        "category": "hidden"
+      },
+      {
+        "id": "volume_up",
+        "displayName": "Volume Max",
+        "category": "hidden"
+      },
+      {
+        "id": "stay_current_portrait",
+        "displayName": "Mode Portrait",
+        "category": "hidden"
+      },
+      {
+        "id": "stay_current_landscape",
+        "displayName": "Mode Paysage",
+        "category": "hidden"
+      },
+      {
+        "id": "airplanemode_active",
+        "displayName": "Mode Avion",
+        "category": "hidden"
+      },
+      {
+        "id": "signal_cellular_alt",
+        "displayName": "Signal Fort",
+        "category": "hidden"
+      }
     ]
   },
+  "hiddenRewards": [
+    {
+      "id": "battery_0_bar",
+      "displayName": "Batterie Vide",
+      "hiddenGame": "hidden_battery_low"
+    },
+    {
+      "id": "battery_charging_full",
+      "displayName": "Batterie Pleine",
+      "hiddenGame": "hidden_battery_charging"
+    },
+    {
+      "id": "volume_off",
+      "displayName": "Volume Off",
+      "hiddenGame": "hidden_silent_mode"
+    },
+    {
+      "id": "volume_up",
+      "displayName": "Volume Max",
+      "hiddenGame": "hidden_loud_mode"
+    },
+    {
+      "id": "stay_current_portrait",
+      "displayName": "Mode Portrait",
+      "hiddenGame": "hidden_portrait_mode"
+    },
+    {
+      "id": "stay_current_landscape",
+      "displayName": "Mode Paysage",
+      "hiddenGame": "hidden_landscape_mode"
+    },
+    {
+      "id": "airplanemode_active",
+      "displayName": "Mode Avion",
+      "hiddenGame": "hidden_airplane_mode"
+    },
+    {
+      "id": "signal_cellular_alt",
+      "displayName": "Signal Fort",
+      "hiddenGame": "hidden_strong_network"
+    }
+  ],
   "combinations": [
-    {"id": "combo_bread", "ingredients": ["grain", "precision_manufacturing"], "result": "bakery_dining", "displayName": "Pain"},
-    {"id": "combo_flour", "ingredients": ["grain", "hardware"], "result": "nutrition", "displayName": "Farine"},
-    {"id": "combo_agriculture", "ingredients": ["water_drop", "grain"], "result": "agriculture", "displayName": "Agriculture"},
-    {"id": "combo_construction", "ingredients": ["forest", "hardware"], "result": "construction", "displayName": "Construction"},
-    {"id": "combo_cottage", "ingredients": ["forest", "construction"], "result": "cottage", "displayName": "Cottage"},
-    {"id": "combo_home", "ingredients": ["construction", "landscape"], "result": "home", "displayName": "Maison"},
-    {"id": "combo_cabin", "ingredients": ["forest", "forest", "hardware"], "result": "cabin", "displayName": "Cabane"},
-    {"id": "combo_cookie", "ingredients": ["grain", "egg"], "result": "cookie", "displayName": "Cookie"},
-    {"id": "combo_cake", "ingredients": ["grain", "egg", "nutrition"], "result": "cake", "displayName": "Gâteau"},
-    {"id": "combo_icecream", "ingredients": ["ac_unit", "nutrition"], "result": "icecream", "displayName": "Glace"},
-    {"id": "combo_meal", "ingredients": ["bakery_dining", "nutrition"], "result": "local_dining", "displayName": "Repas"},
-    {"id": "combo_lunch", "ingredients": ["local_dining", "wb_sunny"], "result": "lunch_dining", "displayName": "Déjeuner"},
-    {"id": "combo_dinner", "ingredients": ["local_dining", "cloud"], "result": "dinner_dining", "displayName": "Dîner"},
-    {"id": "combo_restaurant", "ingredients": ["home", "local_dining"], "result": "restaurant", "displayName": "Restaurant"},
-    {"id": "combo_cafe", "ingredients": ["home", "emoji_food_beverage"], "result": "local_cafe", "displayName": "Café"},
-    {"id": "combo_wine", "ingredients": ["water_drop", "spa", "wb_sunny"], "result": "wine_bar", "displayName": "Vin"},
-    {"id": "combo_liquor", "ingredients": ["wine_bar", "local_fire_department"], "result": "liquor", "displayName": "Liqueur"},
-    {"id": "combo_science", "ingredients": ["engineering", "biotech"], "result": "science", "displayName": "Science"},
-    {"id": "combo_biotech", "ingredients": ["eco", "precision_manufacturing"], "result": "biotech", "displayName": "Biotech"},
-    {"id": "combo_factory", "ingredients": ["construction", "precision_manufacturing"], "result": "factory", "displayName": "Usine"},
-    {"id": "combo_engineering", "ingredients": ["hardware", "precision_manufacturing"], "result": "engineering", "displayName": "Ingénierie"},
-    {"id": "combo_memory", "ingredients": ["developer_board", "bolt"], "result": "memory", "displayName": "Mémoire"},
-    {"id": "combo_circuit", "ingredients": ["precision_manufacturing", "bolt"], "result": "developer_board", "displayName": "Circuit"},
-    {"id": "combo_robot", "ingredients": ["developer_board", "memory", "engineering"], "result": "smart_toy", "displayName": "Robot"},
-    {"id": "combo_android", "ingredients": ["smart_toy", "memory"], "result": "adb", "displayName": "Android"},
-    {"id": "combo_castle", "ingredients": ["home", "home", "landscape"], "result": "castle", "displayName": "Château"},
-    {"id": "combo_church", "ingredients": ["home", "self_improvement"], "result": "church", "displayName": "Église"},
-    {"id": "combo_temple", "ingredients": ["home", "psychology"], "result": "temple_buddhist", "displayName": "Temple"},
-    {"id": "combo_stadium", "ingredients": ["construction", "construction", "construction"], "result": "stadium", "displayName": "Stade"},
-    {"id": "combo_apartment", "ingredients": ["home", "home", "construction"], "result": "apartment", "displayName": "Appartement"},
-    {"id": "combo_domain", "ingredients": ["castle", "park"], "result": "domain", "displayName": "Domaine"},
-    {"id": "combo_diamond", "ingredients": ["landscape", "landscape", "local_fire_department"], "result": "diamond", "displayName": "Diamant"},
-    {"id": "combo_bitcoin", "ingredients": ["developer_board", "memory", "engineering"], "result": "currency_bitcoin", "displayName": "Bitcoin"},
-    {"id": "combo_medal", "ingredients": ["emoji_events", "military_tech"], "result": "military_tech", "displayName": "Médaille"},
-    {"id": "combo_trophy", "ingredients": ["diamond", "workspace_premium"], "result": "emoji_events", "displayName": "Trophée"},
-    {"id": "combo_rocket", "ingredients": ["factory", "engineering", "science"], "result": "rocket_launch", "displayName": "Fusée"},
-    {"id": "combo_satellite", "ingredients": ["rocket_launch", "developer_board"], "result": "satellite_alt", "displayName": "Satellite"},
-    {"id": "combo_world", "ingredients": ["satellite_alt", "satellite_alt"], "result": "public", "displayName": "Monde"},
-    {"id": "combo_magic", "ingredients": ["stars", "psychology"], "result": "auto_awesome", "displayName": "Magie"},
-    {"id": "combo_stars", "ingredients": ["wb_sunny", "wb_sunny", "wb_sunny"], "result": "stars", "displayName": "Étoiles"},
-    {"id": "combo_bolt", "ingredients": ["cloud", "local_fire_department"], "result": "bolt", "displayName": "Éclair"},
-    {"id": "combo_flash", "ingredients": ["bolt", "bolt"], "result": "flash_on", "displayName": "Flash"},
-    {"id": "combo_flame", "ingredients": ["local_fire_department", "air"], "result": "whatshot", "displayName": "Flamme"},
-    {"id": "combo_fire_station", "ingredients": ["whatshot", "home"], "result": "local_fire_station", "displayName": "Feu Ardent"},
-    {"id": "combo_volcano", "ingredients": ["landscape", "whatshot", "local_fire_department"], "result": "volcano", "displayName": "Volcan"},
-    {"id": "combo_tsunami", "ingredients": ["water_drop", "water_drop", "water_drop"], "result": "tsunami", "displayName": "Tsunami"},
-    {"id": "combo_tornado", "ingredients": ["air", "air", "cloud"], "result": "tornado", "displayName": "Tornade"},
-    {"id": "combo_cyclone", "ingredients": ["tornado", "water_drop"], "result": "cyclone", "displayName": "Cyclone"},
-    {"id": "combo_flare", "ingredients": ["wb_sunny", "whatshot"], "result": "flare", "displayName": "Flare"},
-    {"id": "combo_light", "ingredients": ["wb_sunny", "flash_on"], "result": "brightness_high", "displayName": "Lumière"},
-    {"id": "combo_infinite", "ingredients": ["stars", "stars", "auto_awesome"], "result": "all_inclusive", "displayName": "Infini"},
-    {"id": "combo_hub", "ingredients": ["developer_board", "developer_board", "memory"], "result": "hub", "displayName": "Hub"},
-    {"id": "combo_psychology", "ingredients": ["pets", "spa", "eco"], "result": "psychology", "displayName": "Esprit"},
-    {"id": "combo_meditation", "ingredients": ["psychology", "park"], "result": "self_improvement", "displayName": "Méditation"},
-    {"id": "combo_heart", "ingredients": ["spa", "spa", "psychology"], "result": "favorite", "displayName": "Coeur"},
-    {"id": "combo_electric_car", "ingredients": ["bolt", "engineering"], "result": "electric_car", "displayName": "Voiture Électrique"},
-    {"id": "combo_plane", "ingredients": ["air", "engineering", "precision_manufacturing"], "result": "flight", "displayName": "Avion"},
-    {"id": "combo_boat", "ingredients": ["water_drop", "forest", "construction"], "result": "sailing", "displayName": "Bateau"},
-    {"id": "combo_train", "ingredients": ["precision_manufacturing", "precision_manufacturing", "construction"], "result": "train", "displayName": "Train"},
-    {"id": "combo_helicopter", "ingredients": ["flight", "air"], "result": "helicopter", "displayName": "Hélicoptère"},
-    {"id": "combo_ramen", "ingredients": ["water_drop", "grain", "local_fire_department"], "result": "ramen_dining", "displayName": "Ramen"},
-    {"id": "combo_kebab", "ingredients": ["pets", "local_fire_department", "hardware"], "result": "kebab_dining", "displayName": "Kebab"},
-    {"id": "combo_plumbing", "ingredients": ["water_drop", "hardware"], "result": "plumbing", "displayName": "Plomberie"},
-    {"id": "combo_electrical", "ingredients": ["bolt", "hardware"], "result": "electrical_services", "displayName": "Électricité"},
-    {"id": "combo_set_meal", "ingredients": ["lunch_dining", "dinner_dining"], "result": "set_meal", "displayName": "Plateau Repas"},
-    {"id": "combo_recycling", "ingredients": ["eco", "hardware"], "result": "recycling", "displayName": "Recyclage"},
-    {"id": "combo_compost", "ingredients": ["eco", "grass", "bug_report"], "result": "compost", "displayName": "Compost"},
-    {"id": "combo_oil", "ingredients": ["landscape", "landscape", "precision_manufacturing"], "result": "oil_barrel", "displayName": "Pétrole"},
-    {"id": "combo_iron", "ingredients": ["landscape", "local_fire_department", "precision_manufacturing"], "result": "iron", "displayName": "Fer"},
-    {"id": "combo_coal", "ingredients": ["forest", "local_fire_department", "terrain"], "result": "coal", "displayName": "Charbon"}
+    {
+      "id": "combo_bread",
+      "ingredients": [
+        "grain",
+        "precision_manufacturing"
+      ],
+      "result": "bakery_dining",
+      "displayName": "Pain"
+    },
+    {
+      "id": "combo_flour",
+      "ingredients": [
+        "grain",
+        "hardware"
+      ],
+      "result": "nutrition",
+      "displayName": "Farine"
+    },
+    {
+      "id": "combo_agriculture",
+      "ingredients": [
+        "water_drop",
+        "grain"
+      ],
+      "result": "agriculture",
+      "displayName": "Agriculture"
+    },
+    {
+      "id": "combo_cookie",
+      "ingredients": [
+        "grain",
+        "egg"
+      ],
+      "result": "cookie",
+      "displayName": "Cookie"
+    },
+    {
+      "id": "combo_cake",
+      "ingredients": [
+        "grain",
+        "egg",
+        "nutrition"
+      ],
+      "result": "cake",
+      "displayName": "Gâteau"
+    },
+    {
+      "id": "combo_icecream",
+      "ingredients": [
+        "ac_unit",
+        "nutrition"
+      ],
+      "result": "icecream",
+      "displayName": "Glace"
+    },
+    {
+      "id": "combo_meal",
+      "ingredients": [
+        "bakery_dining",
+        "nutrition"
+      ],
+      "result": "local_dining",
+      "displayName": "Repas"
+    },
+    {
+      "id": "combo_lunch",
+      "ingredients": [
+        "local_dining",
+        "wb_sunny"
+      ],
+      "result": "lunch_dining",
+      "displayName": "Déjeuner"
+    },
+    {
+      "id": "combo_dinner",
+      "ingredients": [
+        "local_dining",
+        "cloud"
+      ],
+      "result": "dinner_dining",
+      "displayName": "Dîner"
+    },
+    {
+      "id": "combo_wine",
+      "ingredients": [
+        "water_drop",
+        "spa",
+        "wb_sunny"
+      ],
+      "result": "wine_bar",
+      "displayName": "Vin"
+    },
+    {
+      "id": "combo_liquor",
+      "ingredients": [
+        "wine_bar",
+        "local_fire_department"
+      ],
+      "result": "liquor",
+      "displayName": "Liqueur"
+    },
+    {
+      "id": "combo_ramen",
+      "ingredients": [
+        "water_drop",
+        "grain",
+        "local_fire_department"
+      ],
+      "result": "ramen_dining",
+      "displayName": "Ramen"
+    },
+    {
+      "id": "combo_kebab",
+      "ingredients": [
+        "pets",
+        "local_fire_department",
+        "hardware"
+      ],
+      "result": "kebab_dining",
+      "displayName": "Kebab"
+    },
+    {
+      "id": "combo_set_meal",
+      "ingredients": [
+        "lunch_dining",
+        "dinner_dining"
+      ],
+      "result": "set_meal",
+      "displayName": "Plateau Repas"
+    },
+    {
+      "id": "combo_pizza",
+      "ingredients": [
+        "grain",
+        "local_fire_department"
+      ],
+      "result": "local_pizza",
+      "displayName": "Pizza"
+    },
+    {
+      "id": "combo_fastfood",
+      "ingredients": [
+        "bakery_dining",
+        "pets"
+      ],
+      "result": "fastfood",
+      "displayName": "Fast-food"
+    },
+    {
+      "id": "combo_rice",
+      "ingredients": [
+        "grain",
+        "water_drop",
+        "local_fire_department"
+      ],
+      "result": "rice_bowl",
+      "displayName": "Riz"
+    },
+    {
+      "id": "combo_soup",
+      "ingredients": [
+        "water_drop",
+        "nutrition",
+        "local_fire_department"
+      ],
+      "result": "soup_kitchen",
+      "displayName": "Soupe"
+    },
+    {
+      "id": "combo_breakfast",
+      "ingredients": [
+        "egg",
+        "bakery_dining"
+      ],
+      "result": "breakfast_dining",
+      "displayName": "Petit-déjeuner"
+    },
+    {
+      "id": "combo_brunch",
+      "ingredients": [
+        "breakfast_dining",
+        "lunch_dining"
+      ],
+      "result": "brunch_dining",
+      "displayName": "Brunch"
+    },
+    {
+      "id": "combo_tapas",
+      "ingredients": [
+        "local_dining",
+        "wine_bar"
+      ],
+      "result": "tapas",
+      "displayName": "Tapas"
+    },
+    {
+      "id": "combo_bento",
+      "ingredients": [
+        "rice_bowl",
+        "local_dining"
+      ],
+      "result": "bento",
+      "displayName": "Bento"
+    },
+    {
+      "id": "combo_coffee",
+      "ingredients": [
+        "water_drop",
+        "grain",
+        "local_fire_department"
+      ],
+      "result": "emoji_food_beverage",
+      "displayName": "Café"
+    },
+    {
+      "id": "combo_construction",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "construction",
+      "displayName": "Construction"
+    },
+    {
+      "id": "combo_cottage",
+      "ingredients": [
+        "forest",
+        "construction"
+      ],
+      "result": "cottage",
+      "displayName": "Cottage"
+    },
+    {
+      "id": "combo_home",
+      "ingredients": [
+        "construction",
+        "landscape"
+      ],
+      "result": "home",
+      "displayName": "Maison"
+    },
+    {
+      "id": "combo_cabin",
+      "ingredients": [
+        "forest",
+        "forest",
+        "hardware"
+      ],
+      "result": "cabin",
+      "displayName": "Cabane"
+    },
+    {
+      "id": "combo_restaurant",
+      "ingredients": [
+        "home",
+        "local_dining"
+      ],
+      "result": "restaurant",
+      "displayName": "Restaurant"
+    },
+    {
+      "id": "combo_cafe",
+      "ingredients": [
+        "home",
+        "emoji_food_beverage"
+      ],
+      "result": "local_cafe",
+      "displayName": "Café"
+    },
+    {
+      "id": "combo_castle",
+      "ingredients": [
+        "home",
+        "home",
+        "landscape"
+      ],
+      "result": "castle",
+      "displayName": "Château"
+    },
+    {
+      "id": "combo_church",
+      "ingredients": [
+        "home",
+        "self_improvement"
+      ],
+      "result": "church",
+      "displayName": "Église"
+    },
+    {
+      "id": "combo_temple",
+      "ingredients": [
+        "home",
+        "psychology"
+      ],
+      "result": "temple_buddhist",
+      "displayName": "Temple"
+    },
+    {
+      "id": "combo_stadium",
+      "ingredients": [
+        "construction",
+        "construction",
+        "construction"
+      ],
+      "result": "stadium",
+      "displayName": "Stade"
+    },
+    {
+      "id": "combo_apartment",
+      "ingredients": [
+        "home",
+        "home",
+        "construction"
+      ],
+      "result": "apartment",
+      "displayName": "Appartement"
+    },
+    {
+      "id": "combo_domain",
+      "ingredients": [
+        "castle",
+        "park"
+      ],
+      "result": "domain",
+      "displayName": "Domaine"
+    },
+    {
+      "id": "combo_warehouse",
+      "ingredients": [
+        "construction",
+        "construction"
+      ],
+      "result": "warehouse",
+      "displayName": "Entrepôt"
+    },
+    {
+      "id": "combo_store",
+      "ingredients": [
+        "home",
+        "hardware"
+      ],
+      "result": "store",
+      "displayName": "Magasin"
+    },
+    {
+      "id": "combo_shop",
+      "ingredients": [
+        "store",
+        "local_dining"
+      ],
+      "result": "shop",
+      "displayName": "Boutique"
+    },
+    {
+      "id": "combo_garage",
+      "ingredients": [
+        "home",
+        "directions_car"
+      ],
+      "result": "garage_home",
+      "displayName": "Garage"
+    },
+    {
+      "id": "combo_barn",
+      "ingredients": [
+        "forest",
+        "agriculture"
+      ],
+      "result": "barn",
+      "displayName": "Grange"
+    },
+    {
+      "id": "combo_silo",
+      "ingredients": [
+        "construction",
+        "grain"
+      ],
+      "result": "silo",
+      "displayName": "Silo"
+    },
+    {
+      "id": "combo_villa",
+      "ingredients": [
+        "home",
+        "home",
+        "park"
+      ],
+      "result": "villa",
+      "displayName": "Villa"
+    },
+    {
+      "id": "combo_chalet",
+      "ingredients": [
+        "cabin",
+        "snow"
+      ],
+      "result": "chalet",
+      "displayName": "Chalet"
+    },
+    {
+      "id": "combo_bungalow",
+      "ingredients": [
+        "home",
+        "park"
+      ],
+      "result": "bungalow",
+      "displayName": "Bungalow"
+    },
+    {
+      "id": "combo_hospital",
+      "ingredients": [
+        "home",
+        "medical_services"
+      ],
+      "result": "local_hospital",
+      "displayName": "Hôpital"
+    },
+    {
+      "id": "combo_library",
+      "ingredients": [
+        "home",
+        "school"
+      ],
+      "result": "local_library",
+      "displayName": "Bibliothèque"
+    },
+    {
+      "id": "combo_mall",
+      "ingredients": [
+        "store",
+        "store",
+        "store"
+      ],
+      "result": "local_mall",
+      "displayName": "Centre Commercial"
+    },
+    {
+      "id": "combo_cinema",
+      "ingredients": [
+        "home",
+        "movie"
+      ],
+      "result": "local_movies",
+      "displayName": "Cinéma"
+    },
+    {
+      "id": "combo_airport",
+      "ingredients": [
+        "construction",
+        "flight"
+      ],
+      "result": "local_airport",
+      "displayName": "Aéroport"
+    },
+    {
+      "id": "combo_bank",
+      "ingredients": [
+        "home",
+        "savings"
+      ],
+      "result": "local_atm",
+      "displayName": "Banque"
+    },
+    {
+      "id": "combo_museum",
+      "ingredients": [
+        "home",
+        "palette"
+      ],
+      "result": "museum",
+      "displayName": "Musée"
+    },
+    {
+      "id": "combo_school",
+      "ingredients": [
+        "home",
+        "school"
+      ],
+      "result": "school",
+      "displayName": "École"
+    },
+    {
+      "id": "combo_city",
+      "ingredients": [
+        "apartment",
+        "apartment",
+        "apartment"
+      ],
+      "result": "location_city",
+      "displayName": "Ville"
+    },
+    {
+      "id": "combo_corporate",
+      "ingredients": [
+        "location_city",
+        "work"
+      ],
+      "result": "corporate_fare",
+      "displayName": "Siège Social"
+    },
+    {
+      "id": "combo_science",
+      "ingredients": [
+        "engineering",
+        "biotech"
+      ],
+      "result": "science",
+      "displayName": "Science"
+    },
+    {
+      "id": "combo_biotech",
+      "ingredients": [
+        "eco",
+        "precision_manufacturing"
+      ],
+      "result": "biotech",
+      "displayName": "Biotech"
+    },
+    {
+      "id": "combo_factory",
+      "ingredients": [
+        "construction",
+        "precision_manufacturing"
+      ],
+      "result": "factory",
+      "displayName": "Usine"
+    },
+    {
+      "id": "combo_engineering",
+      "ingredients": [
+        "hardware",
+        "precision_manufacturing"
+      ],
+      "result": "engineering",
+      "displayName": "Ingénierie"
+    },
+    {
+      "id": "combo_memory",
+      "ingredients": [
+        "developer_board",
+        "bolt"
+      ],
+      "result": "memory",
+      "displayName": "Mémoire"
+    },
+    {
+      "id": "combo_circuit",
+      "ingredients": [
+        "precision_manufacturing",
+        "bolt"
+      ],
+      "result": "developer_board",
+      "displayName": "Circuit"
+    },
+    {
+      "id": "combo_robot",
+      "ingredients": [
+        "developer_board",
+        "memory",
+        "engineering"
+      ],
+      "result": "smart_toy",
+      "displayName": "Robot"
+    },
+    {
+      "id": "combo_android",
+      "ingredients": [
+        "smart_toy",
+        "memory"
+      ],
+      "result": "adb",
+      "displayName": "Android"
+    },
+    {
+      "id": "combo_hub",
+      "ingredients": [
+        "developer_board",
+        "developer_board",
+        "memory"
+      ],
+      "result": "hub",
+      "displayName": "Hub"
+    },
+    {
+      "id": "combo_plumbing",
+      "ingredients": [
+        "water_drop",
+        "hardware"
+      ],
+      "result": "plumbing",
+      "displayName": "Plomberie"
+    },
+    {
+      "id": "combo_electrical",
+      "ingredients": [
+        "bolt",
+        "hardware"
+      ],
+      "result": "electrical_services",
+      "displayName": "Électricité"
+    },
+    {
+      "id": "combo_router",
+      "ingredients": [
+        "developer_board",
+        "wifi"
+      ],
+      "result": "router",
+      "displayName": "Routeur"
+    },
+    {
+      "id": "combo_terminal",
+      "ingredients": [
+        "developer_board",
+        "code"
+      ],
+      "result": "terminal",
+      "displayName": "Terminal"
+    },
+    {
+      "id": "combo_api",
+      "ingredients": [
+        "code",
+        "developer_board"
+      ],
+      "result": "api",
+      "displayName": "API"
+    },
+    {
+      "id": "combo_sensors",
+      "ingredients": [
+        "developer_board",
+        "engineering"
+      ],
+      "result": "sensors",
+      "displayName": "Capteurs"
+    },
+    {
+      "id": "combo_smart_display",
+      "ingredients": [
+        "developer_board",
+        "tv"
+      ],
+      "result": "smart_display",
+      "displayName": "Écran Intelligent"
+    },
+    {
+      "id": "combo_thermostat",
+      "ingredients": [
+        "sensors",
+        "hvac"
+      ],
+      "result": "device_thermostat",
+      "displayName": "Thermostat"
+    },
+    {
+      "id": "combo_solar",
+      "ingredients": [
+        "wb_sunny",
+        "developer_board"
+      ],
+      "result": "solar_power",
+      "displayName": "Solaire"
+    },
+    {
+      "id": "combo_wind",
+      "ingredients": [
+        "air",
+        "precision_manufacturing"
+      ],
+      "result": "wind_power",
+      "displayName": "Éolien"
+    },
+    {
+      "id": "combo_camera",
+      "ingredients": [
+        "developer_board",
+        "lens"
+      ],
+      "result": "photo_camera",
+      "displayName": "Appareil Photo"
+    },
+    {
+      "id": "combo_video",
+      "ingredients": [
+        "photo_camera",
+        "movie"
+      ],
+      "result": "videocam",
+      "displayName": "Caméra"
+    },
+    {
+      "id": "combo_electric_car",
+      "ingredients": [
+        "bolt",
+        "engineering"
+      ],
+      "result": "electric_car",
+      "displayName": "Voiture Électrique"
+    },
+    {
+      "id": "combo_plane",
+      "ingredients": [
+        "air",
+        "engineering",
+        "precision_manufacturing"
+      ],
+      "result": "flight",
+      "displayName": "Avion"
+    },
+    {
+      "id": "combo_boat",
+      "ingredients": [
+        "water_drop",
+        "forest",
+        "construction"
+      ],
+      "result": "sailing",
+      "displayName": "Bateau"
+    },
+    {
+      "id": "combo_train",
+      "ingredients": [
+        "precision_manufacturing",
+        "precision_manufacturing",
+        "construction"
+      ],
+      "result": "train",
+      "displayName": "Train"
+    },
+    {
+      "id": "combo_helicopter",
+      "ingredients": [
+        "flight",
+        "air"
+      ],
+      "result": "helicopter",
+      "displayName": "Hélicoptère"
+    },
+    {
+      "id": "combo_car",
+      "ingredients": [
+        "precision_manufacturing",
+        "engineering"
+      ],
+      "result": "directions_car",
+      "displayName": "Voiture"
+    },
+    {
+      "id": "combo_bus",
+      "ingredients": [
+        "directions_car",
+        "directions_car"
+      ],
+      "result": "directions_bus",
+      "displayName": "Bus"
+    },
+    {
+      "id": "combo_bike",
+      "ingredients": [
+        "hardware",
+        "hardware"
+      ],
+      "result": "directions_bike",
+      "displayName": "Vélo"
+    },
+    {
+      "id": "combo_moto",
+      "ingredients": [
+        "directions_bike",
+        "precision_manufacturing"
+      ],
+      "result": "motorcycle",
+      "displayName": "Moto"
+    },
+    {
+      "id": "combo_scooter",
+      "ingredients": [
+        "directions_bike",
+        "bolt"
+      ],
+      "result": "electric_scooter",
+      "displayName": "Trottinette"
+    },
+    {
+      "id": "combo_skateboard",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "skateboarding",
+      "displayName": "Skateboard"
+    },
+    {
+      "id": "combo_subway",
+      "ingredients": [
+        "train",
+        "construction"
+      ],
+      "result": "subway",
+      "displayName": "Métro"
+    },
+    {
+      "id": "combo_tram",
+      "ingredients": [
+        "train",
+        "bolt"
+      ],
+      "result": "tram",
+      "displayName": "Tramway"
+    },
+    {
+      "id": "combo_cable_car",
+      "ingredients": [
+        "construction",
+        "air"
+      ],
+      "result": "cable_car",
+      "displayName": "Téléphérique"
+    },
+    {
+      "id": "combo_truck",
+      "ingredients": [
+        "directions_car",
+        "construction"
+      ],
+      "result": "local_shipping",
+      "displayName": "Camion"
+    },
+    {
+      "id": "combo_fire_truck",
+      "ingredients": [
+        "local_shipping",
+        "local_fire_department"
+      ],
+      "result": "fire_truck",
+      "displayName": "Camion Pompier"
+    },
+    {
+      "id": "combo_rv",
+      "ingredients": [
+        "local_shipping",
+        "home"
+      ],
+      "result": "rv_hookup",
+      "displayName": "Camping-car"
+    },
+    {
+      "id": "combo_tractor",
+      "ingredients": [
+        "precision_manufacturing",
+        "agriculture"
+      ],
+      "result": "agriculture_machinery",
+      "displayName": "Tracteur"
+    },
+    {
+      "id": "combo_rocket",
+      "ingredients": [
+        "factory",
+        "engineering",
+        "science"
+      ],
+      "result": "rocket_launch",
+      "displayName": "Fusée"
+    },
+    {
+      "id": "combo_satellite",
+      "ingredients": [
+        "rocket_launch",
+        "developer_board"
+      ],
+      "result": "satellite_alt",
+      "displayName": "Satellite"
+    },
+    {
+      "id": "combo_world",
+      "ingredients": [
+        "satellite_alt",
+        "satellite_alt"
+      ],
+      "result": "public",
+      "displayName": "Monde"
+    },
+    {
+      "id": "combo_stars",
+      "ingredients": [
+        "wb_sunny",
+        "wb_sunny",
+        "wb_sunny"
+      ],
+      "result": "stars",
+      "displayName": "Étoiles"
+    },
+    {
+      "id": "combo_magic",
+      "ingredients": [
+        "stars",
+        "psychology"
+      ],
+      "result": "auto_awesome",
+      "displayName": "Magie"
+    },
+    {
+      "id": "combo_infinite",
+      "ingredients": [
+        "stars",
+        "stars",
+        "auto_awesome"
+      ],
+      "result": "all_inclusive",
+      "displayName": "Infini"
+    },
+    {
+      "id": "combo_astronomy",
+      "ingredients": [
+        "stars",
+        "science"
+      ],
+      "result": "astronomy",
+      "displayName": "Astronomie"
+    },
+    {
+      "id": "combo_orbit",
+      "ingredients": [
+        "rocket_launch",
+        "public"
+      ],
+      "result": "orbit",
+      "displayName": "Orbite"
+    },
+    {
+      "id": "combo_exploration",
+      "ingredients": [
+        "rocket_launch",
+        "stars"
+      ],
+      "result": "travel_explore",
+      "displayName": "Exploration"
+    },
+    {
+      "id": "combo_moon",
+      "ingredients": [
+        "stars",
+        "dark_mode"
+      ],
+      "result": "dark_mode_outlined",
+      "displayName": "Lune"
+    },
+    {
+      "id": "combo_nightsky",
+      "ingredients": [
+        "stars",
+        "cloud"
+      ],
+      "result": "bedtime",
+      "displayName": "Nuit Étoilée"
+    },
+    {
+      "id": "combo_bolt",
+      "ingredients": [
+        "cloud",
+        "local_fire_department"
+      ],
+      "result": "bolt",
+      "displayName": "Éclair"
+    },
+    {
+      "id": "combo_flash",
+      "ingredients": [
+        "bolt",
+        "bolt"
+      ],
+      "result": "flash_on",
+      "displayName": "Flash"
+    },
+    {
+      "id": "combo_flame",
+      "ingredients": [
+        "local_fire_department",
+        "air"
+      ],
+      "result": "whatshot",
+      "displayName": "Flamme"
+    },
+    {
+      "id": "combo_fire_station",
+      "ingredients": [
+        "whatshot",
+        "home"
+      ],
+      "result": "local_fire_station",
+      "displayName": "Feu Ardent"
+    },
+    {
+      "id": "combo_volcano",
+      "ingredients": [
+        "landscape",
+        "whatshot",
+        "local_fire_department"
+      ],
+      "result": "volcano",
+      "displayName": "Volcan"
+    },
+    {
+      "id": "combo_tsunami",
+      "ingredients": [
+        "water_drop",
+        "water_drop",
+        "water_drop"
+      ],
+      "result": "tsunami",
+      "displayName": "Tsunami"
+    },
+    {
+      "id": "combo_tornado",
+      "ingredients": [
+        "air",
+        "air",
+        "cloud"
+      ],
+      "result": "tornado",
+      "displayName": "Tornade"
+    },
+    {
+      "id": "combo_cyclone",
+      "ingredients": [
+        "tornado",
+        "water_drop"
+      ],
+      "result": "cyclone",
+      "displayName": "Cyclone"
+    },
+    {
+      "id": "combo_flare",
+      "ingredients": [
+        "wb_sunny",
+        "whatshot"
+      ],
+      "result": "flare",
+      "displayName": "Flare"
+    },
+    {
+      "id": "combo_light",
+      "ingredients": [
+        "wb_sunny",
+        "flash_on"
+      ],
+      "result": "brightness_high",
+      "displayName": "Lumière"
+    },
+    {
+      "id": "combo_storm",
+      "ingredients": [
+        "cloud",
+        "bolt",
+        "water_drop"
+      ],
+      "result": "storm",
+      "displayName": "Orage"
+    },
+    {
+      "id": "combo_rainbow",
+      "ingredients": [
+        "water_drop",
+        "wb_sunny"
+      ],
+      "result": "rainbow",
+      "displayName": "Arc-en-ciel"
+    },
+    {
+      "id": "combo_fog",
+      "ingredients": [
+        "cloud",
+        "water_drop"
+      ],
+      "result": "foggy",
+      "displayName": "Brouillard"
+    },
+    {
+      "id": "combo_snow",
+      "ingredients": [
+        "ac_unit",
+        "cloud"
+      ],
+      "result": "snowy",
+      "displayName": "Neige"
+    },
+    {
+      "id": "combo_rain",
+      "ingredients": [
+        "cloud",
+        "water_drop"
+      ],
+      "result": "rainy",
+      "displayName": "Pluie"
+    },
+    {
+      "id": "combo_thunderstorm",
+      "ingredients": [
+        "storm",
+        "bolt"
+      ],
+      "result": "thunderstorm",
+      "displayName": "Tempête"
+    },
+    {
+      "id": "combo_cold",
+      "ingredients": [
+        "ac_unit",
+        "ac_unit"
+      ],
+      "result": "severe_cold",
+      "displayName": "Froid Extrême"
+    },
+    {
+      "id": "combo_flood",
+      "ingredients": [
+        "water_drop",
+        "water_drop",
+        "storm"
+      ],
+      "result": "flood",
+      "displayName": "Inondation"
+    },
+    {
+      "id": "combo_earthquake",
+      "ingredients": [
+        "landscape",
+        "landscape",
+        "bolt"
+      ],
+      "result": "earthquake",
+      "displayName": "Tremblement"
+    },
+    {
+      "id": "combo_diamond",
+      "ingredients": [
+        "landscape",
+        "landscape",
+        "local_fire_department"
+      ],
+      "result": "diamond",
+      "displayName": "Diamant"
+    },
+    {
+      "id": "combo_recycling",
+      "ingredients": [
+        "eco",
+        "hardware"
+      ],
+      "result": "recycling",
+      "displayName": "Recyclage"
+    },
+    {
+      "id": "combo_compost",
+      "ingredients": [
+        "eco",
+        "grass",
+        "bug_report"
+      ],
+      "result": "compost",
+      "displayName": "Compost"
+    },
+    {
+      "id": "combo_oil",
+      "ingredients": [
+        "landscape",
+        "landscape",
+        "precision_manufacturing"
+      ],
+      "result": "oil_barrel",
+      "displayName": "Pétrole"
+    },
+    {
+      "id": "combo_iron",
+      "ingredients": [
+        "landscape",
+        "local_fire_department",
+        "precision_manufacturing"
+      ],
+      "result": "iron",
+      "displayName": "Fer"
+    },
+    {
+      "id": "combo_coal",
+      "ingredients": [
+        "forest",
+        "local_fire_department",
+        "terrain"
+      ],
+      "result": "coal",
+      "displayName": "Charbon"
+    },
+    {
+      "id": "combo_sand",
+      "ingredients": [
+        "landscape",
+        "water_drop"
+      ],
+      "result": "sand",
+      "displayName": "Sable"
+    },
+    {
+      "id": "combo_clay",
+      "ingredients": [
+        "sand",
+        "water_drop"
+      ],
+      "result": "clay",
+      "displayName": "Argile"
+    },
+    {
+      "id": "combo_rock",
+      "ingredients": [
+        "landscape",
+        "landscape"
+      ],
+      "result": "rock",
+      "displayName": "Roche"
+    },
+    {
+      "id": "combo_soil",
+      "ingredients": [
+        "compost",
+        "landscape"
+      ],
+      "result": "soil",
+      "displayName": "Terre"
+    },
+    {
+      "id": "combo_seed",
+      "ingredients": [
+        "spa",
+        "grass"
+      ],
+      "result": "seed",
+      "displayName": "Graine"
+    },
+    {
+      "id": "combo_sprout",
+      "ingredients": [
+        "seed",
+        "water_drop"
+      ],
+      "result": "sprout",
+      "displayName": "Pousse"
+    },
+    {
+      "id": "combo_branch",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "branch",
+      "displayName": "Branche"
+    },
+    {
+      "id": "combo_trunk",
+      "ingredients": [
+        "forest",
+        "forest"
+      ],
+      "result": "trunk",
+      "displayName": "Tronc"
+    },
+    {
+      "id": "combo_moss",
+      "ingredients": [
+        "grass",
+        "water_drop",
+        "eco"
+      ],
+      "result": "moss",
+      "displayName": "Mousse"
+    },
+    {
+      "id": "combo_hive",
+      "ingredients": [
+        "bug_report",
+        "forest"
+      ],
+      "result": "hive",
+      "displayName": "Ruche"
+    },
+    {
+      "id": "combo_waves",
+      "ingredients": [
+        "water_drop",
+        "air"
+      ],
+      "result": "waves",
+      "displayName": "Vagues"
+    },
+    {
+      "id": "combo_yard",
+      "ingredients": [
+        "grass",
+        "home"
+      ],
+      "result": "yard",
+      "displayName": "Jardin"
+    },
+    {
+      "id": "combo_fence",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "fence",
+      "displayName": "Clôture"
+    },
+    {
+      "id": "combo_deck",
+      "ingredients": [
+        "forest",
+        "construction"
+      ],
+      "result": "deck",
+      "displayName": "Terrasse"
+    },
+    {
+      "id": "combo_rabbit",
+      "ingredients": [
+        "pets",
+        "grass"
+      ],
+      "result": "cruelty_free",
+      "displayName": "Lapin"
+    },
+    {
+      "id": "combo_fish",
+      "ingredients": [
+        "pets",
+        "water_drop"
+      ],
+      "result": "phishing",
+      "displayName": "Poisson"
+    },
+    {
+      "id": "combo_butterfly",
+      "ingredients": [
+        "bug_report",
+        "spa"
+      ],
+      "result": "flutter",
+      "displayName": "Papillon"
+    },
+    {
+      "id": "combo_bee",
+      "ingredients": [
+        "bug_report",
+        "spa",
+        "spa"
+      ],
+      "result": "emoji_nature",
+      "displayName": "Abeille"
+    },
+    {
+      "id": "combo_duck",
+      "ingredients": [
+        "pets",
+        "water_drop",
+        "egg"
+      ],
+      "result": "duck",
+      "displayName": "Canard"
+    },
+    {
+      "id": "combo_goat",
+      "ingredients": [
+        "pets",
+        "grass",
+        "terrain"
+      ],
+      "result": "goat",
+      "displayName": "Chèvre"
+    },
+    {
+      "id": "combo_turkey",
+      "ingredients": [
+        "pets",
+        "grain",
+        "grain"
+      ],
+      "result": "turkey",
+      "displayName": "Dinde"
+    },
+    {
+      "id": "combo_owl",
+      "ingredients": [
+        "pets",
+        "dark_mode"
+      ],
+      "result": "owl",
+      "displayName": "Hibou"
+    },
+    {
+      "id": "combo_crow",
+      "ingredients": [
+        "pets",
+        "air"
+      ],
+      "result": "crow",
+      "displayName": "Corneille"
+    },
+    {
+      "id": "combo_psychology",
+      "ingredients": [
+        "pets",
+        "spa",
+        "eco"
+      ],
+      "result": "psychology",
+      "displayName": "Esprit"
+    },
+    {
+      "id": "combo_meditation",
+      "ingredients": [
+        "psychology",
+        "park"
+      ],
+      "result": "self_improvement",
+      "displayName": "Méditation"
+    },
+    {
+      "id": "combo_heart",
+      "ingredients": [
+        "spa",
+        "spa",
+        "psychology"
+      ],
+      "result": "favorite",
+      "displayName": "Coeur"
+    },
+    {
+      "id": "combo_idea",
+      "ingredients": [
+        "psychology",
+        "bolt"
+      ],
+      "result": "lightbulb",
+      "displayName": "Idée"
+    },
+    {
+      "id": "combo_mood",
+      "ingredients": [
+        "psychology",
+        "wb_sunny"
+      ],
+      "result": "mood",
+      "displayName": "Humeur"
+    },
+    {
+      "id": "combo_satisfied",
+      "ingredients": [
+        "mood",
+        "favorite"
+      ],
+      "result": "sentiment_satisfied",
+      "displayName": "Satisfait"
+    },
+    {
+      "id": "combo_psychiatry",
+      "ingredients": [
+        "psychology",
+        "medical_services"
+      ],
+      "result": "psychiatry",
+      "displayName": "Psychiatrie"
+    },
+    {
+      "id": "combo_trophy",
+      "ingredients": [
+        "diamond",
+        "workspace_premium"
+      ],
+      "result": "emoji_events",
+      "displayName": "Trophée"
+    },
+    {
+      "id": "combo_medal",
+      "ingredients": [
+        "emoji_events",
+        "military_tech"
+      ],
+      "result": "military_tech",
+      "displayName": "Médaille"
+    },
+    {
+      "id": "combo_bitcoin",
+      "ingredients": [
+        "developer_board",
+        "memory",
+        "engineering"
+      ],
+      "result": "currency_bitcoin",
+      "displayName": "Bitcoin"
+    },
+    {
+      "id": "combo_verified",
+      "ingredients": [
+        "emoji_events",
+        "check"
+      ],
+      "result": "verified",
+      "displayName": "Vérifié"
+    },
+    {
+      "id": "combo_celebration",
+      "ingredients": [
+        "emoji_events",
+        "stars"
+      ],
+      "result": "celebration",
+      "displayName": "Célébration"
+    },
+    {
+      "id": "combo_loyalty",
+      "ingredients": [
+        "favorite",
+        "emoji_events"
+      ],
+      "result": "loyalty",
+      "displayName": "Fidélité"
+    },
+    {
+      "id": "combo_grade",
+      "ingredients": [
+        "school",
+        "emoji_events"
+      ],
+      "result": "grade",
+      "displayName": "Note"
+    },
+    {
+      "id": "combo_chair",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "chair",
+      "displayName": "Chaise"
+    },
+    {
+      "id": "combo_table",
+      "ingredients": [
+        "forest",
+        "forest",
+        "hardware"
+      ],
+      "result": "table_restaurant",
+      "displayName": "Table"
+    },
+    {
+      "id": "combo_bed",
+      "ingredients": [
+        "forest",
+        "spa",
+        "construction"
+      ],
+      "result": "bed",
+      "displayName": "Lit"
+    },
+    {
+      "id": "combo_sofa",
+      "ingredients": [
+        "bed",
+        "chair"
+      ],
+      "result": "weekend",
+      "displayName": "Canapé"
+    },
+    {
+      "id": "combo_desk",
+      "ingredients": [
+        "table_restaurant",
+        "work"
+      ],
+      "result": "desk",
+      "displayName": "Bureau"
+    },
+    {
+      "id": "combo_door",
+      "ingredients": [
+        "forest",
+        "construction"
+      ],
+      "result": "door_front",
+      "displayName": "Porte"
+    },
+    {
+      "id": "combo_window",
+      "ingredients": [
+        "construction",
+        "air"
+      ],
+      "result": "window",
+      "displayName": "Fenêtre"
+    },
+    {
+      "id": "combo_stairs",
+      "ingredients": [
+        "construction",
+        "construction"
+      ],
+      "result": "stairs",
+      "displayName": "Escaliers"
+    },
+    {
+      "id": "combo_soccer",
+      "ingredients": [
+        "pets",
+        "circle"
+      ],
+      "result": "sports_soccer",
+      "displayName": "Football"
+    },
+    {
+      "id": "combo_basketball",
+      "ingredients": [
+        "pets",
+        "circle"
+      ],
+      "result": "sports_basketball",
+      "displayName": "Basketball"
+    },
+    {
+      "id": "combo_tennis",
+      "ingredients": [
+        "hardware",
+        "circle"
+      ],
+      "result": "sports_tennis",
+      "displayName": "Tennis"
+    },
+    {
+      "id": "combo_baseball",
+      "ingredients": [
+        "hardware",
+        "circle"
+      ],
+      "result": "sports_baseball",
+      "displayName": "Baseball"
+    },
+    {
+      "id": "combo_golf",
+      "ingredients": [
+        "hardware",
+        "grass"
+      ],
+      "result": "sports_golf",
+      "displayName": "Golf"
+    },
+    {
+      "id": "combo_pool",
+      "ingredients": [
+        "water_drop",
+        "construction"
+      ],
+      "result": "pool",
+      "displayName": "Piscine"
+    },
+    {
+      "id": "combo_gym",
+      "ingredients": [
+        "hardware",
+        "construction"
+      ],
+      "result": "fitness_center",
+      "displayName": "Gym"
+    },
+    {
+      "id": "combo_surfing",
+      "ingredients": [
+        "water_drop",
+        "forest"
+      ],
+      "result": "surfing",
+      "displayName": "Surf"
+    },
+    {
+      "id": "combo_kayak",
+      "ingredients": [
+        "water_drop",
+        "forest",
+        "hardware"
+      ],
+      "result": "kayaking",
+      "displayName": "Kayak"
+    },
+    {
+      "id": "combo_snowboard",
+      "ingredients": [
+        "ac_unit",
+        "forest"
+      ],
+      "result": "snowboarding",
+      "displayName": "Snowboard"
+    },
+    {
+      "id": "combo_piano",
+      "ingredients": [
+        "forest",
+        "hardware",
+        "music_note"
+      ],
+      "result": "piano",
+      "displayName": "Piano"
+    },
+    {
+      "id": "combo_guitar",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "guitar",
+      "displayName": "Guitare"
+    },
+    {
+      "id": "combo_radio",
+      "ingredients": [
+        "developer_board",
+        "music_note"
+      ],
+      "result": "radio",
+      "displayName": "Radio"
+    },
+    {
+      "id": "combo_tv",
+      "ingredients": [
+        "developer_board",
+        "movie"
+      ],
+      "result": "tv",
+      "displayName": "Télévision"
+    },
+    {
+      "id": "combo_theater",
+      "ingredients": [
+        "home",
+        "movie"
+      ],
+      "result": "theaters",
+      "displayName": "Théâtre"
+    },
+    {
+      "id": "combo_album",
+      "ingredients": [
+        "music_note",
+        "music_note"
+      ],
+      "result": "album",
+      "displayName": "Album"
+    },
+    {
+      "id": "combo_kitchen",
+      "ingredients": [
+        "home",
+        "local_fire_department"
+      ],
+      "result": "kitchen",
+      "displayName": "Cuisine"
+    },
+    {
+      "id": "combo_microwave",
+      "ingredients": [
+        "developer_board",
+        "local_fire_department"
+      ],
+      "result": "microwave",
+      "displayName": "Micro-ondes"
+    },
+    {
+      "id": "combo_blender",
+      "ingredients": [
+        "precision_manufacturing",
+        "local_fire_department"
+      ],
+      "result": "blender",
+      "displayName": "Mixeur"
+    },
+    {
+      "id": "combo_coffee_maker",
+      "ingredients": [
+        "precision_manufacturing",
+        "water_drop"
+      ],
+      "result": "coffee_maker",
+      "displayName": "Cafetière"
+    },
+    {
+      "id": "combo_grill",
+      "ingredients": [
+        "hardware",
+        "local_fire_department"
+      ],
+      "result": "grill",
+      "displayName": "Barbecue"
+    },
+    {
+      "id": "combo_doctor",
+      "ingredients": [
+        "science",
+        "home"
+      ],
+      "result": "medical_services",
+      "displayName": "Médecin"
+    },
+    {
+      "id": "combo_police",
+      "ingredients": [
+        "home",
+        "work"
+      ],
+      "result": "local_police",
+      "displayName": "Policier"
+    },
+    {
+      "id": "combo_firefighter",
+      "ingredients": [
+        "local_fire_department",
+        "work"
+      ],
+      "result": "firefighter",
+      "displayName": "Pompier"
+    },
+    {
+      "id": "combo_florist",
+      "ingredients": [
+        "spa",
+        "store"
+      ],
+      "result": "local_florist",
+      "displayName": "Fleuriste"
+    }
   ],
   "productions": [
-    {"id": "prod_grain", "ingredients": ["water_drop"], "result": "grain", "time": 15, "type": "plant", "displayName": "Cultiver du Blé"},
-    {"id": "prod_grass", "ingredients": ["water_drop", "wb_sunny"], "result": "grass", "time": 10, "type": "plant", "displayName": "Faire pousser l'Herbe"},
-    {"id": "prod_flower", "ingredients": ["water_drop", "grass"], "result": "spa", "time": 20, "type": "plant", "displayName": "Cultiver des Fleurs"},
-    {"id": "prod_tree", "ingredients": ["water_drop", "grass", "wb_sunny"], "result": "forest", "time": 30, "type": "plant", "displayName": "Planter un Arbre"},
-    {"id": "prod_eco", "ingredients": ["forest"], "result": "eco", "time": 15, "type": "plant", "displayName": "Récolter des Feuilles"},
-    {"id": "prod_egg", "ingredients": ["pets", "grain"], "result": "egg", "time": 20, "type": "plant", "displayName": "Produire des Oeufs"},
-    {"id": "prod_insect", "ingredients": ["grass", "eco"], "result": "bug_report", "time": 10, "type": "plant", "displayName": "Élever des Insectes"},
-    {"id": "prod_wood_planks", "ingredients": ["forest", "hardware"], "result": "carpenter", "time": 20, "type": "manufactured", "displayName": "Fabriquer des Planches"},
-    {"id": "prod_bricks", "ingredients": ["landscape", "local_fire_department"], "result": "construction", "time": 25, "type": "manufactured", "displayName": "Cuire des Briques"},
-    {"id": "prod_machine", "ingredients": ["hardware", "hardware"], "result": "precision_manufacturing", "time": 30, "type": "manufactured", "displayName": "Assembler une Machine"},
-    {"id": "prod_circuit", "ingredients": ["precision_manufacturing", "hardware"], "result": "developer_board", "time": 25, "type": "manufactured", "displayName": "Fabriquer un Circuit"},
-    {"id": "prod_tool", "ingredients": ["landscape", "forest"], "result": "hardware", "time": 15, "type": "manufactured", "displayName": "Forger des Outils"},
-    {"id": "prod_beverage", "ingredients": ["water_drop", "grain"], "result": "emoji_food_beverage", "time": 15, "type": "manufactured", "displayName": "Préparer une Boisson"},
-    {"id": "prod_nutrition", "ingredients": ["grain", "grain"], "result": "nutrition", "time": 10, "type": "manufactured", "displayName": "Préparer de la Nutrition"},
-    {"id": "prod_ice", "ingredients": ["water_drop", "air"], "result": "ac_unit", "time": 20, "type": "manufactured", "displayName": "Fabriquer de la Glace"}
+    {
+      "id": "prod_grain",
+      "ingredients": [
+        "water_drop"
+      ],
+      "result": "grain",
+      "time": 15,
+      "type": "plant",
+      "displayName": "Cultiver du Blé"
+    },
+    {
+      "id": "prod_grass",
+      "ingredients": [
+        "water_drop",
+        "wb_sunny"
+      ],
+      "result": "grass",
+      "time": 10,
+      "type": "plant",
+      "displayName": "Faire pousser l'Herbe"
+    },
+    {
+      "id": "prod_flower",
+      "ingredients": [
+        "water_drop",
+        "grass"
+      ],
+      "result": "spa",
+      "time": 20,
+      "type": "plant",
+      "displayName": "Cultiver des Fleurs"
+    },
+    {
+      "id": "prod_tree",
+      "ingredients": [
+        "water_drop",
+        "grass",
+        "wb_sunny"
+      ],
+      "result": "forest",
+      "time": 30,
+      "type": "plant",
+      "displayName": "Planter un Arbre"
+    },
+    {
+      "id": "prod_eco",
+      "ingredients": [
+        "forest"
+      ],
+      "result": "eco",
+      "time": 15,
+      "type": "plant",
+      "displayName": "Récolter des Feuilles"
+    },
+    {
+      "id": "prod_egg",
+      "ingredients": [
+        "pets",
+        "grain"
+      ],
+      "result": "egg",
+      "time": 20,
+      "type": "plant",
+      "displayName": "Produire des Oeufs"
+    },
+    {
+      "id": "prod_insect",
+      "ingredients": [
+        "grass",
+        "eco"
+      ],
+      "result": "bug_report",
+      "time": 10,
+      "type": "plant",
+      "displayName": "Élever des Insectes"
+    },
+    {
+      "id": "prod_seed",
+      "ingredients": [
+        "spa"
+      ],
+      "result": "seed",
+      "time": 15,
+      "type": "plant",
+      "displayName": "Récolter des Graines"
+    },
+    {
+      "id": "prod_sprout",
+      "ingredients": [
+        "seed",
+        "water_drop"
+      ],
+      "result": "sprout",
+      "time": 12,
+      "type": "plant",
+      "displayName": "Faire germer"
+    },
+    {
+      "id": "prod_moss",
+      "ingredients": [
+        "grass",
+        "water_drop"
+      ],
+      "result": "moss",
+      "time": 18,
+      "type": "plant",
+      "displayName": "Cultiver de la Mousse"
+    },
+    {
+      "id": "prod_hive",
+      "ingredients": [
+        "bug_report",
+        "bug_report"
+      ],
+      "result": "hive",
+      "time": 25,
+      "type": "plant",
+      "displayName": "Construire une Ruche"
+    },
+    {
+      "id": "prod_compost2",
+      "ingredients": [
+        "eco",
+        "eco"
+      ],
+      "result": "compost",
+      "time": 20,
+      "type": "plant",
+      "displayName": "Créer du Compost"
+    },
+    {
+      "id": "prod_rabbit",
+      "ingredients": [
+        "pets",
+        "grass"
+      ],
+      "result": "cruelty_free",
+      "time": 25,
+      "type": "plant",
+      "displayName": "Élever des Lapins"
+    },
+    {
+      "id": "prod_fish",
+      "ingredients": [
+        "water_drop",
+        "catching_pokemon"
+      ],
+      "result": "phishing",
+      "time": 20,
+      "type": "plant",
+      "displayName": "Pêcher"
+    },
+    {
+      "id": "prod_duck",
+      "ingredients": [
+        "pets",
+        "water_drop"
+      ],
+      "result": "duck",
+      "time": 22,
+      "type": "plant",
+      "displayName": "Élever des Canards"
+    },
+    {
+      "id": "prod_goat",
+      "ingredients": [
+        "pets",
+        "grass"
+      ],
+      "result": "goat",
+      "time": 28,
+      "type": "plant",
+      "displayName": "Élever des Chèvres"
+    },
+    {
+      "id": "prod_turkey",
+      "ingredients": [
+        "pets",
+        "grain"
+      ],
+      "result": "turkey",
+      "time": 26,
+      "type": "plant",
+      "displayName": "Élever des Dindes"
+    },
+    {
+      "id": "prod_butterfly",
+      "ingredients": [
+        "bug_report",
+        "spa"
+      ],
+      "result": "flutter",
+      "time": 18,
+      "type": "plant",
+      "displayName": "Élever des Papillons"
+    },
+    {
+      "id": "prod_bee",
+      "ingredients": [
+        "bug_report",
+        "hive"
+      ],
+      "result": "emoji_nature",
+      "time": 24,
+      "type": "plant",
+      "displayName": "Élever des Abeilles"
+    },
+    {
+      "id": "prod_wood_planks",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "carpenter",
+      "time": 20,
+      "type": "manufactured",
+      "displayName": "Fabriquer des Planches"
+    },
+    {
+      "id": "prod_bricks",
+      "ingredients": [
+        "landscape",
+        "local_fire_department"
+      ],
+      "result": "construction",
+      "time": 25,
+      "type": "manufactured",
+      "displayName": "Cuire des Briques"
+    },
+    {
+      "id": "prod_machine",
+      "ingredients": [
+        "hardware",
+        "hardware"
+      ],
+      "result": "precision_manufacturing",
+      "time": 30,
+      "type": "manufactured",
+      "displayName": "Assembler une Machine"
+    },
+    {
+      "id": "prod_circuit",
+      "ingredients": [
+        "precision_manufacturing",
+        "hardware"
+      ],
+      "result": "developer_board",
+      "time": 25,
+      "type": "manufactured",
+      "displayName": "Fabriquer un Circuit"
+    },
+    {
+      "id": "prod_tool",
+      "ingredients": [
+        "landscape",
+        "forest"
+      ],
+      "result": "hardware",
+      "time": 15,
+      "type": "manufactured",
+      "displayName": "Forger des Outils"
+    },
+    {
+      "id": "prod_beverage",
+      "ingredients": [
+        "water_drop",
+        "grain"
+      ],
+      "result": "emoji_food_beverage",
+      "time": 15,
+      "type": "manufactured",
+      "displayName": "Préparer une Boisson"
+    },
+    {
+      "id": "prod_nutrition",
+      "ingredients": [
+        "grain",
+        "grain"
+      ],
+      "result": "nutrition",
+      "time": 10,
+      "type": "manufactured",
+      "displayName": "Préparer de la Nutrition"
+    },
+    {
+      "id": "prod_ice",
+      "ingredients": [
+        "water_drop",
+        "air"
+      ],
+      "result": "ac_unit",
+      "time": 20,
+      "type": "manufactured",
+      "displayName": "Fabriquer de la Glace"
+    },
+    {
+      "id": "prod_sand",
+      "ingredients": [
+        "landscape",
+        "water_drop"
+      ],
+      "result": "sand",
+      "time": 15,
+      "type": "manufactured",
+      "displayName": "Extraire du Sable"
+    },
+    {
+      "id": "prod_clay",
+      "ingredients": [
+        "sand",
+        "water_drop"
+      ],
+      "result": "clay",
+      "time": 18,
+      "type": "manufactured",
+      "displayName": "Préparer de l'Argile"
+    },
+    {
+      "id": "prod_iron",
+      "ingredients": [
+        "landscape",
+        "local_fire_department"
+      ],
+      "result": "iron",
+      "time": 28,
+      "type": "manufactured",
+      "displayName": "Fondre du Fer"
+    },
+    {
+      "id": "prod_coal",
+      "ingredients": [
+        "forest",
+        "local_fire_department"
+      ],
+      "result": "coal",
+      "time": 25,
+      "type": "manufactured",
+      "displayName": "Produire du Charbon"
+    },
+    {
+      "id": "prod_oil",
+      "ingredients": [
+        "landscape",
+        "precision_manufacturing"
+      ],
+      "result": "oil_barrel",
+      "time": 30,
+      "type": "manufactured",
+      "displayName": "Extraire du Pétrole"
+    },
+    {
+      "id": "prod_chair",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "chair",
+      "time": 18,
+      "type": "manufactured",
+      "displayName": "Fabriquer une Chaise"
+    },
+    {
+      "id": "prod_table",
+      "ingredients": [
+        "forest",
+        "forest"
+      ],
+      "result": "table_restaurant",
+      "time": 22,
+      "type": "manufactured",
+      "displayName": "Fabriquer une Table"
+    },
+    {
+      "id": "prod_bed",
+      "ingredients": [
+        "forest",
+        "spa"
+      ],
+      "result": "bed",
+      "time": 25,
+      "type": "manufactured",
+      "displayName": "Fabriquer un Lit"
+    },
+    {
+      "id": "prod_door",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "door_front",
+      "time": 20,
+      "type": "manufactured",
+      "displayName": "Fabriquer une Porte"
+    },
+    {
+      "id": "prod_window",
+      "ingredients": [
+        "sand",
+        "local_fire_department"
+      ],
+      "result": "window",
+      "time": 22,
+      "type": "manufactured",
+      "displayName": "Fabriquer une Fenêtre"
+    },
+    {
+      "id": "prod_fence",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "fence",
+      "time": 18,
+      "type": "manufactured",
+      "displayName": "Construire une Clôture"
+    },
+    {
+      "id": "prod_memory",
+      "ingredients": [
+        "developer_board",
+        "precision_manufacturing"
+      ],
+      "result": "memory",
+      "time": 28,
+      "type": "manufactured",
+      "displayName": "Fabriquer de la Mémoire"
+    },
+    {
+      "id": "prod_robot",
+      "ingredients": [
+        "developer_board",
+        "memory"
+      ],
+      "result": "smart_toy",
+      "time": 30,
+      "type": "manufactured",
+      "displayName": "Construire un Robot"
+    },
+    {
+      "id": "prod_camera",
+      "ingredients": [
+        "developer_board",
+        "hardware"
+      ],
+      "result": "photo_camera",
+      "time": 26,
+      "type": "manufactured",
+      "displayName": "Fabriquer un Appareil Photo"
+    },
+    {
+      "id": "prod_radio",
+      "ingredients": [
+        "developer_board",
+        "hardware"
+      ],
+      "result": "radio",
+      "time": 24,
+      "type": "manufactured",
+      "displayName": "Construire une Radio"
+    },
+    {
+      "id": "prod_tv",
+      "ingredients": [
+        "developer_board",
+        "developer_board"
+      ],
+      "result": "tv",
+      "time": 28,
+      "type": "manufactured",
+      "displayName": "Fabriquer une TV"
+    },
+    {
+      "id": "prod_solar",
+      "ingredients": [
+        "developer_board",
+        "hardware"
+      ],
+      "result": "solar_power",
+      "time": 30,
+      "type": "manufactured",
+      "displayName": "Installer des Panneaux Solaires"
+    },
+    {
+      "id": "prod_wind",
+      "ingredients": [
+        "precision_manufacturing",
+        "hardware"
+      ],
+      "result": "wind_power",
+      "time": 30,
+      "type": "manufactured",
+      "displayName": "Construire une Éolienne"
+    },
+    {
+      "id": "prod_blender",
+      "ingredients": [
+        "precision_manufacturing",
+        "hardware"
+      ],
+      "result": "blender",
+      "time": 22,
+      "type": "manufactured",
+      "displayName": "Fabriquer un Mixeur"
+    },
+    {
+      "id": "prod_microwave",
+      "ingredients": [
+        "developer_board",
+        "precision_manufacturing"
+      ],
+      "result": "microwave",
+      "time": 26,
+      "type": "manufactured",
+      "displayName": "Fabriquer un Micro-ondes"
+    },
+    {
+      "id": "prod_grill",
+      "ingredients": [
+        "iron",
+        "hardware"
+      ],
+      "result": "grill",
+      "time": 24,
+      "type": "manufactured",
+      "displayName": "Construire un Barbecue"
+    },
+    {
+      "id": "prod_guitar",
+      "ingredients": [
+        "forest",
+        "hardware"
+      ],
+      "result": "guitar",
+      "time": 25,
+      "type": "manufactured",
+      "displayName": "Fabriquer une Guitare"
+    }
   ],
   "miniGames": {
     "active": [
-      {"id": "tap_the_icon", "displayName": "Tape l'icône !", "description": "Tape sur l'icône 10 fois en 3 secondes !"},
-      {"id": "dont_tap_bomb", "displayName": "Évite les bombes !", "description": "Tape sur les icônes mais évite les bombes !"},
-      {"id": "find_odd_one", "displayName": "Trouve l'intrus !", "description": "Trouve l'icône différente des autres !"},
-      {"id": "icon_catcher", "displayName": "Attrape-icônes !", "description": "Attrape les icônes qui tombent !"},
-      {"id": "memory_match", "displayName": "Mémoire !", "description": "Retrouve les paires d'icônes !"},
-      {"id": "quick_sort", "displayName": "Tri rapide !", "description": "Trie les icônes par catégorie !"}
+      {
+        "id": "tap_the_icon",
+        "displayName": "Tape l'icône !",
+        "description": "Tape sur l'icône 10 fois en 3 secondes !"
+      },
+      {
+        "id": "dont_tap_bomb",
+        "displayName": "Évite les bombes !",
+        "description": "Tape sur les icônes mais évite les bombes !"
+      },
+      {
+        "id": "find_odd_one",
+        "displayName": "Trouve l'intrus !",
+        "description": "Trouve l'icône différente des autres !"
+      },
+      {
+        "id": "icon_catcher",
+        "displayName": "Attrape-icônes !",
+        "description": "Attrape les icônes qui tombent !"
+      },
+      {
+        "id": "memory_match",
+        "displayName": "Mémoire !",
+        "description": "Retrouve les paires d'icônes !"
+      },
+      {
+        "id": "quick_sort",
+        "displayName": "Tri rapide !",
+        "description": "Trie les icônes par catégorie !"
+      }
     ],
     "hidden": [
-      {"id": "hidden_battery_low", "displayName": "Batterie Faible", "description": "Jouez avec une batterie à 20% ou moins", "reward": "battery_0_bar"},
-      {"id": "hidden_battery_charging", "displayName": "En Charge", "description": "Jouez pendant que votre téléphone charge", "reward": "battery_charging_full"},
-      {"id": "hidden_silent_mode", "displayName": "Mode Silencieux", "description": "Jouez avec le volume au minimum", "reward": "volume_off"},
-      {"id": "hidden_loud_mode", "displayName": "Volume Maximum", "description": "Jouez avec le volume au maximum", "reward": "volume_up"},
-      {"id": "hidden_portrait_mode", "displayName": "Mode Portrait", "description": "Jouez en tenant le téléphone verticalement", "reward": "stay_current_portrait"},
-      {"id": "hidden_landscape_mode", "displayName": "Mode Paysage", "description": "Jouez en tenant le téléphone horizontalement", "reward": "stay_current_landscape"},
-      {"id": "hidden_airplane_mode", "displayName": "Mode Avion", "description": "Jouez sans connexion internet", "reward": "airplanemode_active"},
-      {"id": "hidden_strong_network", "displayName": "Connexion WiFi", "description": "Jouez connecté au WiFi", "reward": "signal_cellular_alt"}
+      {
+        "id": "hidden_battery_low",
+        "displayName": "Batterie Faible",
+        "description": "Jouez avec une batterie à 20% ou moins",
+        "reward": "battery_0_bar"
+      },
+      {
+        "id": "hidden_battery_charging",
+        "displayName": "En Charge",
+        "description": "Jouez pendant que votre téléphone charge",
+        "reward": "battery_charging_full"
+      },
+      {
+        "id": "hidden_silent_mode",
+        "displayName": "Mode Silencieux",
+        "description": "Jouez avec le volume au minimum",
+        "reward": "volume_off"
+      },
+      {
+        "id": "hidden_loud_mode",
+        "displayName": "Volume Maximum",
+        "description": "Jouez avec le volume au maximum",
+        "reward": "volume_up"
+      },
+      {
+        "id": "hidden_portrait_mode",
+        "displayName": "Mode Portrait",
+        "description": "Jouez en tenant le téléphone verticalement",
+        "reward": "stay_current_portrait"
+      },
+      {
+        "id": "hidden_landscape_mode",
+        "displayName": "Mode Paysage",
+        "description": "Jouez en tenant le téléphone horizontalement",
+        "reward": "stay_current_landscape"
+      },
+      {
+        "id": "hidden_airplane_mode",
+        "displayName": "Mode Avion",
+        "description": "Jouez sans connexion internet",
+        "reward": "airplanemode_active"
+      },
+      {
+        "id": "hidden_strong_network",
+        "displayName": "Connexion WiFi",
+        "description": "Jouez connecté au WiFi",
+        "reward": "signal_cellular_alt"
+      }
     ],
     "proposed": [
-      {"id": "find_trademark", "displayName": "Trouve la Marque", "description": "Identifiez la marque à partir d'une icône partielle"},
-      {"id": "mini_word", "displayName": "Mini Mot", "description": "Épeler des mots en utilisant des icônes"},
-      {"id": "icon_chain", "displayName": "Chaîne d'Icônes", "description": "Mémorisez une séquence croissante d'icônes"},
-      {"id": "speed_match", "displayName": "Match Rapide", "description": "Associez les icônes contre la montre"}
+      {
+        "id": "find_trademark",
+        "displayName": "Trouve la Marque",
+        "description": "Identifiez la marque à partir d'une icône partielle"
+      },
+      {
+        "id": "mini_word",
+        "displayName": "Mini Mot",
+        "description": "Épeler des mots en utilisant des icônes"
+      },
+      {
+        "id": "icon_chain",
+        "displayName": "Chaîne d'Icônes",
+        "description": "Mémorisez une séquence croissante d'icônes"
+      },
+      {
+        "id": "speed_match",
+        "displayName": "Match Rapide",
+        "description": "Associez les icônes contre la montre"
+      },
+      {
+        "id": "icon_puzzle",
+        "displayName": "Puzzle d'Icônes",
+        "description": "Reconstruisez l'icône à partir de morceaux"
+      },
+      {
+        "id": "icon_slider",
+        "displayName": "Slider d'Icônes",
+        "description": "Faites glisser les icônes dans le bon ordre"
+      },
+      {
+        "id": "color_match",
+        "displayName": "Match de Couleurs",
+        "description": "Associez les icônes par couleur de rareté"
+      },
+      {
+        "id": "category_sort",
+        "displayName": "Tri par Catégorie",
+        "description": "Triez les icônes par catégorie le plus vite possible"
+      }
     ]
   },
   "luckWheelIcons": [
     "rocket_launch",
-    "satellite_alt", 
+    "satellite_alt",
     "public",
     "auto_awesome",
     "stars",
@@ -251,6 +4774,17 @@
     "hub",
     "psychology",
     "self_improvement",
-    "favorite"
+    "favorite",
+    "nightlight",
+    "astronomy",
+    "orbit",
+    "thunderstorm",
+    "earthquake",
+    "auto_fix_high",
+    "tips_and_updates",
+    "lightbulb",
+    "power_settings_new",
+    "shield",
+    "timeline"
   ]
 }
