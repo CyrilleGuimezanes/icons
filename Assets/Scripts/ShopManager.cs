@@ -168,17 +168,7 @@ public class ShopManager : MonoBehaviour
     /// <param name="packId">The pack ID that was purchased.</param>
     public void ProcessIAPPurchase(string packId)
     {
-        IconPack pack = null;
-
-        // Find the pack
-        foreach (var p in IconPacks.GetAllPacks())
-        {
-            if (p.packId == packId)
-            {
-                pack = p;
-                break;
-            }
-        }
+        IconPack pack = FindPackById(packId);
 
         if (pack != null)
         {
@@ -198,17 +188,7 @@ public class ShopManager : MonoBehaviour
     /// <returns>True if the pack was processed successfully.</returns>
     public bool SimulateIAPPurchase(string packId)
     {
-        IconPack pack = null;
-
-        // Find the pack
-        foreach (var p in IconPacks.GetAllPacks())
-        {
-            if (p.packId == packId)
-            {
-                pack = p;
-                break;
-            }
-        }
+        IconPack pack = FindPackById(packId);
 
         if (pack == null)
         {
@@ -217,6 +197,23 @@ public class ShopManager : MonoBehaviour
         }
 
         return ProcessPackPurchase(pack);
+    }
+
+    /// <summary>
+    /// Finds a pack by its ID.
+    /// </summary>
+    /// <param name="packId">The pack ID to find.</param>
+    /// <returns>The pack if found, null otherwise.</returns>
+    private IconPack FindPackById(string packId)
+    {
+        foreach (var pack in IconPacks.GetAllPacks())
+        {
+            if (pack.packId == packId)
+            {
+                return pack;
+            }
+        }
+        return null;
     }
 
     /// <summary>

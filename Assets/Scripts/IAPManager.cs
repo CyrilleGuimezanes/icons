@@ -141,6 +141,10 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         {
             ShopManager.Instance.ProcessIAPPurchase(productId);
         }
+        else
+        {
+            Debug.LogError($"ShopManager not available to process IAP purchase: {productId}. Purchase may be lost!");
+        }
 
         OnPurchaseSuccess?.Invoke(productId);
         return PurchaseProcessingResult.Complete;
