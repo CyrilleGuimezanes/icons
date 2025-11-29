@@ -46,6 +46,9 @@ public class ProductionManager : MonoBehaviour
     [SerializeField]
     private List<string> discoveredProductionIds = new List<string>();
 
+    // Dictionary for O(1) active production lookup by slot index
+    private Dictionary<int, ActiveProduction> activeProductionsBySlot = new Dictionary<int, ActiveProduction>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -54,6 +57,7 @@ public class ProductionManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             InitializeDefaultProductions();
             Load();
+            RebuildSlotDictionary();
         }
         else
         {
@@ -294,6 +298,7 @@ public class ProductionManager : MonoBehaviour
         );
 
         activeProductions.Add(activeProduction);
+        activeProductionsBySlot[slotIndex] = activeProduction;
         Save();
 
         OnProductionStarted?.Invoke(slotIndex, activeProduction);
@@ -326,6 +331,7 @@ public class ProductionManager : MonoBehaviour
         }
 
         activeProductions.Remove(activeProduction);
+        activeProductionsBySlot.Remove(slotIndex);
         Save();
 
         OnProductionCancelled?.Invoke(slotIndex);
@@ -356,6 +362,7 @@ public class ProductionManager : MonoBehaviour
         OnProductionCompleted?.Invoke(slotIndex, activeProduction);
 
         activeProductions.Remove(activeProduction);
+        activeProductionsBySlot.Remove(slotIndex);
         Save();
     }
 
@@ -366,7 +373,21 @@ public class ProductionManager : MonoBehaviour
     /// <returns>The active production, or null if slot is empty</returns>
     public ActiveProduction GetActiveProduction(int slotIndex)
     {
-        return activeProductions.Find(p => p.slotIndex == slotIndex);
+        activeProductionsBySlot.TryGetValue(slotIndex, out var production);
+        return production;
+    }
+
+    /// <summary>
+    /// Rebuilds the slot dictionary from the active productions list.
+    /// Called after loading or modifying productions.
+    /// </summary>
+    private void RebuildSlotDictionary()
+    {
+        activeProductionsBySlot.Clear();
+        foreach (var production in activeProductions)
+        {
+            activeProductionsBySlot[production.slotIndex] = production;
+        }
     }
 
     /// <summary>
@@ -406,6 +427,12 @@ public class ProductionManager : MonoBehaviour
     /// </summary>
     public void Save()
     {
+        // Update saved elapsed time for each active production before saving
+        foreach (var production in activeProductions)
+        {
+            production.savedElapsedTime = production.GetElapsedTime();
+        }
+
         // Save active productions
         var productionsSaveData = new ActiveProductionsSaveData { productions = activeProductions };
         string productionsJson = JsonUtility.ToJson(productionsSaveData);
@@ -435,13 +462,12 @@ public class ProductionManager : MonoBehaviour
                 {
                     activeProductions = saveData.productions;
 
-                    // Recalculate remaining time based on real time passed
+                    // Recalculate start time based on saved elapsed time
                     float currentTime = Time.time;
                     foreach (var production in activeProductions)
                     {
-                        // Note: In a real implementation, you'd use DateTime for persistence
-                        // For now, we just update the start time to current time
-                        production.startTime = currentTime - (production.totalTime - production.GetRemainingTime());
+                        // Set startTime so that GetElapsedTime() returns savedElapsedTime
+                        production.startTime = currentTime - production.savedElapsedTime;
                     }
                 }
             }
@@ -500,6 +526,11 @@ public class ActiveProduction
     /// </summary>
     public float totalTime;
 
+    /// <summary>
+    /// Elapsed time at the time of saving (used for persistence).
+    /// </summary>
+    public float savedElapsedTime;
+
     public ActiveProduction() { }
 
     public ActiveProduction(int slotIndex, string productionId, int multiplier, float startTime, float totalTime)
@@ -509,6 +540,7 @@ public class ActiveProduction
         this.multiplier = multiplier;
         this.startTime = startTime;
         this.totalTime = totalTime;
+        this.savedElapsedTime = 0f;
     }
 
     /// <summary>

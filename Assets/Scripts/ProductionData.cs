@@ -10,6 +10,16 @@ using System.Collections.Generic;
 public class ProductionData
 {
     /// <summary>
+    /// Minimum base production time in seconds.
+    /// </summary>
+    public const float MIN_PRODUCTION_TIME = 10f;
+
+    /// <summary>
+    /// Maximum base production time in seconds.
+    /// </summary>
+    public const float MAX_PRODUCTION_TIME = 30f;
+
+    /// <summary>
     /// Unique identifier for this production recipe.
     /// </summary>
     public string id;
@@ -52,7 +62,7 @@ public class ProductionData
         this.displayName = displayName;
         this.ingredients = ingredients ?? new List<string>();
         this.result = result;
-        this.baseProductionTime = Mathf.Clamp(baseProductionTime, 10f, 30f);
+        this.baseProductionTime = Mathf.Clamp(baseProductionTime, MIN_PRODUCTION_TIME, MAX_PRODUCTION_TIME);
         this.productionType = productionType;
         this.isDiscovered = false;
     }

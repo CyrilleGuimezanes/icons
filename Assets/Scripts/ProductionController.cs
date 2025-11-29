@@ -44,7 +44,7 @@ public class ProductionController : ScreenController
     private int currentMultiplier = 1;
     private int selectedSlotIndex = -1;
     private ProductionType currentTabType = ProductionType.Plant;
-    private List<InventoryIconDisplay> inventoryIcons = new List<InventoryIconDisplay>();
+    private List<ProductionIconDisplay> inventoryIcons = new List<ProductionIconDisplay>();
     private List<GameObject> selectionItems = new List<GameObject>();
 
     protected override void OnEnable()
@@ -224,11 +224,11 @@ public class ProductionController : ScreenController
             if (item.quantity > 0)
             {
                 GameObject iconObj = Instantiate(inventoryIconPrefab, inventoryContainer);
-                InventoryIconDisplay iconDisplay = iconObj.GetComponent<InventoryIconDisplay>();
+                ProductionIconDisplay iconDisplay = iconObj.GetComponent<ProductionIconDisplay>();
 
                 if (iconDisplay != null)
                 {
-                    iconDisplay.Setup(item.iconId, item.quantity, null);
+                    iconDisplay.Setup(item.iconId, item.quantity, this);
                     inventoryIcons.Add(iconDisplay);
                 }
             }
