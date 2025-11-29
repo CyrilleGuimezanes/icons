@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour
     /// <param name="index">Screen index (0-5)</param>
     public void ShowScreenByIndex(int index)
     {
-        if (index >= 0 && index < 6)
+        if (index >= 0 && index < allScreens.Length)
         {
             ShowScreen((MenuScreen)index);
         }
