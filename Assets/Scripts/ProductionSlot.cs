@@ -335,7 +335,7 @@ public class ProductionSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         }
 
         // Check if the dropped item is one of the required ingredients
-        var draggedIcon = eventData.pointerDrag?.GetComponent<InventoryIconDisplay>();
+        var draggedIcon = eventData.pointerDrag?.GetComponent<ProductionIconDisplay>();
         if (draggedIcon == null)
         {
             return;

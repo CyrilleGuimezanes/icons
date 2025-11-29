@@ -348,18 +348,23 @@ public class ProductionController : ScreenController
     /// <param name="productionId">The selected production ID</param>
     private void OnProductionSelected(string productionId)
     {
+        // Validate slot index before any operations
         if (selectedSlotIndex < 0 || selectedSlotIndex >= productionSlots.Length)
         {
+            selectedSlotIndex = -1;
             HideSelectionModal();
             return;
         }
 
         var slot = productionSlots[selectedSlotIndex];
-        if (slot != null)
+        if (slot == null)
         {
-            slot.SetPlaceholder(productionId);
+            selectedSlotIndex = -1;
+            HideSelectionModal();
+            return;
         }
 
+        slot.SetPlaceholder(productionId);
         HideSelectionModal();
     }
 

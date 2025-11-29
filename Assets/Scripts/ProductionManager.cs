@@ -49,6 +49,10 @@ public class ProductionManager : MonoBehaviour
     // Dictionary for O(1) active production lookup by slot index
     private Dictionary<int, ActiveProduction> activeProductionsBySlot = new Dictionary<int, ActiveProduction>();
 
+    // Timer to avoid checking production completion every frame
+    private float lastCompletionCheckTime;
+    private const float COMPLETION_CHECK_INTERVAL = 0.5f; // Check twice per second
+
     private void Awake()
     {
         if (Instance == null)
@@ -160,11 +164,18 @@ public class ProductionManager : MonoBehaviour
 
     /// <summary>
     /// Updates all active productions, checking for completion.
+    /// Uses a check interval to avoid unnecessary iterations every frame.
     /// </summary>
     private void UpdateActiveProductions()
     {
+        // Only check periodically to reduce overhead
+        if (Time.time - lastCompletionCheckTime < COMPLETION_CHECK_INTERVAL)
+        {
+            return;
+        }
+        lastCompletionCheckTime = Time.time;
+
         bool hasChanges = false;
-        float currentTime = Time.time;
 
         for (int i = activeProductions.Count - 1; i >= 0; i--)
         {
