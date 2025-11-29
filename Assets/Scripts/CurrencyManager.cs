@@ -46,6 +46,14 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+        {
+            Save();
+        }
+    }
+
     private void OnApplicationQuit()
     {
         Save();

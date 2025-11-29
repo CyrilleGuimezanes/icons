@@ -100,6 +100,13 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
         gameId = androidGameId;
 #endif
 
+        // Validate game ID configuration
+        if (string.IsNullOrEmpty(gameId) || gameId.StartsWith("YOUR_"))
+        {
+            Debug.LogWarning("AdRewardManager: Unity Ads Game ID is not configured. Please set your Game ID in the inspector.");
+            return;
+        }
+
         if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
             Advertisement.Initialize(gameId, testMode, this);
