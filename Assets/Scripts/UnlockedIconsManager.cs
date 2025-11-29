@@ -40,34 +40,6 @@ public class UnlockedIconsManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        // Subscribe to inventory changes to auto-unlock icons
-        if (PlayerInventory.Instance != null)
-        {
-            PlayerInventory.Instance.OnInventoryChanged += OnInventoryChanged;
-        }
-    }
-
-    private void OnDisable()
-    {
-        // Unsubscribe from inventory changes
-        if (PlayerInventory.Instance != null)
-        {
-            PlayerInventory.Instance.OnInventoryChanged -= OnInventoryChanged;
-        }
-    }
-
-    private void Start()
-    {
-        // Retry subscription if PlayerInventory wasn't ready in OnEnable
-        if (PlayerInventory.Instance != null)
-        {
-            PlayerInventory.Instance.OnInventoryChanged -= OnInventoryChanged;
-            PlayerInventory.Instance.OnInventoryChanged += OnInventoryChanged;
-        }
-    }
-
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
@@ -79,20 +51,6 @@ public class UnlockedIconsManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         Save();
-    }
-
-    /// <summary>
-    /// Called when the inventory changes - unlocks any new icons found.
-    /// </summary>
-    private void OnInventoryChanged()
-    {
-        if (PlayerInventory.Instance == null) return;
-
-        List<InventoryItem> items = PlayerInventory.Instance.GetAllItems();
-        foreach (var item in items)
-        {
-            UnlockIcon(item.iconId);
-        }
     }
 
     /// <summary>
