@@ -66,7 +66,7 @@ To use Material Symbols in Unity with TextMeshPro:
 Example in Unity:
 ```csharp
 // Set icon using unicode escape
-iconText.text = "\uE909"; // science icon
+iconText.text = "\ue909"; // science icon
 ```
 
 ## Visual Style
