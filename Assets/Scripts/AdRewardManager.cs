@@ -2,11 +2,16 @@ using UnityEngine;
 using System;
 
 /// <summary>
-/// Manages rewarded video ads using Unity Ads.
-/// Players can watch up to 5 videos per day to earn coins.
-/// Each video watched rewards the player with 5 coins.
-/// Note: Requires Unity Ads package (com.unity.ads) to be installed for full functionality.
-/// When Unity Ads is not available, ads will show as "not available".
+/// Stub implementation for rewarded video ads manager.
+/// This is a placeholder that maintains the public interface but does not show ads.
+/// 
+/// To enable actual ads functionality:
+/// 1. Install Unity Ads package (com.unity.ads) via Package Manager
+/// 2. Implement the Unity Ads interfaces (IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener)
+/// 3. Initialize and show ads using the Advertisement class
+/// 
+/// When Unity Ads is not installed, ads will show as "not available".
+/// Players can still earn coins through other means (passive income, IAP, gameplay).
 /// </summary>
 public class AdRewardManager : MonoBehaviour
 {
@@ -157,14 +162,12 @@ public class AdRewardManager : MonoBehaviour
 
     /// <summary>
     /// Loads a rewarded ad.
+    /// Note: This is a stub - Unity Ads package is not installed, so no ad will be loaded.
     /// </summary>
     public void LoadAd()
     {
-        // Unity Ads not available
-        if (!isInitialized)
-        {
-            return;
-        }
+        // Unity Ads not available - nothing to load
+        // When Unity Ads is installed, this method would call Advertisement.Load()
     }
 
     /// <summary>
