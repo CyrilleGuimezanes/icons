@@ -9,12 +9,27 @@ using System.Collections.Generic;
 /// </summary>
 public class PlayerInventory : MonoBehaviour
 {
-    private const string SAVE_KEY = "PlayerInventory";
+    private const string SAVE_KEY_BASE = "PlayerInventory";
 
     /// <summary>
     /// Singleton instance for global access.
     /// </summary>
     public static PlayerInventory Instance { get; private set; }
+
+    /// <summary>
+    /// Gets the current save key with slot suffix.
+    /// </summary>
+    private string SaveKey
+    {
+        get
+        {
+            if (GameSlotsManager.Instance != null)
+            {
+                return SAVE_KEY_BASE + GameSlotsManager.Instance.GetCurrentSlotSuffix();
+            }
+            return SAVE_KEY_BASE;
+        }
+    }
 
     /// <summary>
     /// Event triggered when the inventory changes.
@@ -193,7 +208,7 @@ public class PlayerInventory : MonoBehaviour
     public void Save()
     {
         string json = JsonUtility.ToJson(inventoryData);
-        PlayerPrefs.SetString(SAVE_KEY, json);
+        PlayerPrefs.SetString(SaveKey, json);
         PlayerPrefs.Save();
     }
 
@@ -202,9 +217,11 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     public void Load()
     {
-        if (PlayerPrefs.HasKey(SAVE_KEY))
+        bool hasExistingData = inventoryData.items.Count > 0;
+        
+        if (PlayerPrefs.HasKey(SaveKey))
         {
-            string json = PlayerPrefs.GetString(SAVE_KEY);
+            string json = PlayerPrefs.GetString(SaveKey);
             if (!string.IsNullOrEmpty(json))
             {
                 inventoryData = JsonUtility.FromJson<InventoryData>(json);
@@ -213,6 +230,16 @@ public class PlayerInventory : MonoBehaviour
                     inventoryData = new InventoryData();
                 }
             }
+        }
+        else
+        {
+            inventoryData = new InventoryData();
+        }
+        
+        // Only notify if data actually changed or if there was previous data
+        if (hasExistingData || inventoryData.items.Count > 0)
+        {
+            OnInventoryChanged?.Invoke();
         }
     }
 }

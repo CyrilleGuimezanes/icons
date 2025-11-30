@@ -10,12 +10,27 @@ using System.Collections.Generic;
 /// </summary>
 public class UnlockedIconsManager : MonoBehaviour
 {
-    private const string SAVE_KEY = "UnlockedIcons";
+    private const string SAVE_KEY_BASE = "UnlockedIcons";
 
     /// <summary>
     /// Singleton instance for global access.
     /// </summary>
     public static UnlockedIconsManager Instance { get; private set; }
+
+    /// <summary>
+    /// Gets the current save key with slot suffix.
+    /// </summary>
+    private string SaveKey
+    {
+        get
+        {
+            if (GameSlotsManager.Instance != null)
+            {
+                return SAVE_KEY_BASE + GameSlotsManager.Instance.GetCurrentSlotSuffix();
+            }
+            return SAVE_KEY_BASE;
+        }
+    }
 
     /// <summary>
     /// Event triggered when a new icon is unlocked.
@@ -73,6 +88,13 @@ public class UnlockedIconsManager : MonoBehaviour
 
         unlockedData.unlockedIconIds.Add(iconId);
         Save();
+        
+        // Update the slot's unlocked icons count
+        if (GameSlotsManager.Instance != null)
+        {
+            GameSlotsManager.Instance.UpdateUnlockedIconsCount(unlockedData.unlockedIconIds.Count);
+        }
+        
         OnIconUnlocked?.Invoke(iconId);
         return true;
     }
@@ -125,7 +147,7 @@ public class UnlockedIconsManager : MonoBehaviour
     public void Save()
     {
         string json = JsonUtility.ToJson(unlockedData);
-        PlayerPrefs.SetString(SAVE_KEY, json);
+        PlayerPrefs.SetString(SaveKey, json);
         PlayerPrefs.Save();
     }
 
@@ -134,9 +156,9 @@ public class UnlockedIconsManager : MonoBehaviour
     /// </summary>
     public void Load()
     {
-        if (PlayerPrefs.HasKey(SAVE_KEY))
+        if (PlayerPrefs.HasKey(SaveKey))
         {
-            string json = PlayerPrefs.GetString(SAVE_KEY);
+            string json = PlayerPrefs.GetString(SaveKey);
             if (!string.IsNullOrEmpty(json))
             {
                 unlockedData = JsonUtility.FromJson<UnlockedIconsData>(json);
@@ -145,6 +167,10 @@ public class UnlockedIconsManager : MonoBehaviour
                     unlockedData = new UnlockedIconsData();
                 }
             }
+        }
+        else
+        {
+            unlockedData = new UnlockedIconsData();
         }
     }
 }

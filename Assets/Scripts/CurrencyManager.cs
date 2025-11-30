@@ -9,7 +9,7 @@ using System;
 /// </summary>
 public class CurrencyManager : MonoBehaviour
 {
-    private const string SAVE_KEY = "CurrencyData";
+    private const string SAVE_KEY_BASE = "CurrencyData";
     private const string COIN_ICON_ID = "paid";
 
     /// <summary>
@@ -21,6 +21,21 @@ public class CurrencyManager : MonoBehaviour
     /// Singleton instance for global access.
     /// </summary>
     public static CurrencyManager Instance { get; private set; }
+
+    /// <summary>
+    /// Gets the current save key with slot suffix.
+    /// </summary>
+    private string SaveKey
+    {
+        get
+        {
+            if (GameSlotsManager.Instance != null)
+            {
+                return SAVE_KEY_BASE + GameSlotsManager.Instance.GetCurrentSlotSuffix();
+            }
+            return SAVE_KEY_BASE;
+        }
+    }
 
     /// <summary>
     /// Event triggered when the coin balance changes.
@@ -215,7 +230,7 @@ public class CurrencyManager : MonoBehaviour
     public void Save()
     {
         string json = JsonUtility.ToJson(currencyData);
-        PlayerPrefs.SetString(SAVE_KEY, json);
+        PlayerPrefs.SetString(SaveKey, json);
         PlayerPrefs.Save();
     }
 
@@ -224,9 +239,11 @@ public class CurrencyManager : MonoBehaviour
     /// </summary>
     public void Load()
     {
-        if (PlayerPrefs.HasKey(SAVE_KEY))
+        int previousCoins = currencyData.coins;
+        
+        if (PlayerPrefs.HasKey(SaveKey))
         {
-            string json = PlayerPrefs.GetString(SAVE_KEY);
+            string json = PlayerPrefs.GetString(SaveKey);
             if (!string.IsNullOrEmpty(json))
             {
                 currencyData = JsonUtility.FromJson<CurrencyData>(json);
@@ -235,6 +252,17 @@ public class CurrencyManager : MonoBehaviour
                     currencyData = new CurrencyData();
                 }
             }
+        }
+        else
+        {
+            currencyData = new CurrencyData();
+        }
+        
+        // Only notify if balance actually changed
+        if (previousCoins != currencyData.coins)
+        {
+            OnCoinsChanged?.Invoke(currencyData.coins);
+            OnBalanceChanged?.Invoke(currencyData.coins);
         }
     }
 
