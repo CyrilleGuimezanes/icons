@@ -356,71 +356,49 @@ public class WelcomeScreenBuilder : MonoBehaviour
         buttonsLayout.childForceExpandHeight = true;
 
         // Cancel button
-        CreateButton("CancelButton", buttonsContainer.transform, "Cancel", new Color(0.6f, 0.6f, 0.6f, 1f));
+        Button cancelBtn = CreateButton("CancelButton", buttonsContainer.transform, "Cancel", new Color(0.6f, 0.6f, 0.6f, 1f));
 
         // Confirm button
-        CreateButton("ConfirmButton", buttonsContainer.transform, "Delete", new Color(0.9f, 0.3f, 0.3f, 1f));
+        Button confirmBtn = CreateButton("ConfirmButton", buttonsContainer.transform, "Delete", new Color(0.9f, 0.3f, 0.3f, 1f));
 
         overlay.SetActive(false);
+        
+        // Store references for later use
+        overlay.AddComponent<DeletePanelReferences>().Initialize(
+            confirmText.GetComponent<TextMeshProUGUI>(), confirmBtn, cancelBtn);
+        
         return overlay;
     }
 
     private void SetupControllerReferences(WelcomeScreenController controller, GameSlotUI[] slotUIs, 
         TextMeshProUGUI titleText, GameObject deletePanel)
     {
-        // Use reflection to set private serialized fields
-        var type = typeof(WelcomeScreenController);
-        
-        var titleField = type.GetField("titleText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        titleField?.SetValue(controller, titleText);
+        // Get delete panel references
+        var deleteRefs = deletePanel.GetComponent<DeletePanelReferences>();
+        TextMeshProUGUI confirmText = deleteRefs?.ConfirmText;
+        Button confirmBtn = deleteRefs?.ConfirmButton;
+        Button cancelBtn = deleteRefs?.CancelButton;
 
-        var slotsField = type.GetField("slotUIs", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        slotsField?.SetValue(controller, slotUIs);
-
-        var deletePanelField = type.GetField("deleteConfirmationPanel", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        deletePanelField?.SetValue(controller, deletePanel);
-
-        // Find confirmation text and buttons in delete panel
-        var confirmText = deletePanel.transform.Find("Dialog/ConfirmText")?.GetComponent<TextMeshProUGUI>();
-        var confirmTextField = type.GetField("deleteConfirmationText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        confirmTextField?.SetValue(controller, confirmText);
-
-        var confirmBtn = deletePanel.transform.Find("Dialog/Buttons/ConfirmButton")?.GetComponent<Button>();
-        var confirmBtnField = type.GetField("confirmDeleteButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        confirmBtnField?.SetValue(controller, confirmBtn);
-
-        var cancelBtn = deletePanel.transform.Find("Dialog/Buttons/CancelButton")?.GetComponent<Button>();
-        var cancelBtnField = type.GetField("cancelDeleteButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        cancelBtnField?.SetValue(controller, cancelBtn);
-
-        var menuField = type.GetField("menuManager", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        menuField?.SetValue(controller, menuManager);
+        // Use public initialization method instead of reflection
+        controller.InitializeReferences(titleText, slotUIs, deletePanel, 
+            confirmText, confirmBtn, cancelBtn, menuManager);
     }
 
     private void SetSlotUIReferences(GameSlotUI slotUI, TextMeshProUGUI nameText, TextMeshProUGUI statsText,
         GameObject activeContent, GameObject emptyContent, Button playBtn, Button renameBtn, 
         Button deleteBtn, Button newGameBtn, TMP_InputField nameInput)
     {
-        var type = typeof(GameSlotUI);
-
-        type.GetField("slotNameText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, nameText);
-        type.GetField("statsText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, statsText);
-        type.GetField("activeContent", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, activeContent);
-        type.GetField("emptyContent", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, emptyContent);
-        type.GetField("playButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, playBtn);
-        type.GetField("renameButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, renameBtn);
-        type.GetField("deleteButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, deleteBtn);
-        type.GetField("newGameButton", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, newGameBtn);
-        type.GetField("nameInputField", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(slotUI, nameInput);
+        // Use public initialization method instead of reflection
+        slotUI.SetupReferences(nameText, statsText, activeContent, emptyContent,
+            playBtn, renameBtn, deleteBtn, newGameBtn, nameInput);
     }
 
     private void ConnectToMenuManager()
     {
         if (menuManager == null) return;
 
-        var type = typeof(MenuManager);
-        var welcomeField = type.GetField("welcomeScreen", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        welcomeField?.SetValue(menuManager, welcomeScreenRoot);
+        // Use public method instead of reflection
+        menuManager.SetWelcomeScreen(welcomeScreenRoot);
     }
 
     /// <summary>
@@ -429,5 +407,23 @@ public class WelcomeScreenBuilder : MonoBehaviour
     public GameObject GetWelcomeScreen()
     {
         return welcomeScreenRoot;
+    }
+}
+
+/// <summary>
+/// Helper component to store references to delete panel UI elements.
+/// Used to avoid reflection when setting up the WelcomeScreenController.
+/// </summary>
+public class DeletePanelReferences : MonoBehaviour
+{
+    public TextMeshProUGUI ConfirmText { get; private set; }
+    public Button ConfirmButton { get; private set; }
+    public Button CancelButton { get; private set; }
+
+    public void Initialize(TextMeshProUGUI text, Button confirm, Button cancel)
+    {
+        ConfirmText = text;
+        ConfirmButton = confirm;
+        CancelButton = cancel;
     }
 }

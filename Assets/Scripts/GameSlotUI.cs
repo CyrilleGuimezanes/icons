@@ -23,6 +23,24 @@ public class GameSlotUI : MonoBehaviour
     private WelcomeScreenController welcomeScreen;
 
     /// <summary>
+    /// Sets up the UI references for this slot (for runtime creation).
+    /// </summary>
+    public void SetupReferences(TextMeshProUGUI nameText, TextMeshProUGUI stats,
+        GameObject active, GameObject empty, Button play, Button rename,
+        Button delete, Button newGame, TMP_InputField nameInput)
+    {
+        slotNameText = nameText;
+        statsText = stats;
+        activeContent = active;
+        emptyContent = empty;
+        playButton = play;
+        renameButton = rename;
+        deleteButton = delete;
+        newGameButton = newGame;
+        nameInputField = nameInput;
+    }
+
+    /// <summary>
     /// Initializes the slot UI with the welcome screen reference.
     /// </summary>
     /// <param name="controller">The welcome screen controller.</param>

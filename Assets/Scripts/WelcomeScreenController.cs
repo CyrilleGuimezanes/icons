@@ -23,6 +23,22 @@ public class WelcomeScreenController : MonoBehaviour
 
     private int pendingDeleteSlotIndex = -1;
 
+    /// <summary>
+    /// Initializes the controller with UI references (for runtime creation).
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI title, GameSlotUI[] slots, 
+        GameObject deletePanel, TextMeshProUGUI deleteText, 
+        Button confirmBtn, Button cancelBtn, MenuManager menu)
+    {
+        titleText = title;
+        slotUIs = slots;
+        deleteConfirmationPanel = deletePanel;
+        deleteConfirmationText = deleteText;
+        confirmDeleteButton = confirmBtn;
+        cancelDeleteButton = cancelBtn;
+        menuManager = menu;
+    }
+
     private void OnEnable()
     {
         RefreshSlots();

@@ -119,6 +119,15 @@ public class MenuManager : MonoBehaviour
     public bool IsShowingWelcomeScreen => isShowingWelcomeScreen;
 
     /// <summary>
+    /// Sets the welcome screen reference (for runtime creation).
+    /// </summary>
+    /// <param name="screen">The welcome screen GameObject.</param>
+    public void SetWelcomeScreen(GameObject screen)
+    {
+        welcomeScreen = screen;
+    }
+
+    /// <summary>
     /// Shows the specified screen and hides all others.
     /// </summary>
     /// <param name="screen">The screen to display</param>

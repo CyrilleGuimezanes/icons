@@ -217,6 +217,8 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     public void Load()
     {
+        bool hasExistingData = inventoryData.items.Count > 0;
+        
         if (PlayerPrefs.HasKey(SaveKey))
         {
             string json = PlayerPrefs.GetString(SaveKey);
@@ -233,7 +235,12 @@ public class PlayerInventory : MonoBehaviour
         {
             inventoryData = new InventoryData();
         }
-        OnInventoryChanged?.Invoke();
+        
+        // Only notify if data actually changed or if there was previous data
+        if (hasExistingData || inventoryData.items.Count > 0)
+        {
+            OnInventoryChanged?.Invoke();
+        }
     }
 }
 

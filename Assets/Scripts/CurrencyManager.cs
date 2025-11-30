@@ -239,6 +239,8 @@ public class CurrencyManager : MonoBehaviour
     /// </summary>
     public void Load()
     {
+        int previousCoins = currencyData.coins;
+        
         if (PlayerPrefs.HasKey(SaveKey))
         {
             string json = PlayerPrefs.GetString(SaveKey);
@@ -255,8 +257,13 @@ public class CurrencyManager : MonoBehaviour
         {
             currencyData = new CurrencyData();
         }
-        OnCoinsChanged?.Invoke(currencyData.coins);
-        OnBalanceChanged?.Invoke(currencyData.coins);
+        
+        // Only notify if balance actually changed
+        if (previousCoins != currencyData.coins)
+        {
+            OnCoinsChanged?.Invoke(currencyData.coins);
+            OnBalanceChanged?.Invoke(currencyData.coins);
+        }
     }
 
     /// <summary>
