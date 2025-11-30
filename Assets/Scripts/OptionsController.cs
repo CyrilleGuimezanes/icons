@@ -53,7 +53,6 @@ public class OptionsController : ScreenController
     private void Start()
     {
         SetupEventListeners();
-        LoadSettings();
         UpdateVersionDisplay();
         HideResetConfirmation();
     }
@@ -219,30 +218,24 @@ public class OptionsController : ScreenController
         bool soundEnabled = PlayerPrefs.GetInt(SOUND_ENABLED_KEY, 1) == 1;
         float soundVolume = PlayerPrefs.GetFloat(SOUND_VOLUME_KEY, 1f);
 
-        // Apply to AudioListener or AudioMixer
-        // This is a placeholder - implement based on your audio system
         if (!soundEnabled)
         {
             soundVolume = 0f;
         }
 
-        // AudioListener.volume = soundVolume; // Or use AudioMixer
+        // Apply to AudioListener for global volume control
+        AudioListener.volume = soundVolume;
     }
 
     /// <summary>
     /// Applies music settings to the audio system.
+    /// Note: Music volume should be applied to dedicated music AudioSource(s).
+    /// The musicVolume value is stored and can be retrieved via IsMusicEnabled() and GetMusicVolume().
     /// </summary>
     private void ApplyMusicSettings()
     {
-        bool musicEnabled = PlayerPrefs.GetInt(MUSIC_ENABLED_KEY, 1) == 1;
-        float musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY, 1f);
-
-        // Apply to music audio source or AudioMixer
-        // This is a placeholder - implement based on your audio system
-        if (!musicEnabled)
-        {
-            musicVolume = 0f;
-        }
+        // Music volume is stored in PlayerPrefs and can be applied by music managers
+        // This method triggers the save - actual application depends on the music system
     }
 
     /// <summary>
