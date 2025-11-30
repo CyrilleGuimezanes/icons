@@ -1,13 +1,14 @@
 using UnityEngine;
-using UnityEngine.Advertisements;
 using System;
 
 /// <summary>
 /// Manages rewarded video ads using Unity Ads.
 /// Players can watch up to 5 videos per day to earn coins.
 /// Each video watched rewards the player with 5 coins.
+/// Note: Requires Unity Ads package (com.unity.ads) to be installed for full functionality.
+/// When Unity Ads is not available, ads will show as "not available".
 /// </summary>
-public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+public class AdRewardManager : MonoBehaviour
 {
     private const string SAVE_KEY = "AdRewardData";
     private const int MAX_DAILY_ADS = 5;
@@ -47,7 +48,6 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
     public event Action OnAdReady;
 
     private AdRewardData saveData;
-    private string gameId;
     private bool isAdLoaded = false;
     private bool isInitialized = false;
 
@@ -86,31 +86,15 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
 
     /// <summary>
     /// Initializes Unity Ads.
+    /// Note: Unity Ads package is not currently installed. Install com.unity.ads to enable ads.
     /// </summary>
     private void InitializeAds()
     {
-#if UNITY_IOS
-        gameId = iosGameId;
-        rewardedAdUnitId = "Rewarded_iOS";
-#elif UNITY_ANDROID
-        gameId = androidGameId;
-        rewardedAdUnitId = "Rewarded_Android";
-#elif UNITY_EDITOR
-        // For testing in editor, default to Android
-        gameId = androidGameId;
-#endif
-
-        // Validate game ID configuration
-        if (string.IsNullOrEmpty(gameId) || gameId.StartsWith("YOUR_"))
-        {
-            Debug.LogWarning("AdRewardManager: Unity Ads Game ID is not configured. Please set your Game ID in the inspector.");
-            return;
-        }
-
-        if (!Advertisement.isInitialized && Advertisement.isSupported)
-        {
-            Advertisement.Initialize(gameId, testMode, this);
-        }
+        // Unity Ads package is not installed
+        // To enable ads, add "com.unity.ads" to your Packages/manifest.json
+        Debug.LogWarning("AdRewardManager: Unity Ads package is not installed. Ads will not be available.");
+        isInitialized = false;
+        isAdLoaded = false;
     }
 
     /// <summary>
@@ -154,6 +138,12 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
             return;
         }
 
+        if (!isInitialized)
+        {
+            OnAdFailed?.Invoke("Les publicités ne sont pas disponibles. Le package Unity Ads n'est pas installé.");
+            return;
+        }
+
         if (!isAdLoaded)
         {
             OnAdFailed?.Invoke("La publicité n'est pas encore prête. Veuillez réessayer.");
@@ -161,7 +151,8 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
             return;
         }
 
-        Advertisement.Show(rewardedAdUnitId, this);
+        // Unity Ads not available - show error
+        OnAdFailed?.Invoke("Les publicités ne sont pas disponibles.");
     }
 
     /// <summary>
@@ -169,9 +160,10 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
     /// </summary>
     public void LoadAd()
     {
-        if (isInitialized)
+        // Unity Ads not available
+        if (!isInitialized)
         {
-            Advertisement.Load(rewardedAdUnitId, this);
+            return;
         }
     }
 
@@ -221,87 +213,6 @@ public class AdRewardManager : MonoBehaviour, IUnityAdsInitializationListener, I
         // Load next ad
         LoadAd();
     }
-
-    #region IUnityAdsInitializationListener
-
-    public void OnInitializationComplete()
-    {
-        Debug.Log("Unity Ads initialization complete.");
-        isInitialized = true;
-        LoadAd();
-    }
-
-    public void OnInitializationFailed(UnityAdsInitializationError error, string message)
-    {
-        Debug.LogError($"Unity Ads initialization failed: {error} - {message}");
-        OnAdFailed?.Invoke($"Erreur d'initialisation des publicités: {message}");
-    }
-
-    #endregion
-
-    #region IUnityAdsLoadListener
-
-    public void OnUnityAdsAdLoaded(string placementId)
-    {
-        Debug.Log($"Ad loaded: {placementId}");
-        if (placementId == rewardedAdUnitId)
-        {
-            isAdLoaded = true;
-            OnAdReady?.Invoke();
-        }
-    }
-
-    public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
-    {
-        Debug.LogError($"Failed to load ad {placementId}: {error} - {message}");
-        isAdLoaded = false;
-        OnAdFailed?.Invoke($"Impossible de charger la publicité: {message}");
-    }
-
-    #endregion
-
-    #region IUnityAdsShowListener
-
-    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
-    {
-        if (placementId == rewardedAdUnitId)
-        {
-            isAdLoaded = false;
-
-            if (showCompletionState == UnityAdsShowCompletionState.COMPLETED)
-            {
-                // User watched the entire ad, grant reward
-                GrantReward();
-            }
-            else if (showCompletionState == UnityAdsShowCompletionState.SKIPPED)
-            {
-                Debug.Log("Ad was skipped, no reward granted.");
-            }
-
-            // Load the next ad
-            LoadAd();
-        }
-    }
-
-    public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
-    {
-        Debug.LogError($"Failed to show ad {placementId}: {error} - {message}");
-        isAdLoaded = false;
-        OnAdFailed?.Invoke($"Erreur lors de l'affichage de la publicité: {message}");
-        LoadAd();
-    }
-
-    public void OnUnityAdsShowStart(string placementId)
-    {
-        Debug.Log($"Ad started: {placementId}");
-    }
-
-    public void OnUnityAdsShowClick(string placementId)
-    {
-        Debug.Log($"Ad clicked: {placementId}");
-    }
-
-    #endregion
 
     /// <summary>
     /// Saves the ad reward data.
