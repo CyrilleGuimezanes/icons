@@ -23,12 +23,12 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     /// <summary>
     /// Event triggered when a purchase fails.
     /// </summary>
-    public event Action<string, string> OnPurchaseFailed;
+    public event Action<string, string> OnPurchaseFailure;
 
     /// <summary>
     /// Event triggered when IAP initialization is complete.
     /// </summary>
-    public event Action<bool> OnInitialized;
+    public event Action<bool> OnIAPInitialized;
 
     private IStoreController storeController;
     private IExtensionProvider extensionProvider;
@@ -81,7 +81,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         storeController = controller;
         extensionProvider = extensions;
         Debug.Log("IAP initialized successfully");
-        OnInitialized?.Invoke(true);
+        OnIAPInitialized?.Invoke(true);
     }
 
     /// <summary>
@@ -90,7 +90,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     public void OnInitializeFailed(InitializationFailureReason error)
     {
         Debug.LogError($"IAP initialization failed: {error}");
-        OnInitialized?.Invoke(false);
+        OnIAPInitialized?.Invoke(false);
     }
 
     /// <summary>
@@ -99,7 +99,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     public void OnInitializeFailed(InitializationFailureReason error, string message)
     {
         Debug.LogError($"IAP initialization failed: {error} - {message}");
-        OnInitialized?.Invoke(false);
+        OnIAPInitialized?.Invoke(false);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         if (!IsInitialized)
         {
             Debug.LogError("IAP not initialized");
-            OnPurchaseFailed?.Invoke(productId, "IAP not initialized");
+            OnPurchaseFailure?.Invoke(productId, "IAP not initialized");
             return;
         }
 
@@ -124,7 +124,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         else
         {
             Debug.LogError($"Product not available: {productId}");
-            OnPurchaseFailed?.Invoke(productId, "Product not available");
+            OnPurchaseFailure?.Invoke(productId, "Product not available");
         }
     }
 
@@ -156,7 +156,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
     {
         Debug.LogError($"Purchase failed: {product.definition.id} - {reason}");
-        OnPurchaseFailed?.Invoke(product.definition.id, reason.ToString());
+        OnPurchaseFailure?.Invoke(product.definition.id, reason.ToString());
     }
 
     /// <summary>
@@ -165,7 +165,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
         Debug.LogError($"Purchase failed: {product.definition.id} - {failureDescription.message}");
-        OnPurchaseFailed?.Invoke(product.definition.id, failureDescription.message);
+        OnPurchaseFailure?.Invoke(product.definition.id, failureDescription.message);
     }
 
     /// <summary>
