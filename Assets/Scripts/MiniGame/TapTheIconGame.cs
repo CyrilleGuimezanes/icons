@@ -37,6 +37,24 @@ public class TapTheIconGame : MiniGameBase
         gameDuration = timeLimit;
     }
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, Button tapBtn, TextMeshProUGUI tapIcon, TextMeshProUGUI tapCount,
+        TextMeshProUGUI targetCount, Image progress)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        tapButton = tapBtn;
+        tapIconText = tapIcon;
+        tapCountText = tapCount;
+        targetCountText = targetCount;
+        progressBar = progress;
+    }
+
     private void Start()
     {
         if (tapButton != null)

@@ -36,6 +36,8 @@ public class DontTapTheBombGame : MiniGameBase
     private List<int> availablePositions;
     private Coroutine spawnCoroutine;
     private bool gameOver;
+    private Button[] gridButtons;
+    private TextMeshProUGUI[] gridIcons;
 
     private void Awake()
     {
@@ -43,6 +45,20 @@ public class DontTapTheBombGame : MiniGameBase
         gameName = "Évite les bombes !";
         gameDescription = $"Tape sur les icônes, évite les bombes ! ({targetScore} à trouver)";
         gameDuration = 15f;
+    }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, Button[] buttons, TextMeshProUGUI[] icons)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        gridButtons = buttons;
+        gridIcons = icons;
     }
 
     protected override void OnGameStarted()

@@ -48,6 +48,10 @@ public class QuickSortGame : MiniGameBase
     private int wrongSorts;
     private int maxWrongSorts = 3;
     private bool isWaiting;
+    private Button leftCategoryButton;
+    private Button rightCategoryButton;
+    private TextMeshProUGUI leftCategoryText;
+    private TextMeshProUGUI rightCategoryText;
 
     private void Awake()
     {
@@ -55,6 +59,24 @@ public class QuickSortGame : MiniGameBase
         gameName = "Trie les icônes !";
         gameDescription = $"Trie {targetSorts} icônes par rareté !";
         gameDuration = 30f;
+    }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, TextMeshProUGUI currentIcon, Button leftBtn, Button rightBtn,
+        TextMeshProUGUI leftText, TextMeshProUGUI rightText)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        currentIconText = currentIcon;
+        leftCategoryButton = leftBtn;
+        rightCategoryButton = rightBtn;
+        leftCategoryText = leftText;
+        rightCategoryText = rightText;
     }
 
     private void Start()

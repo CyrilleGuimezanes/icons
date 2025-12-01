@@ -47,6 +47,34 @@ public class ProductionController : ScreenController
     private List<ProductionIconDisplay> inventoryIcons = new List<ProductionIconDisplay>();
     private List<GameObject> selectionItems = new List<GameObject>();
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(ProductionSlot[] slots, Transform invContainer, GameObject invIconPrefab,
+        Button x1Btn, Button x5Btn, Button x10Btn, Button x100Btn, TextMeshProUGUI multiplierTxt,
+        GameObject selModal, Transform selContainer, GameObject selItemPrefab, Button closeSelBtn,
+        Button plantTab, Button industryTab, TextMeshProUGUI plantTabTxt, TextMeshProUGUI industryTabTxt,
+        TextMeshProUGUI title)
+    {
+        productionSlots = slots;
+        inventoryContainer = invContainer;
+        inventoryIconPrefab = invIconPrefab;
+        multiplierX1Button = x1Btn;
+        multiplierX5Button = x5Btn;
+        multiplierX10Button = x10Btn;
+        multiplierX100Button = x100Btn;
+        multiplierText = multiplierTxt;
+        selectionModal = selModal;
+        selectionContainer = selContainer;
+        productionSelectionItemPrefab = selItemPrefab;
+        closeSelectionButton = closeSelBtn;
+        plantTabButton = plantTab;
+        industryTabButton = industryTab;
+        plantTabText = plantTabTxt;
+        industryTabText = industryTabTxt;
+        titleText = title;
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

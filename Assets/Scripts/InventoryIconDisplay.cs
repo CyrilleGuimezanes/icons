@@ -50,6 +50,15 @@ public class InventoryIconDisplay : MonoBehaviour, IBeginDragHandler, IDragHandl
         
         canvas = GetComponentInParent<Canvas>();
     }
+
+    /// <summary>
+    /// Initializes UI references for runtime building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI qty)
+    {
+        iconText = icon;
+        quantityText = qty;
+    }
     
     /// <summary>
     /// Sets up the icon display with the given data.

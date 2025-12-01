@@ -22,6 +22,23 @@ public class BottomNavigation : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets the menu buttons array (for runtime UI building).
+    /// </summary>
+    public void SetMenuButtons(MenuButton[] buttons)
+    {
+        menuButtons = buttons;
+    }
+
+    /// <summary>
+    /// Initializes with a MenuManager reference (for runtime UI building).
+    /// </summary>
+    public void InitializeWithMenuManager(MenuManager manager)
+    {
+        menuManager = manager;
+        SelectButton(0);
+    }
+
+    /// <summary>
     /// Called when a menu button is clicked.
     /// </summary>
     /// <param name="index">Index of the clicked button (0-5)</param>

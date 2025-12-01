@@ -128,6 +128,34 @@ public class MenuManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Initializes all screen references (for runtime UI building).
+    /// </summary>
+    public void InitializeScreens(GameObject welcome, GameObject bottomNav, GameObject screens,
+        GameObject melangeur, GameObject miniJeu, GameObject potager,
+        GameObject boutique, GameObject collection, GameObject options)
+    {
+        welcomeScreen = welcome;
+        bottomNavigation = bottomNav;
+        screensContainer = screens;
+        melangeurScreen = melangeur;
+        miniJeuScreen = miniJeu;
+        potagerScreen = potager;
+        boutiqueScreen = boutique;
+        collectionScreen = collection;
+        optionsScreen = options;
+
+        allScreens = new GameObject[]
+        {
+            melangeurScreen,
+            miniJeuScreen,
+            potagerScreen,
+            boutiqueScreen,
+            collectionScreen,
+            optionsScreen
+        };
+    }
+
+    /// <summary>
     /// Shows the specified screen and hides all others.
     /// </summary>
     /// <param name="screen">The screen to display</param>

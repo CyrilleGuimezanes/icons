@@ -38,6 +38,10 @@ public class IconCatcherGame : MiniGameBase
     private int catchCount;
     private int missCount;
     private int maxMisses = 5;
+    private RectTransform catcherRect;
+    private RectTransform iconSpawnArea;
+    private TextMeshProUGUI caughtCountText;
+    private GameObject iconPrefab;
 
     private void Awake()
     {
@@ -45,6 +49,23 @@ public class IconCatcherGame : MiniGameBase
         gameName = "Attrape les icônes !";
         gameDescription = $"Attrape {targetCatches} icônes avant qu'elles tombent !";
         gameDuration = 20f;
+    }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, RectTransform catcher, RectTransform spawn, TextMeshProUGUI caughtCount,
+        GameObject iconPrefabTemplate)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        catcherRect = catcher;
+        iconSpawnArea = spawn;
+        caughtCountText = caughtCount;
+        iconPrefab = iconPrefabTemplate;
     }
 
     protected override void OnGameStarted()

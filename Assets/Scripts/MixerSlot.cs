@@ -32,6 +32,15 @@ public class MixerSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         // Find the mixer controller in parent hierarchy
         mixerController = GetComponentInParent<MixerController>();
     }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI icon, Image background)
+    {
+        iconText = icon;
+        slotBackground = background;
+    }
     
     private void Start()
     {

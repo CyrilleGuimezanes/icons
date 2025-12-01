@@ -43,6 +43,32 @@ public class OptionsController : ScreenController
 
     private bool isPendingFullReset = false;
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(Toggle sound, Toggle music, Slider soundVol, Slider musicVol,
+        Toggle vibration, Toggle notifications,
+        Button resetProgress, Button resetCurrentSlot,
+        GameObject resetConfirmPnl, TextMeshProUGUI resetConfirmTxt,
+        Button confirmReset, Button cancelReset,
+        TextMeshProUGUI version, TextMeshProUGUI title)
+    {
+        soundToggle = sound;
+        musicToggle = music;
+        soundVolumeSlider = soundVol;
+        musicVolumeSlider = musicVol;
+        vibrationToggle = vibration;
+        notificationsToggle = notifications;
+        resetProgressButton = resetProgress;
+        resetCurrentSlotButton = resetCurrentSlot;
+        resetConfirmationPanel = resetConfirmPnl;
+        resetConfirmationText = resetConfirmTxt;
+        confirmResetButton = confirmReset;
+        cancelResetButton = cancelReset;
+        versionText = version;
+        titleText = title;
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

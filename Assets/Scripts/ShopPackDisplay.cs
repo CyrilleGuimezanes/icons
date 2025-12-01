@@ -26,6 +26,17 @@ public class ShopPackDisplay : MonoBehaviour
     private Action<IconPack> onClickCallback;
 
     /// <summary>
+    /// Initializes UI references for runtime building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI name, TextMeshProUGUI description, TextMeshProUGUI price)
+    {
+        iconText = icon;
+        nameText = name;
+        descriptionText = description;
+        priceText = price;
+    }
+
+    /// <summary>
     /// Sets up the display with an icon pack.
     /// </summary>
     /// <param name="iconPack">The icon pack to display.</param>

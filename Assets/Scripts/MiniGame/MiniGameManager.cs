@@ -49,6 +49,36 @@ public class MiniGameManager : ScreenController
     private MiniGameBase currentGame;
     private IconEntry pendingReward;
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(List<MiniGameBase> games,
+        GameObject mainMenuPnl, TextMeshProUGUI playsRemaining, TextMeshProUGUI nextReset,
+        Button playBtn, TextMeshProUGUI playBtnText, GameObject gameCont,
+        GameObject rewardPnl, TextMeshProUGUI rewardIcon, TextMeshProUGUI rewardName,
+        TextMeshProUGUI rewardRarity, Image rewardBg, Button claimReward,
+        GameObject failurePnl, TextMeshProUGUI failureMsg, Button tryAgain,
+        TextMeshProUGUI title)
+    {
+        availableGames = games;
+        mainMenuPanel = mainMenuPnl;
+        playsRemainingText = playsRemaining;
+        nextResetText = nextReset;
+        playButton = playBtn;
+        playButtonText = playBtnText;
+        gameContainer = gameCont;
+        rewardPanel = rewardPnl;
+        rewardIconText = rewardIcon;
+        rewardNameText = rewardName;
+        rewardRarityText = rewardRarity;
+        rewardBackground = rewardBg;
+        claimRewardButton = claimReward;
+        failurePanel = failurePnl;
+        failureMessageText = failureMsg;
+        tryAgainButton = tryAgain;
+        titleText = title;
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();
