@@ -58,12 +58,11 @@ public class ProductionSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
     /// <summary>
     /// Initializes UI references for runtime building.
     /// </summary>
-    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI status, Image progress, TextMeshProUGUI timeText, Button slotButton)
+    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI status, Image progress, TextMeshProUGUI timeText)
     {
         iconText = icon;
         statusText = status;
         progressBar = progress;
-        // Note: slotButton is used for interaction but stored elsewhere
     }
 
     private void Start()

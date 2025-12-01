@@ -158,7 +158,7 @@ public class PotagerScreenBuilder : UIBuilderBase
 
         // Add ProductionSlot component
         ProductionSlot slot = slotObj.AddComponent<ProductionSlot>();
-        slot.InitializeReferences(iconText, nameText, progressImage, timeText, slotButton);
+        slot.InitializeReferences(iconText, nameText, progressImage, timeText);
 
         return slot;
     }
