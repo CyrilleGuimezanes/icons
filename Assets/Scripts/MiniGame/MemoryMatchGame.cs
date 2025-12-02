@@ -36,6 +36,9 @@ public class MemoryMatchGame : MiniGameBase
     private MemoryCard secondFlipped;
     private int pairsFound;
     private bool isProcessing;
+    private Button[] cardButtons;
+    private TextMeshProUGUI[] cardIcons;
+    private Image[] cardBackgrounds;
 
     private void Awake()
     {
@@ -43,6 +46,21 @@ public class MemoryMatchGame : MiniGameBase
         gameName = "Memory Match !";
         gameDescription = $"Trouve les {pairsCount} paires d'icônes !";
         gameDuration = 30f;
+    }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, Button[] buttons, TextMeshProUGUI[] icons, Image[] backgrounds)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        cardButtons = buttons;
+        cardIcons = icons;
+        cardBackgrounds = backgrounds;
     }
 
     protected override void OnGameStarted()

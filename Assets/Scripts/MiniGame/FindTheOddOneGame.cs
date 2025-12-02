@@ -34,6 +34,8 @@ public class FindTheOddOneGame : MiniGameBase
     private int oddIndex;
     private bool isProcessing;
     private float roundTimer;
+    private Button[] optionButtons;
+    private TextMeshProUGUI[] optionIcons;
 
     private void Awake()
     {
@@ -41,6 +43,20 @@ public class FindTheOddOneGame : MiniGameBase
         gameName = "Trouve l'intrus !";
         gameDescription = $"Trouve l'icône différente dans chaque grille !";
         gameDuration = 45f;
+    }
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI timer, TextMeshProUGUI score, TextMeshProUGUI instruction,
+        GameObject panel, Button[] buttons, TextMeshProUGUI[] icons)
+    {
+        timerText = timer;
+        scoreText = score;
+        instructionText = instruction;
+        gamePanel = panel;
+        optionButtons = buttons;
+        optionIcons = icons;
     }
 
     protected override void Update()

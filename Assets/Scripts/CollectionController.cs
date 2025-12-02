@@ -35,6 +35,26 @@ public class CollectionController : ScreenController
     private IconRarity? currentFilter = null;
     private List<GameObject> displayedIcons = new List<GameObject>();
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(Transform grid, GameObject iconPrefab,
+        TextMeshProUGUI totalUnlocked, TextMeshProUGUI progress,
+        Button allFilter, Button commonFilter, Button uncommonFilter,
+        Button rareFilter, Button legendaryFilter, TextMeshProUGUI title)
+    {
+        gridContainer = grid;
+        collectionIconPrefab = iconPrefab;
+        totalUnlockedText = totalUnlocked;
+        progressText = progress;
+        allFilterButton = allFilter;
+        commonFilterButton = commonFilter;
+        uncommonFilterButton = uncommonFilter;
+        rareFilterButton = rareFilter;
+        legendaryFilterButton = legendaryFilter;
+        titleText = title;
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

@@ -26,6 +26,15 @@ public class MenuButton : MonoBehaviour
     }
 
     /// <summary>
+    /// Initializes the button references (for runtime UI building).
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI label)
+    {
+        iconText = icon;
+        labelText = label;
+    }
+
+    /// <summary>
     /// Sets the selected state of this menu button.
     /// </summary>
     /// <param name="selected">Whether the button is selected</param>

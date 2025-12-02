@@ -54,6 +54,46 @@ public class ShopController : ScreenController
     private IconPack pendingPurchasePack;
     private bool isShowingIcons = true;
 
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI coinBalance, TextMeshProUGUI nextCoinTimer,
+        Button iconsTab, Button packsTab,
+        GameObject iconsPnl, Transform iconsCont, GameObject iconPrefab,
+        GameObject packsPnl, Transform packsCont, GameObject packPrefab,
+        GameObject confirmPnl, TextMeshProUGUI confirmTxt, TextMeshProUGUI confirmPrice,
+        Button confirmBtn, Button cancelBtn,
+        GameObject resultPnl, TextMeshProUGUI resultTitle, TextMeshProUGUI resultMsg, Button resultClose,
+        GameObject packOpenPnl, Transform packContentsCont, GameObject packIconPrefab, Button closePack,
+        TMP_Dropdown rarityFilter, TextMeshProUGUI title)
+    {
+        coinBalanceText = coinBalance;
+        nextCoinTimerText = nextCoinTimer;
+        iconsTabButton = iconsTab;
+        packsTabButton = packsTab;
+        iconsPanel = iconsPnl;
+        iconsContainer = iconsCont;
+        shopIconPrefab = iconPrefab;
+        packsPanel = packsPnl;
+        packsContainer = packsCont;
+        shopPackPrefab = packPrefab;
+        confirmationPanel = confirmPnl;
+        confirmationText = confirmTxt;
+        confirmationPriceText = confirmPrice;
+        confirmButton = confirmBtn;
+        cancelButton = cancelBtn;
+        resultPanel = resultPnl;
+        resultTitleText = resultTitle;
+        resultMessageText = resultMsg;
+        resultCloseButton = resultClose;
+        packOpeningPanel = packOpenPnl;
+        packContentsContainer = packContentsCont;
+        packIconDisplayPrefab = packIconPrefab;
+        closePackButton = closePack;
+        rarityFilterDropdown = rarityFilter;
+        titleText = title;
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

@@ -55,6 +55,16 @@ public class ProductionSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
         productionController = GetComponentInParent<ProductionController>();
     }
 
+    /// <summary>
+    /// Initializes UI references for runtime building.
+    /// </summary>
+    public void InitializeReferences(TextMeshProUGUI icon, TextMeshProUGUI status, Image progress, TextMeshProUGUI timeText)
+    {
+        iconText = icon;
+        statusText = status;
+        progressBar = progress;
+    }
+
     private void Start()
     {
         if (cancelButton != null)

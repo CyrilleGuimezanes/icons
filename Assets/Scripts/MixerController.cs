@@ -37,6 +37,30 @@ public class MixerController : ScreenController
     
     private int currentMultiplier = 1;
     private List<InventoryIconDisplay> inventoryIcons = new List<InventoryIconDisplay>();
+
+    /// <summary>
+    /// Initializes references for runtime UI building.
+    /// </summary>
+    public void InitializeReferences(MixerSlot[] slots, Transform invContainer, GameObject invIconPrefab,
+        Button x1Btn, Button x5Btn, Button x10Btn, Button x100Btn,
+        Button mixBtn, TextMeshProUGUI mixBtnText,
+        GameObject resultPnl, TextMeshProUGUI resultIcon, TextMeshProUGUI resultMsg,
+        TextMeshProUGUI title)
+    {
+        mixerSlots = slots;
+        inventoryContainer = invContainer;
+        inventoryIconPrefab = invIconPrefab;
+        multiplierX1Button = x1Btn;
+        multiplierX5Button = x5Btn;
+        multiplierX10Button = x10Btn;
+        multiplierX100Button = x100Btn;
+        mixButton = mixBtn;
+        mixButtonText = mixBtnText;
+        resultPanel = resultPnl;
+        resultIconText = resultIcon;
+        resultMessageText = resultMsg;
+        titleText = title;
+    }
     
     protected override void OnEnable()
     {
