@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 /// <summary>
 /// Editor script that builds the Potager (Production) screen UI.
